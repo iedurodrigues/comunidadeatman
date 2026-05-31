@@ -1,0 +1,23 @@
+{
+	"name": "Comunidade Atman",
+	"short_name": "Atman",
+	"description": "Comprometidos com a Espiritualidade.",
+	"start_url": "index.html",
+	"scope": ".",
+	"display": "standalone",
+	"background_color": "#FEFAE0",
+	"theme_color": "#2D3A27",
+	"orientation": "portrait",
+	"icons": [
+	{
+	  "src": "Resources/ico192.png",
+	  "sizes": "192x192",
+	  "type": "image/png"
+	},
+	{
+	  "src": "Resources/ico512.png",
+	  "sizes": "512x512",
+	  "type": "image/png"
+	}
+	]
+}
