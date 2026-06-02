@@ -27,6 +27,20 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
+	<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+	<script>
+		window.OneSignalDeferred = window.OneSignalDeferred || [];
+		window.OneSignalDeferred.push(async function(OneSignal) {
+		await OneSignal.init({
+		  appId: "e2080499-e511-4351-ad48-8efa996254ce",
+		  safari_web_id: "web.onesignal.auto.ec8dfb15-992d-42bc-9d04-a1599a0ef9db",
+		  notifyButton: {
+			enable: true,
+		  },
+		});
+		});
+	</script>
+
     <style>
         :root {
             --verde-floresta: #2D3A27;
