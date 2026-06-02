@@ -1,3 +1,6 @@
+// Importa as funções de notificação do OneSignal
+importScripts('https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.sw.js');
+
 const CACHE_NAME = 'atman-v4';
 
 self.addEventListener('install', event => {
