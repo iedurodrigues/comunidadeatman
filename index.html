@@ -164,7 +164,7 @@
 		<div class="container mx-auto px-6 py-4 flex justify-between items-center">
 			<div class="flex items-center gap-2">
 				<img src="Resources/LogoCirc.png" alt="Logo Atman" class="h-8 w-auto object-contain">
-				<span class="text-xl font-serif tracking-widest uppercase text-[#FEFAE0]">Atman</span>
+				<span id="header-text" class="transition-all duration-300 ease-in-out">Atman</span>	
 			</div>
 
 			<button id="menu-btn" class="block md:hidden focus:outline-none z-50" aria-label="Abrir Menu">
@@ -186,7 +186,7 @@
 	</nav>
 
     <!-- SEÇÃO: Apresentação -->
-    <section class="bg-nature h-screen flex items-center justify-center text-center text-[#FEFAE0] px-4">
+    <section id="inicio" class="bg-nature h-screen flex items-center justify-center text-center text-[#FEFAE0] px-4">
         <div class="max-w-4xl">
             <span class="uppercase tracking-[0.5em] text-sm mb-4 block">Bem-vindo à Floresta</span>
             <h1 class="text-6xl md:text-8xl mb-6">Comunidade Atman</h1>
@@ -597,7 +597,49 @@
 		document.body.style.overflow = 'hidden'; 
 	}
 
-    </script>
+
+	document.addEventListener("DOMContentLoaded", function () {
+		const headerText = document.getElementById("header-text");
+		  const secoesTexto = {
+			"inicio": "Atman",
+			"galeria": "Galeria",
+			"ayahuasca": "Ayahuasca",
+			"atividades": "Atividades",
+			"contribua": "Contribua",
+			"previsoes": "Previsões",
+			"contato": "Contato"
+		  };
+	  const options = {
+		root: null,
+		rootMargin: "-10% 0px -70% 0px",
+		threshold: 0
+	  };
+	  const observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+			const idSecao = entry.target.id;
+			console.log("Seção ativa detectada:", idSecao);
+			headerText.style.opacity = "0";
+			setTimeout(() => {
+			  if (secoesTexto[idSecao]) {
+				headerText.innerText = secoesTexto[idSecao];
+			  }
+			  headerText.style.opacity = "1";
+				}, 150);
+			}
+		});
+	  }, options);
+		  Object.keys(secoesTexto).forEach((id) => {
+			const elemento = document.getElementById(id);
+			if (elemento) {
+			  observer.observe(elemento);
+			} else {
+			  console.warn("Aviso: Não encontrei nenhuma tag com o id:", id);
+			}
+		  });
+		});
+
+</script>
 
 	<div id="modal-previsao" class="hidden fixed inset-0 bg-stone-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 transition-all">
 		<div class="bg-white max-w-lg w-full rounded-2xl shadow-xl border border-stone-100 relative max-h-[85vh] flex flex-col overflow-hidden">
@@ -609,7 +651,6 @@
 		</div>
 		</div>
 	</div>
-
 
 </body>
 
