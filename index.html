@@ -163,8 +163,8 @@
 	<nav class="fixed w-full z-50 bg-[#2d3a27]/90 backdrop-blur-md text-[#fefae0]">
 		<div class="container mx-auto px-6 py-4 flex justify-between items-center">
 			<div class="flex items-center gap-2">
-				<img src="Resources/LogoCirc.png" alt="Logo Atman" class="h-8 w-auto object-contain">
-				<span id="header-text" class="transition-opacity duration-300"></span>
+				<img src="Resources/LogoCirc.png" alt="" class="h-8 w-auto object-contain">
+				<span id="header-text" class="text-xl font-serif tracking-widest uppercase text-[#FEFAE0]">Atman</span>
 			</div>
 
 			<button id="menu-btn" class="block md:hidden focus:outline-none z-50" aria-label="Abrir Menu">
@@ -596,48 +596,6 @@
 		document.getElementById('modal-previsao').classList.remove('hidden');
 		document.body.style.overflow = 'hidden'; 
 	}
-
-	document.addEventListener("DOMContentLoaded", function () {
-		const headerText = document.getElementById("header-text");
-		const secoesTexto = {
-			"inicio": "",
-			"galeria": "Galeria",
-			"ayahuasca": "Ayahuasca",
-			"previsoes": "Previsões",
-			"atividades": "Atividades",
-			"orientacoes": "Orientações",
-			"contribua": "Contribua",
-			"contato": "Contato"
-		};
-
-		const options = {
-			root: null,
-			rootMargin: "-20% 0px -40% 0px",
-			threshold: 0
-		};
-
-		const observer = new IntersectionObserver((entries) => {
-		entries.forEach((entry) => {
-			if (entry.isIntersecting) {
-			const idSecao = entry.target.id;
-				if (secoesTexto[idSecao] && headerText.innerText !== secoesTexto[idSecao]) {
-				headerText.style.opacity = "0";
-					setTimeout(() => {
-						headerText.innerText = secoesTexto[idSecao];
-						headerText.style.opacity = "1";
-						}, 150);
-					}
-				}
-			});
-		}, options);
-
-	  Object.keys(secoesTexto).forEach((id) => {
-		const elemento = document.getElementById(id);
-		if (elemento) {
-			observer.observe(elemento);
-		}
-	  });
-	});
 
 </script>
 
