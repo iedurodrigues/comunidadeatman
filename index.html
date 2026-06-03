@@ -164,7 +164,7 @@
 		<div class="container mx-auto px-6 py-4 flex justify-between items-center">
 			<div class="flex items-center gap-2">
 				<img src="Resources/LogoCirc.png" alt="" class="h-8 w-auto object-contain">
-				<span id="header-text" class="text-xl font-serif tracking-widest uppercase text-[#FEFAE0]">Atman</span>
+				<span id="header-text" class="text-xl font-serif tracking-widest uppercase text-[#FEFAE0]"> </span>
 			</div>
 
 			<button id="menu-btn" class="block md:hidden focus:outline-none z-50" aria-label="Abrir Menu">
@@ -599,16 +599,56 @@
 
 </script>
 
-	<div id="modal-previsao" class="hidden fixed inset-0 bg-stone-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 transition-all">
-		<div class="bg-white max-w-lg w-full rounded-2xl shadow-xl border border-stone-100 relative max-h-[85vh] flex flex-col overflow-hidden">
-			<div class="p-6 border-b border-stone-100 flex justify-between items-center bg-white rounded-t-2xl">
-			<h3 id="modal-titulo" class="text-2xl font-serif text-stone-800 pr-4">Título da Previsão</h3>
-			<button onclick="fecharModal()" class="text-stone-400 hover:text-stone-600 text-3xl font-light transition-colors leading-none">&times;</button>
-		</div>
-		<div id="modal-texto" class="p-6 text-stone-600 leading-relaxed text-sm overflow-y-auto space-y-4">
-		</div>
-		</div>
+<script>
+	//Tive que separar o script porque não rodou na mesma chave com os anteriores
+	document.addEventListener("DOMContentLoaded", function () {
+		const headerText = document.getElementById("header-text");
+		const secoesTexto = {
+			"inicio": " ",
+			"galeria": "Galeria",
+			"ayahuasca": "Ayahuasca",
+			"previsoes": "Previsões",
+			"atividades": "Atividades",
+			"orientacoes": "Orientações",
+			"contribua": "Contribua",
+			"contato": "Contato"
+		};
+		const options = {
+			root: null,
+			threshold: 0.5 
+		};
+		const observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+		  if (entry.isIntersecting) {
+			const idSeacao = entry.target.id;
+			headerText.style.opacity = "0";
+			setTimeout(() => {
+				if (secoesTexto[idSeacao]) {
+					headerText.innerText = secoesTexto[idSeacao];
+				}
+				headerText.style.opacity = "1";
+			}, 250);
+		  }
+		});
+		}, options);
+
+		Object.keys(secoesTexto).forEach((id) => {
+			const elemento = document.getElementById(id);
+			if (elemento) observer.observe(elemento);
+		});
+	});
+</script>
+
+<div id="modal-previsao" class="hidden fixed inset-0 bg-stone-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 transition-all">
+	<div class="bg-white max-w-lg w-full rounded-2xl shadow-xl border border-stone-100 relative max-h-[85vh] flex flex-col overflow-hidden">
+		<div class="p-6 border-b border-stone-100 flex justify-between items-center bg-white rounded-t-2xl">
+		<h3 id="modal-titulo" class="text-2xl font-serif text-stone-800 pr-4">Título da Previsão</h3>
+		<button onclick="fecharModal()" class="text-stone-400 hover:text-stone-600 text-3xl font-light transition-colors leading-none">&times;</button>
 	</div>
+	<div id="modal-texto" class="p-6 text-stone-600 leading-relaxed text-sm overflow-y-auto space-y-4">
+	</div>
+	</div>
+</div>
 
 </body>
 
