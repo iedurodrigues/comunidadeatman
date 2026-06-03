@@ -615,7 +615,7 @@
 		};
 		const options = {
 			root: null,
-			threshold: 0.5 
+			threshold: 0.8
 		};
 		const observer = new IntersectionObserver((entries) => {
 		entries.forEach((entry) => {
@@ -627,7 +627,7 @@
 					headerText.innerText = secoesTexto[idSeacao];
 				}
 				headerText.style.opacity = "1";
-			}, 250);
+			}, 300);
 		  }
 		});
 		}, options);
