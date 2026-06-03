@@ -159,13 +159,6 @@
 </head>
 <body>
 
-	<div id="splash-screen" class="fixed inset-0 bg-[#2d3a27] z-[100] flex flex-col items-center justify-center transition-opacity duration-700 ease-in-out">
-		<div class="text-center animate-fade-in">
-			<img src="https://raw.githubusercontent.com/iedurodrigues/comunidadeatman/refs/heads/ComunidadeAtman/Resources/LogoCirc.png" alt="Comunidade Atman" class="h-24 w-24 mx-auto mb-4 animate-pulse">
-			<h1 class="text-[#FEFAE0] font-serif text-2xl tracking-wide"></h1>
-		</div>
-	</div>
-
     <!-- Header orgânico -->
 	<nav class="fixed w-full z-50 bg-[#2d3a27]/90 backdrop-blur-md text-[#fefae0]">
 		<div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -643,20 +636,6 @@
 			const elemento = document.getElementById(id);
 			if (elemento) observer.observe(elemento);
 		});
-	});
-</script>
-
-<script>
-	document.addEventListener("DOMContentLoaded", function () {
-		const splash = document.getElementById("splash-screen");
-		if (splash) {
-			setTimeout(() => {
-			  splash.style.opacity = "0";
-				setTimeout(() => {
-					splash.remove();
-				}, 700); 
-			}, 1800);
-		}
 	});
 </script>
 
