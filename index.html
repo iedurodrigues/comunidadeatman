@@ -567,7 +567,9 @@
 				.catch(err => console.error('Erro ao registrar Service Worker:', err));
 		});
 	}
-	
+</script>
+
+<script>
 	function abrirModal(titulo, conteudoHtml) {
 	  document.getElementById('modal-titulo').innerText = titulo;
 	  document.getElementById('modal-texto').innerHTML = conteudoHtml;
@@ -596,11 +598,9 @@
 		document.getElementById('modal-previsao').classList.remove('hidden');
 		document.body.style.overflow = 'hidden'; 
 	}
-
 </script>
 
 <script>
-	//Tive que separar o script porque não rodou na mesma chave com os anteriores
 	document.addEventListener("DOMContentLoaded", function () {
 		const headerText = document.getElementById("header-text");
 		const secoesTexto = {
@@ -615,7 +615,7 @@
 		};
 		const options = {
 			root: null,
-			threshold: 0.8
+			threshold: 0.5
 		};
 		const observer = new IntersectionObserver((entries) => {
 		entries.forEach((entry) => {
