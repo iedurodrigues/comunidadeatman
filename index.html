@@ -82,21 +82,20 @@
             gap: 1.5rem;
             padding-bottom: 1rem;
         }
+		
         .carousel-item { flex: 0 0 300px; scroll-snap-align: start; }
-        
         .social-icon { fill: var(--verde-claro); transition: transform 0.3s ease, opacity 0.3s ease; }
         .social-icon:hover { transform: scale(1.1); opacity: 1; }
-
-        img { pointer-events: none; -webkit-user-drag: none; }
-
-        .btn-copy { background-color: var(--verde-claro); color: var(--verde-floresta); transition: all 0.3s ease; }
+        
+		img { pointer-events: none; -webkit-user-drag: none; }
+        
+		.btn-copy { background-color: var(--verde-claro); color: var(--verde-floresta); transition: all 0.3s ease; }
         .btn-copy:hover { background-color: #d4d9a8; transform: scale(1.05); }
 
         #mural-fade {
             text-shadow: 0 0 1px rgba(45, 58, 39, 0.1);
         }
 
-        /* Responsividade Mobile */
         @media (max-width: 768px) {
             #mural-fade { font-size: 1.1rem; }
             .text-6xl { font-size: 3.5rem; }
@@ -104,28 +103,23 @@
         }
 		@media (max-width: 640px) {
 			#pix-key {
-				font-size: 0.85rem; /* Diminui o texto no celular */
-				word-break: break-all; /* Se ainda assim for grande, ele quebra a linha */
+				font-size: 0.85rem;
+				word-break: break-all;
 				overflow-wrap: anywhere;
 			}
 		}
 		@media (max-width: 768px) {
-			/* Ajuste para títulos grandes que estão quebrando o layout */
 			h2.text-5xl {
-				font-size: 2.7rem !important; /* Tamanho menor para celular */
+				font-size: 2.7rem !important;
 				line-height: 1.2;
 				word-wrap: break-word;
 				padding-left: 10px;
 				padding-right: 10px;
 			}
-
-			/* Ajuste específico para a seção de contribuições e previsões */
 			#contribua h2, #previsoes h2 {
 				font-size: 2.7rem !important;
-				hyphens: auto; /* Permite hifenização se necessário */
+				hyphens: auto;
 			}
-
-			/* Garante que o container branco/creme não transborde */
 			.container {
 				padding-left: 1rem;
 				padding-right: 1rem;
@@ -138,13 +132,10 @@
 				box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
 			}
 		}
-		/* Estado do Menu Aberto (Mobile) */
 		#menu-links.menu-open {
 			transform: translateX(0);
 			box-shadow: -10px 0 30px rgba(0,0,0,0.5);
 		}
-
-		/* Animação das Linhas do Ícone para o "X" */
 		.btn-active #line-1 {
 			transform: rotate(45deg) translate(2px, -1px);
 		}
@@ -166,7 +157,6 @@
 				<img src="Resources/LogoCirc.png" alt="" class="h-8 w-auto object-contain">
 				<span id="header-text" class="text-xl font-serif tracking-widest uppercase text-[#FEFAE0]"> </span>
 			</div>
-
 			<button id="menu-btn" class="block md:hidden focus:outline-none z-50" aria-label="Abrir Menu">
 				<div class="w-6 h-5 relative flex flex-col justify-between overflow-hidden">
 					<span id="line-1" class="w-full h-0.5 bg-current transition-all duration-300 origin-left"></span>
@@ -174,7 +164,6 @@
 					<span id="line-3" class="w-full h-0.5 bg-current transition-all duration-300 origin-left"></span>
 				</div>
 			</button>
-
 			<div id="menu-links" class="fixed md:static top-0 right-0 h-screen md:h-auto w-64 md:w-auto bg-[#2d3a27] md:bg-transparent flex flex-col md:flex-row items-center justify-center md:justify-start gap-8 md:gap-8 translate-x-full md:translate-x-0 transition-transform duration-500 ease-in-out text-xs uppercase tracking-[0.2em]">
 				<a href="#ayahuasca" class="menu-item hover:text-[#ccd5ae] transition">Ayahuasca</a>
 				<a href="#previsoes" class="menu-item hover:text-[#ccd5ae] transition">Previsões</a>
@@ -214,7 +203,7 @@
 			<div><span class="block text-xs uppercase opacity-60">Data</span><span class="text-xl text-[#FFFFFF]">20 de Junho</span></div>
 			<div><span class="block text-xs uppercase opacity-60">Hora</span><span class="text-xl text-[#FFFFFF]">19:30h</span></div> -->
 
-    <section id="ayahuasca" class="py-24 bg-[#FAEDCD]">
+    <section id="ayahuasca" class="py-24 bg-[#FFF5DB]">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="bg-[#164473] rounded-[3rem] overflow-hidden flex flex-col md:flex-row shadow-2xl">
                 <div class="md:w-1/2 p-12 md:p-20 text-[#FEFAE0]">
@@ -223,6 +212,7 @@
                     <p class="text-[#FFFFFF] mb-10 leading-relaxed text-sm">
                         <b>Consagração de Ayahuasca.</b><br>
 						O Cristo Cósmico é a representação expansiva de Jesus em Cristo. Na consagração, será evocada a força Crística através das estruturas energéticas da Fraternidade Branca e das Religiões Afro.
+						<br><b>Local: Rolândia, Paraná.</b>
                     </p>
                     <div class="flex gap-10 border-t border-[#FFFFFF]/30 pt-8">
                         <div><span class="block text-xs uppercase opacity-60">Data</span><span class="text-xl text-[#FFFFFF]">20 de Junho</span></div>
@@ -249,95 +239,97 @@
 				<div class="bg-white/75 p-8 rounded-2xl shadow-sm border border-stone-100 flex flex-col justify-between transition-all hover:shadow-md">
 					<div>
 						<div class="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center text-amber-700 text-xl mb-6">☀️</div>
-							<h3 class="text-xl font-medium text-stone-800 mb-3">Começo do Mês</h3>
-							<p class="text-stone-600 leading-relaxed text-sm">
-								<b>Entre os dias 01 e 12</b><br>
-								Os pensamentos e sentimentos parecerão uma coisa só - será possível perceber o que acontece quando o cérebro e o coração sintonizam...
-							</p>
-						</div>
-						<button onclick="abrirModal('Começo do Mês', `
-								<p class='mb-4'>
-									<b>>>> Entre 01 e 03 <<<</b><br>
-									Os pensamentos e sentimentos parecerão uma coisa só - será possível perceber o que acontece quando o cérebro e o coração sintonizam e a lucidez que isso gera. A comunicação estará mais emocional e nos veremos nostálgicos, gratos aos nossos ancestrais. Cabe relembrar: sem melodrama, memória é uma dádiva e não um instrumento de lamentação
-									<br><br>
-								</p>
-								<p class='mb-4'>
-									<b>>>> Entre 04 e 08 <<<</b><br>
-									A imaginação estará em alta, o &quot;preço&quot; desse aumento será a diminuição do pensamento preciso - preste atenção nas fantasias, pois ela começa quando o sonho se desconecta da realidade. Trabalhar com artes e introspecção estará muito favorável, apenas evite deixar assuntos mal entendidos continuarem sem esclarecimento
-									<br><br>
-								</p>
-								<p>
-									<b>>>> Entre 09 e 12 <<<</b><br>
-									Chamados de <i>&quot;dias de sorte&quot;</i> - dos momentos íntimos às oportunidades em investimentos. No dia 10 haverá uma quadratura que nos &quot;puxará&quot; para a realidade: a sorte referida é o momento favorável em conjunto com a conduta digna. A sorte vem ao encontro do merecimento e não pode ser exigida - então poderá haver &quot;choques de realidade&quot; para diferenciar amor de paixão, investimento de jogos de azar e diálogos de chantagem emocional - <b>a Natureza não financia as tramas do egoísmo</b>
-								</p>
-								`)" class="mt-6 text-left text-sm font-medium text-amber-700 hover:text-amber-800 transition-colors inline-flex items-center gap-1">
-							Ler mais &rarr;
-						</button>
+						<h3 class="text-xl font-medium text-stone-800 mb-3">Começo do Mês</h3>
+						<p class="text-stone-600 leading-relaxed text-sm">
+							<b>Entre os dias 01 e 12</b><br>
+							Os pensamentos e sentimentos parecerão uma coisa só - será possível perceber o que acontece quando o cérebro e o coração sintonizam...
+						</p>
 					</div>
+					<button onclick="abrirModal('Começo do Mês', `
+							<p class='mb-4'>
+								<b>>>> Entre 01 e 03 <<<</b><br>
+								Os pensamentos e sentimentos parecerão uma coisa só - será possível perceber o que acontece quando o cérebro e o coração sintonizam e a lucidez que isso gera. A comunicação estará mais emocional e nos veremos nostálgicos, gratos aos nossos ancestrais. Cabe relembrar: sem melodrama, memória é uma dádiva e não um instrumento de lamentação
+								<br><br>
+							</p>
+							<p class='mb-4'>
+								<b>>>> Entre 04 e 08 <<<</b><br>
+								A imaginação estará em alta, o &quot;preço&quot; desse aumento será a diminuição do pensamento preciso - preste atenção nas fantasias, pois ela começa quando o sonho se desconecta da realidade. Trabalhar com artes e introspecção estará muito favorável, apenas evite deixar assuntos mal entendidos continuarem sem esclarecimento
+								<br><br>
+							</p>
+							<p>
+								<b>>>> Entre 09 e 12 <<<</b><br>
+								Chamados de <i>&quot;dias de sorte&quot;</i> - dos momentos íntimos às oportunidades em investimentos. No dia 10 haverá uma quadratura que nos &quot;puxará&quot; para a realidade: a sorte referida é o momento favorável em conjunto com a conduta digna. A sorte vem ao encontro do merecimento e não pode ser exigida - então poderá haver &quot;choques de realidade&quot; para diferenciar amor de paixão, investimento de jogos de azar e diálogos de chantagem emocional - <b>a Natureza não financia as tramas do egoísmo</b>
+							</p>
+							`)" class="mt-6 text-left text-sm font-medium text-amber-700 hover:text-amber-800 transition-colors inline-flex items-center gap-1">
+						Ler mais &rarr;
+					</button>
+				</div>
 
 				<!-- Card 2 -->
 				<div class="bg-white/75 p-8 rounded-2xl shadow-sm border border-stone-100 flex flex-col justify-between transition-all hover:shadow-md">
 					<div>
 						<div class="w-12 h-12 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-700 text-xl mb-6">🌳</div>
-							<h3 class="text-xl font-medium text-stone-800 mb-3">O Ápice do Mês</h3>
-							<p class="text-stone-600 leading-relaxed text-sm">
-								<b>Entre os dias 13 e 21</b><br>
-								A onda da boa sorte que ainda reverbera trará respostas positivas a certas inseguranças internas, nos motivando a ficarmos brincalhões...
-							</p>
-						</div>
-						<button onclick="abrirModal('O Ápice do Mês', `
-								<p class='mb-4'>
-									<b>>>> Entre 13 e 15 <<<</b><br>
-									A onda da boa sorte que ainda reverbera trará respostas positivas a certas inseguranças internas, nos motivando a ficarmos brincalhões por conta da euforia das coisas estarem dando certo. Todavia, por baixo dos panos precisamos frear o impulso que nos leva a julgar os outros - como que se a sorte fosse nossa e os demais indignos dela, gerando frases como <i>&quot;que bobagem você não conseguir fazer isso&quot;</i> - expondo que a sorte inflou nosso próprio egoísmo. No caso de buscar reconhecimento, procure oferecê-lo antes - é importante lembrar que o corpo físico não é instrumento de desejo e que um amor mais puro exige retidão. Se planeja começar algo diferente, esses dias serão favoráveis para planejar
-									<br><br>
-								</p>
-								<p class='mb-4'>
-									<b>>>> Entre 16 e 18 <<<</b><br>
-									Momento de inspiração, poesia e magnetismo. O poder e o ciúme poderão se manifestar com intensidade, então ficará complicado soltar algumas coisas. A presença de três planetas nesse período nos faz esperar impulsos sociais relacionados a mulheres e a posição delas na sociedade
-									<br><br>
-								</p>
-								<p>
-									<b>>>> Entre 19 e 21 <<<</b><br>
-									Essa posição começa nessa data e vai até 18/09 - esse momento é importante porque nos dará uma prévia de um ciclo que durará 6 anos que começará em 04/2027: muito vem sendo dito sobre desapego e libertação e isso não vai mudar tão cedo - fugir das dores será impossível. A ascensão tecnológica, somada à imprudência sobre como o homem trata a natureza (sem cuidado com o próprio lixo e alimentação, por exemplo) resultará em momentos de escassez, não por ausência de recursos naturais, mas por crise em face da própria ganância - uma oportunidade de consciência sobre como utilizamos a matéria. Os assuntos femininos estarão em pauta constantemente, pois Touro em domicílio em Vênus trará a estabilidade emocional para que isso continue. Domingo, dia 21 - será um excelente dia para rituais em honra a própria vida (por exemplo refeições familiares para celebrar a dádiva do alimento ao invés da discussão de problemas que não nos cabe)
-									<br><br>
-								</p>
-								`)" class="mt-6 text-left text-sm font-medium text-emerald-700 hover:text-emerald-800 transition-colors inline-flex items-center gap-1">
-							Ler mais &rarr;
-						</button>
+						<h3 class="text-xl font-medium text-stone-800 mb-3">O Ápice do Mês</h3>
+						<p class="text-stone-600 leading-relaxed text-sm">
+							<b>Entre os dias 13 e 21</b><br>
+							A onda da boa sorte que ainda reverbera trará respostas positivas a certas inseguranças internas, nos motivando a ficarmos brincalhões...
+						</p>
 					</div>
+					<button onclick="abrirModal('O Ápice do Mês', `
+							<p class='mb-4'>
+								<b>>>> Entre 13 e 15 <<<</b><br>
+								A onda da boa sorte que ainda reverbera trará respostas positivas a certas inseguranças internas, nos motivando a ficarmos brincalhões por conta da euforia das coisas estarem dando certo. Todavia, por baixo dos panos precisamos frear o impulso que nos leva a julgar os outros - como que se a sorte fosse nossa e os demais indignos dela, gerando frases como <i>&quot;que bobagem você não conseguir fazer isso&quot;</i> - expondo que a sorte inflou nosso próprio egoísmo. No caso de buscar reconhecimento, procure oferecê-lo antes - é importante lembrar que o corpo físico não é instrumento de desejo e que um amor mais puro exige retidão. Se planeja começar algo diferente, esses dias serão favoráveis para planejar
+								<br><br>
+							</p>
+							<p class='mb-4'>
+								<b>>>> Entre 16 e 18 <<<</b><br>
+								Momento de inspiração, poesia e magnetismo. O poder e o ciúme poderão se manifestar com intensidade, então ficará complicado soltar algumas coisas. A presença de três planetas nesse período nos faz esperar impulsos sociais relacionados a mulheres e a posição delas na sociedade
+								<br><br>
+							</p>
+							<p>
+								<b>>>> Entre 19 e 21 <<<</b><br>
+								Essa posição começa nessa data e vai até 18/09 - esse momento é importante porque nos dará uma prévia de um ciclo que durará 6 anos que começará em 04/2027: muito vem sendo dito sobre desapego e libertação e isso não vai mudar tão cedo - fugir das dores será impossível. A ascensão tecnológica, somada à imprudência sobre como o homem trata a natureza (sem cuidado com o próprio lixo e alimentação, por exemplo) resultará em momentos de escassez, não por ausência de recursos naturais, mas por crise em face da própria ganância - uma oportunidade de consciência sobre como utilizamos a matéria. Os assuntos femininos estarão em pauta constantemente, pois Touro em domicílio em Vênus trará a estabilidade emocional para que isso continue. Domingo, dia 21 - será um excelente dia para rituais em honra a própria vida (por exemplo refeições familiares para celebrar a dádiva do alimento ao invés da discussão de problemas que não nos cabe)
+								<br><br>
+							</p>
+							`)" class="mt-6 text-left text-sm font-medium text-emerald-700 hover:text-emerald-800 transition-colors inline-flex items-center gap-1">
+						Ler mais &rarr;
+					</button>
+				</div>
 
 				<!-- Card 3 -->
 				<div class="bg-white/75 p-8 rounded-2xl shadow-sm border border-stone-100 flex flex-col justify-between transition-all hover:shadow-md">
 					<div>
 						<div class="w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center text-purple-700 text-xl mb-6">🌙</div>
-							<h3 class="text-xl font-medium text-stone-800 mb-3">Final do Mês</h3>
-							<p class="text-stone-600 leading-relaxed text-sm">
-								<b>Entre os dias 22 e 30</b><br>
-								A generosidade ocupará o centro das atenções, portanto o voluntariado e trabalhos de bom grado não remunerados passarão a ser reconhecidos como merecem...
-							</p>
-						</div>
-						<button onclick="abrirModal('Final do Mês', `
-								<p class='mb-4'>
-									<b>>>> Entre 22 e 28 <<<</b><br>
-									A vitalidade estará reduzida e será um bom momento para estar perto das águas (mar, rios, lagos). Caso se recarregar apropriadamente, logo em seguida virá uma vontade de concretizar - cabendo relembrar: não faça um monte de coisas de uma só vez, pois isso dispersa energia e a perda do foco coloca em xeque a sustentação daquilo que você iniciará, fazendo com que seus projetos nasçam com vício de fracassar por falta de energia. Veremos sentido e até certa beleza na disciplina, mas paradoxalmente isso poderá incomodar porque será percebido que isso também pode prejudicar nossos aspectos sonhadores: entenda que disciplina nos permite sonhar sem fantasiar
-									<br><br>
-								</p>
-								<p class='mb-4'>
-									<b>>>> Entre 29 e 30 <<<</b><br>
-									A generosidade ocupará o centro das atenções, portanto o voluntariado e trabalhos de bom grado não remunerados passarão a ser reconhecidos como merecem. Aos seus aspirantes e praticantes, energias de criatividade e autoridade lhe serão confiadas. Para gerar o contraste, a passagem de Júpiter tornará explícito o desperdício, o egoísmo e a vaidade e aqueles mais atentos serão capazes de, enfim, <i>&quot;separar o shoyu do trigo&quot;</i> no tocante a entender a diferença entre os &quot;mercenários espirituais&quot; dos bem intencionados
-									<br><br>
-								</p>
-								`)" class="mt-6 text-left text-sm font-medium text-purple-700 hover:text-purple-800 transition-colors inline-flex items-center gap-1">
-							Ler mais &rarr;
-						</button>
+						<h3 class="text-xl font-medium text-stone-800 mb-3">Final do Mês</h3>
+						<p class="text-stone-600 leading-relaxed text-sm">
+							<b>Entre os dias 22 e 30</b><br>
+							A generosidade ocupará o centro das atenções, portanto o voluntariado e trabalhos de bom grado não remunerados passarão a ser reconhecidos como merecem...
+						</p>
 					</div>
+					<button onclick="abrirModal('Final do Mês', `
+							<p class='mb-4'>
+								<b>>>> Entre 22 e 28 <<<</b><br>
+								A vitalidade estará reduzida e será um bom momento para estar perto das águas (mar, rios, lagos). Caso se recarregar apropriadamente, logo em seguida virá uma vontade de concretizar - cabendo relembrar: não faça um monte de coisas de uma só vez, pois isso dispersa energia e a perda do foco coloca em xeque a sustentação daquilo que você iniciará, fazendo com que seus projetos nasçam com vício de fracassar por falta de energia. Veremos sentido e até certa beleza na disciplina, mas paradoxalmente isso poderá incomodar porque será percebido que isso também pode prejudicar nossos aspectos sonhadores: entenda que disciplina nos permite sonhar sem fantasiar
+								<br><br>
+							</p>
+							<p class='mb-4'>
+								<b>>>> Entre 29 e 30 <<<</b><br>
+								A generosidade ocupará o centro das atenções, portanto o voluntariado e trabalhos de bom grado não remunerados passarão a ser reconhecidos como merecem. Aos seus aspirantes e praticantes, energias de criatividade e autoridade lhe serão confiadas. Para gerar o contraste, a passagem de Júpiter tornará explícito o desperdício, o egoísmo e a vaidade e aqueles mais atentos serão capazes de, enfim, <i>&quot;separar o shoyu do trigo&quot;</i> no tocante a entender a diferença entre os &quot;mercenários espirituais&quot; dos bem intencionados
+								<br><br>
+							</p>
+							`)" class="mt-6 text-left text-sm font-medium text-purple-700 hover:text-purple-800 transition-colors inline-flex items-center gap-1">
+						Ler mais &rarr;
+					</button>
 				</div>
+			</div>
 		</div>
 	</section>
 
     <!-- SEÇÃO: Atividades -->
-    <section id="atividades" class="py-24 bg-[#FAEDCD] text-center">
-		<h2 class="text-5xl italic text-[#2D3A27] text-center mb-16">Atividades</h2>
+    <section id="atividades" class="py-24 bg-[#FFF5DB] text-center">
+		<div class="text-center mb-12">
+			<h2 class="text-5xl italic text-stone-800 mb-2">Atividades</h2>
+		</div>
 		<div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto px-6">
             <a class="card-nature p-10 rounded-[2rem] hover:bg-[#E9EDC9] transition-all group">
 				<details>
@@ -374,22 +366,22 @@
         <div class="container mx-auto px-6 max-w-5xl">
             <h2 class="text-5xl italic text-[#2D3A27] text-center mb-16">Orientação aos Caminhantes</h2>
 			<div class="grid md:grid-cols-2 gap-8 italic font-serif">
- 				<div class="p-8 border-l-4 border-amber-800 bg-white/30 rounded-r-2xl">
+ 				<div class="p-8 border-l-4 border-amber-800 bg-white/50 rounded-r-2xl">
                     <p class="opacity-80">Anamnese</p>
 					<h4 class="text-2sm mb-2">Consagrará Ayahuasca conosco pela primeira vez?</h4>
 					<a href="https://docs.google.com/forms/d/e/1FAIpQLSfsiikE-qdAF7DKLkA6ZUBljmaOiCCgQYl6dgvryf_r4aEpcA/viewform?usp=share_link" target="_blank" class="hover:underline">Preencha aqui.</a>
                 </div>
-				<div class="p-8 border-l-4 border-amber-800 bg-white/30 rounded-r-2xl">
+				<div class="p-8 border-l-4 border-amber-800 bg-white/50 rounded-r-2xl">
                     <p class="opacity-80">Restrições e Recomendações</p>
 					<h4 class="text-2sm mb-2">Consome medicamentos e/ou tem restrições médicas?</h4>
 					<a href="https://drive.google.com/file/d/1uXn976Xbl6MEsxi3e4DXLqrLBK4nszXe/view?usp=share_link" target="_blank" class="hover:underline">Consulte este link.</a>
                 </div>
-				<div class="p-8 border-l-4 border-green-800 bg-white/30 rounded-r-2xl">
+				<div class="p-8 border-l-4 border-green-800 bg-white/50 rounded-r-2xl">
 					<p class="opacity-80">Metodologias</p>
 					<h4 class="text-2sm mb-2">Para entender como trabalhamos,</h4>
 					<a href="https://drive.google.com/file/d/1COvVXzl-UBGNnlsq3IGkJzwGLEZQj3B-/view?usp=sharing" target="_blank" class="hover:underline">Consulte este link.</a>
 				</div>
-				<div class="p-8 border-l-4 border-green-800 bg-white/30 rounded-r-2xl">
+				<div class="p-8 border-l-4 border-green-800 bg-white/50 rounded-r-2xl">
 					<p class="opacity-80">Cursos</p>
 					<h4 class="text-2sm mb-2">Para aprender gratuitamente conosco,</h4>
 					<a href="https://www.youtube.com/@ComunidadeAtman/courses" target="_blank" class="hover:underline">Acesse o canal.</a>
@@ -404,26 +396,21 @@
 			<div class="bg-white/40 p-12 md:p-16 rounded-[3rem] border border-[#2D3A27]/10 text-center text-[#4A3728]">
 				<h2 class="text-5xl italic text-[#2D3A27] mb-8">Contribua</h2>
 				<p class="text-sm mb-10">Praticamos a caridade e estamos abertos para receber contribuições. Somos transparentes com a forma que tratamos os recebimentos. Você pode conferir os relatórios <a href="https://docs.google.com/spreadsheets/d/1NniQBEfyofqLYEkZCBXYahCKzzo7AZrox8C42Umpj0k/edit?usp=share_link" target="_blank" class="hover:underline"><b>aqui</b></a>.</p>
-				
 				<div class="text-center">
 					<div class="inline-block bg-[#2D3A27] text-[#FEFAE0] p-8 md:p-12 rounded-3xl shadow-xl">
 						<h4 class="uppercase tracking-widest text-xs font-bold mb-4 opacity-70">Chave Pix</h4>
-						
-						
 						<p id="pix-key" class="text-base sm:text-lg md:text-xl lg:text-2xl font-mono mb-8 block select-all text-center break-all sm:break-normal">doacoes@comunidadeatman.org</p>
-						
 						<button onclick="copyPix()" id="btn-copy" class="btn-copy flex items-center gap-2 mx-auto px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest">
 							<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
 							<span id="btn-text">Copiar Chave</span>
 						</button>
 					</div>
 				</div>
-
 				<div class="mt-8">
 					<p class="text-xs uppercase tracking-[0.3em] mb-6 opacity-60 font-bold">Mural de Gratidão</p>
 					<div class="h-12 overflow-hidden relative">
 						<div id="mural-fade" class="text-2xl italic font-serif text-[#2D3A27] transition-all duration-1000 opacity-0 transform translate-y-4">
-							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -434,7 +421,7 @@
     <section id="contato" class="py-24 bg-[#4A3728]">
         <div class="container mx-auto px-6 max-w-3xl text-center text-[#FEFAE0]">
             <h2 class="text-5xl italic mb-8">Fale Conosco</h2>
-            <p class="mt-4 font-serif text-lg opacity-80 italic mb-12">Dúvidas ou intenção de participar?<br>Entre em contato.</p>
+            <p class="mt-4 font-serif text-lg opacity-80 italic mb-12">Dúvidas ou solicitações?<br>Entre em contato.</p>
             <a href="mailto:contato@comunidadeatman.org" class="inline-block bg-[#2D3A27] text-[#FEFAE0] px-12 py-5 rounded-full hover:bg-[#2D3A27] transition-all shadow-lg uppercase tracking-widest text-sm font-bold mb-12 border border-[#E9EDC9]/20">
                 Enviar E-mail
             </a>
@@ -591,9 +578,9 @@
 	function abrirModalSobre() {
 		document.getElementById('modal-titulo').innerText = 'Sobre';
 		document.getElementById('modal-texto').innerHTML = `
-			<p class='mb-4'>Este é o aplicativo oficial da Comunidade Atman, desenvolvido para facilitar o acesso aos trabalhos que realizamos.</p>
+			<p class='mb-4'>Este é o aplicativo oficial da Comunidade Atman - desenvolvido para facilitar o acesso aos trabalhos que realizamos.</p>
 			<p class='mb-4'>Você pode instalar o aplicativo salvando esta página na tela inicial do seu despositivo.</p>
-			<p>E se nos permitir te enviar notificações, te avisaremos sobre novas publicações no site.</p>
+			<p>Se nos permitir enviar notificações, avisaremos sobre novas publicações do site.</p>
 			`;
 		document.getElementById('modal-previsao').classList.remove('hidden');
 		document.body.style.overflow = 'hidden'; 
@@ -642,11 +629,11 @@
 <div id="modal-previsao" class="hidden fixed inset-0 bg-stone-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 transition-all">
 	<div class="bg-white max-w-lg w-full rounded-2xl shadow-xl border border-stone-100 relative max-h-[85vh] flex flex-col overflow-hidden">
 		<div class="p-6 border-b border-stone-100 flex justify-between items-center bg-white rounded-t-2xl">
-		<h3 id="modal-titulo" class="text-2xl font-serif text-stone-800 pr-4">Título da Previsão</h3>
-		<button onclick="fecharModal()" class="text-stone-400 hover:text-stone-600 text-3xl font-light transition-colors leading-none">&times;</button>
-	</div>
-	<div id="modal-texto" class="p-6 text-stone-600 leading-relaxed text-sm overflow-y-auto space-y-4">
-	</div>
+			<h3 id="modal-titulo" class="text-2xl font-serif text-stone-800 pr-4">Título da Previsão</h3>
+			<button onclick="fecharModal()" class="text-stone-400 hover:text-stone-600 text-3xl font-light transition-colors leading-none">&times;</button>
+		</div>
+		<div id="modal-texto" class="p-6 text-stone-600 leading-relaxed text-sm overflow-y-auto space-y-4">
+		</div>
 	</div>
 </div>
 
