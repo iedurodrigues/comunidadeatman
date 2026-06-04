@@ -138,13 +138,11 @@
 				box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
 			}
 		}
-		/* Estado do Menu Aberto (Mobile) */
 		#menu-links.menu-open {
 			transform: translateX(0);
 			box-shadow: -10px 0 30px rgba(0,0,0,0.5);
 		}
 
-		/* Animação das Linhas do Ícone para o "X" */
 		.btn-active #line-1 {
 			transform: rotate(45deg) translate(2px, -1px);
 		}
@@ -570,30 +568,30 @@
 </script>
 
 <script>
-	function abrirModal(titulo, conteudoHtml) {
-	  document.getElementById('modal-titulo').innerText = titulo;
-	  document.getElementById('modal-texto').innerHTML = conteudoHtml;
-	  document.getElementById('modal-previsao').classList.remove('hidden');
-	  document.body.style.overflow = 'hidden'; 
-	}
-
-	function fecharModal() {
-	  document.getElementById('modal-previsao').classList.add('hidden');
-	  document.body.style.overflow = 'auto';
-	}
-
-	document.getElementById('modal-previsao').addEventListener('click', function(e) {
-	  if (e.target === this) {
-		fecharModal();
-	  }
+	document.addEventListener("DOMContentLoaded", function () {
+	const botaoMenu = document.querySelector('[onclick*="Menu"]') || document.getElementById('botao-menu'); 
+		const headerText = document.getElementById("header-text");
+		if (!botaoMenu || !headerText) return;
+		botaoMenu.addEventListener("click", function () {
+		setTimeout(() => {
+			const menuMobile = document.getElementById('menu-mobile') || document.querySelector('nav');
+				if (menuMobile) {
+				if (!menuMobile.classList.contains('hidden')) {
+					  headerText.style.visibility = 'hidden'; 
+					} else {
+					  headerText.style.visibility = 'visible';
+					}
+				}
+		}, 50);
+		});
 	});
 	
 	function abrirModalSobre() {
 		document.getElementById('modal-titulo').innerText = 'Sobre';
 		document.getElementById('modal-texto').innerHTML = `
-			<p class='mb-4'>Este é o aplicativo oficial da Comunidade Atman, desenvolvido para facilitar o acesso aos trabalhos que realizamos.</p>
+			<p class='mb-4'>Este é o aplicativo oficial da Comunidade Atman - desenvolvido para facilitar o acesso aos trabalhos que realizamos.</p>
 			<p class='mb-4'>Você pode instalar o aplicativo salvando esta página na tela inicial do seu despositivo.</p>
-			<p>E se nos permitir te enviar notificações, te avisaremos sobre novas publicações no site.</p>
+			<p>E se nos permitir te enviar notificações, avisaremos sobre novas publicações do site.</p>
 			`;
 		document.getElementById('modal-previsao').classList.remove('hidden');
 		document.body.style.overflow = 'hidden'; 
