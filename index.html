@@ -31,13 +31,11 @@
 	<script>
 		window.OneSignalDeferred = window.OneSignalDeferred || [];
 		window.OneSignalDeferred.push(async function(OneSignal) {
-		await OneSignal.init({
-		  appId: "e2080499-e511-4351-ad48-8efa996254ce",
-		  safari_web_id: "web.onesignal.auto.ec8dfb15-992d-42bc-9d04-a1599a0ef9db",
-		  notifyButton: {
-			enable: true,
-		  },
-		});
+			await OneSignal.init({
+			  appId: "e2080499-e511-4351-ad48-8efa996254ce",
+			  safari_web_id: "web.onesignal.auto.ec8dfb15-992d-42bc-9d04-a1599a0ef9db",
+			  notifyButton: { enable: true, },
+			});
 		});
 	</script>
 
@@ -92,15 +90,14 @@
 		.btn-copy { background-color: var(--verde-claro); color: var(--verde-floresta); transition: all 0.3s ease; }
         .btn-copy:hover { background-color: #d4d9a8; transform: scale(1.05); }
 
-        #mural-fade {
-            text-shadow: 0 0 1px rgba(45, 58, 39, 0.1);
-        }
+        #mural-fade { text-shadow: 0 0 1px rgba(45, 58, 39, 0.1); }
 
         @media (max-width: 768px) {
             #mural-fade { font-size: 1.1rem; }
             .text-6xl { font-size: 3.5rem; }
             .text-5xl { font-size: 2.5rem; }
         }
+
 		@media (max-width: 640px) {
 			#pix-key {
 				font-size: 0.85rem;
@@ -108,6 +105,7 @@
 				overflow-wrap: anywhere;
 			}
 		}
+
 		@media (max-width: 768px) {
 			h2.text-5xl {
 				font-size: 2.7rem !important;
@@ -126,26 +124,19 @@
 				overflow-x: hidden;
 			}
 		}
+
 		@media (max-width: 767px) {
 			#menu-links.flex {
 				border-bottom: 1px solid rgba(233, 237, 201, 0.1);
 				box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
 			}
 		}
-		#menu-links.menu-open {
-			transform: translateX(0);
-			box-shadow: -10px 0 30px rgba(0,0,0,0.5);
-		}
-		.btn-active #line-1 {
-			transform: rotate(45deg) translate(2px, -1px);
-		}
-		.btn-active #line-2 {
-			transform: translateX(50px);
-			opacity: 0;
-		}
-		.btn-active #line-3 {
-			transform: rotate(-45deg) translate(2px, 1px);
-		}
+
+		#menu-links.menu-open { transform: translateX(0); box-shadow: -10px 0 30px rgba(0,0,0,0.5); }
+		.btn-active #line-1 { transform: rotate(45deg) translate(2px, -1px); }
+		.btn-active #line-2 { transform: translateX(50px); opacity: 0; }
+		.btn-active #line-3 { transform: rotate(-45deg) translate(2px, 1px); }
+
     </style>
 </head>
 <body>
@@ -422,8 +413,7 @@
             <h2 class="text-5xl italic mb-8">Fale Conosco</h2>
             <p class="mt-4 font-serif text-lg opacity-80 italic mb-12">Dúvidas ou solicitações?<br>Entre em contato.</p>
             <a href="mailto:contato@comunidadeatman.org" class="inline-block bg-[#2D3A27] text-[#FEFAE0] px-12 py-5 rounded-full hover:bg-[#2D3A27] transition-all shadow-lg uppercase tracking-widest text-sm font-bold mb-12 border border-[#E9EDC9]/20">
-                Enviar E-mail
-            </a>
+                Enviar E-mail</a>
             <div class="flex justify-center gap-12">
                 <a href="https://youtube.com/@comunidadeatman" target="_blank" title="YouTube">
                     <svg class="w-12 h-12 social-icon" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
@@ -440,93 +430,96 @@
 		</button>
     </footer>
 
-    <script>
-		function copyPix() {
-			const pixText = document.getElementById('pix-key').innerText.trim();
-			const btnText = document.getElementById('btn-text');
-			const btn = document.getElementById('btn-copy');
+<script>
+	function copyPix() {
+		const pixText = document.getElementById('pix-key').innerText.trim();
+		const btnText = document.getElementById('btn-text');
+		const btn = document.getElementById('btn-copy');
 
-			function showSuccess() {
-				const originalText = "Copiar Chave";
-				btnText.innerText = 'Copiado';
-				btn.style.backgroundColor = '#FEFAE0';
-				btn.style.color = '#2D3A27';
-				
-				setTimeout(() => {
-					btnText.innerText = originalText;
-					btn.style.backgroundColor = '';
-					btn.style.color = '';
-				}, 2000);
-			}
-
-			if (navigator.clipboard && window.isSecureContext) {
-				navigator.clipboard.writeText(pixText)
-					.then(() => showSuccess())
-					.catch(() => fallbackCopy(pixText));
-			} else {
-				fallbackCopy(pixText);
-			}
-
-			function fallbackCopy(text) {
-				const textArea = document.createElement("textarea");
-				textArea.value = text;
-				
-				textArea.style.position = "fixed";
-				textArea.style.left = "-9999px";
-				textArea.style.top = "0";
-				document.body.appendChild(textArea);
-				
-				textArea.focus();
-				textArea.select();
-				
-				try {
-					const successful = document.execCommand('copy');
-					if (successful) showSuccess();
-				} catch (err) {
-					console.error('Erro no fallback:', err);
-					prompt("Pressione Ctrl+C para copiar a chave:", text);
-				}
-				document.body.removeChild(textArea);
-			}
+		function showSuccess() {
+			const originalText = "Copiar Chave";
+			btnText.innerText = 'Copiado';
+			btn.style.backgroundColor = '#FEFAE0';
+			btn.style.color = '#2D3A27';
+			
+			setTimeout(() => {
+				btnText.innerText = originalText;
+				btn.style.backgroundColor = '';
+				btn.style.color = '';
+			}, 2000);
 		}
-        document.addEventListener('contextmenu', e => e.preventDefault());
 
-        async function loadGallery() {
-            const user = 'iedurodrigues';
-            const repo = 'comunidadeatman';
-            const path = 'Fotos';
-            const galleryContainer = document.getElementById('github-gallery');
-            try {
-                const response = await fetch(`https://api.github.com/repos/${user}/${repo}/contents/${path}`);
-                const files = await response.json();
-                galleryContainer.innerHTML = '';
-                files.forEach(file => {
-                    if (file.name.match(/\.(jpg|jpeg|png|gif|webp)$/i)) {
-                        const item = document.createElement('div');
-                        item.className = 'carousel-item';
-                        item.innerHTML = `<img src="${file.download_url}" class="rounded-3xl w-full h-80 object-cover border-4 border-[#E9EDC9]" alt="Atman">`;
-                        galleryContainer.appendChild(item);
-                    }
-                });
-            } catch (e) { galleryContainer.innerHTML = '<p>Carregando...</p>'; }
-        }
-        loadGallery();
+		if (navigator.clipboard && window.isSecureContext) {
+			navigator.clipboard.writeText(pixText)
+				.then(() => showSuccess())
+				.catch(() => fallbackCopy(pixText));
+		} else {
+			fallbackCopy(pixText);
+		}
 
-        const nomes = ["🌿 Bruna Maia", "🌿 Carla Michele", "🌿 Cledineia Maia", "🌿 Elaine Paiva", "🌿 Izaura Costa", "🌿 Raíssa Torres", "🌿 Roseneide Cunha"];
-        let index = 0;
-        const mural = document.getElementById('mural-fade');
-        function mudarNome() {
-            mural.classList.add('opacity-0', 'translate-y-4');
-            setTimeout(() => {
-                mural.innerText = nomes[index];
-                index = (index + 1) % nomes.length;
-                mural.classList.remove('opacity-0', 'translate-y-4');
-            }, 1000);
-        }
-        setInterval(mudarNome, 3000);
-        mudarNome();
+		function fallbackCopy(text) {
+			const textArea = document.createElement("textarea");
+			textArea.value = text;
+			
+			textArea.style.position = "fixed";
+			textArea.style.left = "-9999px";
+			textArea.style.top = "0";
+			document.body.appendChild(textArea);
+			
+			textArea.focus();
+			textArea.select();
+			
+			try {
+				const successful = document.execCommand('copy');
+				if (successful) showSuccess();
+			} catch (err) {
+				console.error('Erro no fallback:', err);
+				prompt("Pressione Ctrl+C para copiar a chave:", text);
+			}
+			document.body.removeChild(textArea);
+		}
+	}
+	document.addEventListener('contextmenu', e => e.preventDefault());
 
+	async function loadGallery() {
+		const user = 'iedurodrigues';
+		const repo = 'comunidadeatman';
+		const path = 'Fotos';
+		const galleryContainer = document.getElementById('github-gallery');
+		try {
+			const response = await fetch(`https://api.github.com/repos/${user}/${repo}/contents/${path}`);
+			const files = await response.json();
+			galleryContainer.innerHTML = '';
+			files.forEach(file => {
+				if (file.name.match(/\.(jpg|jpeg|png|gif|webp)$/i)) {
+					const item = document.createElement('div');
+					item.className = 'carousel-item';
+					item.innerHTML = `<img src="${file.download_url}" class="rounded-3xl w-full h-80 object-cover border-4 border-[#E9EDC9]" alt="Atman">`;
+					galleryContainer.appendChild(item);
+				}
+			});
+		} catch (e) { galleryContainer.innerHTML = '<p>Carregando...</p>'; }
+	}
+	loadGallery();
+</script>
 
+<script>
+	const nomes = ["🌿 Bruna Maia", "🌿 Carla Michele", "🌿 Cledineia Maia", "🌿 Elaine Paiva", "🌿 Izaura Costa", "🌿 Raíssa Torres", "🌿 Roseneide Cunha"];
+	let index = 0;
+	const mural = document.getElementById('mural-fade');
+	function mudarNome() {
+		mural.classList.add('opacity-0', 'translate-y-4');
+		setTimeout(() => {
+			mural.innerText = nomes[index];
+			index = (index + 1) % nomes.length;
+			mural.classList.remove('opacity-0', 'translate-y-4');
+		}, 1000);
+	}
+	setInterval(mudarNome, 3000);
+	mudarNome();
+</script>
+
+<script>
     const menuBtn = document.getElementById('menu-btn');
     const menuLinks = document.getElementById('menu-links');
     const links = document.querySelectorAll('.menu-item');
@@ -569,9 +562,7 @@
 	}
 
 	document.getElementById('modal-previsao').addEventListener('click', function(e) {
-	  if (e.target === this) {
-		fecharModal();
-	  }
+	  if (e.target === this) { fecharModal(); }
 	});
 	
 	function abrirModalSobre() {
