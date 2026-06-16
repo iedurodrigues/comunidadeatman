@@ -2,5 +2,5 @@
   "titulo": "O Despertar da Consciência",
   "autor": "Eduardo Rodrigues",
   "resumo": "Uma reflexão profunda sobre o autoconhecimento na floresta.",
-  "conteudo": "Aqui entra o seu texto completo do artigo."
+  "conteudo": "<p class='mb-4'>Primeiro parágrafo do seu texto.</p><p class='mb-4'>Segundo parágrafo do seu texto.</p>"
 }
