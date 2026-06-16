@@ -306,12 +306,12 @@
 				<p class="text-stone-600 max-w-md mx-auto">Reflexões sobre o que vivenciamos.</p>
 			</div>
 
-			<div id="container-artigos" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-				<p id="artigos-status" class="text-[#4A3728] italic text-center col-span-full">Sintonizando pensamentos...</p>
+			<div id="container-estudos" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<p id="estudos-status" class="text-[#4A3728] italic text-center col-span-full">Sintonizando pensamentos...</p>
 			</div>
 
-			<div id="bloco-botao-artigos" class="text-center mt-12 hidden">
-				<button id="btn-toggle-artigos" onclick="toggleArtigos()" class="inline-block bg-[#2D3A27] text-[#FEFAE0] px-8 py-3 rounded-full hover:bg-[#3d4f35] transition-all text-xs font-bold uppercase tracking-widest shadow-md">
+			<div id="bloco-botao-estudos" class="text-center mt-12 hidden">
+				<button id="btn-toggle-estudos" onclick="toggleEstudos()" class="inline-block bg-[#2D3A27] text-[#FEFAE0] px-8 py-3 rounded-full hover:bg-[#3d4f35] transition-all text-xs font-bold uppercase tracking-widest shadow-md">
 					Ver mais
 				</button>
 			</div>
@@ -448,7 +448,7 @@
 
 <script>
 
-	let artigosCarregados = [];
+	let estudosCarregados = [];
 	let mostrandoTudo = false;
 	let textoAtualParaLeitura = ""; 
 	let executandoAudio = false;
@@ -533,18 +533,18 @@
 		}
 	}
 
-	async function carregarArtigosDoGitHub() {
+	async function carregarEstudosDoGitHub() {
 		const user = 'iedurodrigues';
 		const repo = 'comunidadeatman';
-		const path = 'Artigos'; 
-		const container = document.getElementById('container-artigos');
+		const path = 'Estudos'; 
+		const container = document.getElementById('container-estudos');
 		
 		try {
 			const urlAPI = 'https://api.github.com/repos/' + user + '/' + repo + '/contents/' + path + '?t=' + Date.now();
 			const response = await fetch(urlAPI);
 			
 			if (!response.ok) {
-				container.innerHTML = '<p class="text-[#4A3728] italic text-center col-span-full">Pasta "Artigos" não localizada no repositório.</p>';
+				container.innerHTML = '<p class="text-[#4A3728] italic text-center col-span-full">Pasta "Estudos" não localizada no repositório.</p>';
 				return;
 			}
 			
@@ -570,31 +570,31 @@
 			});
 			
 			const resultados = await Promise.all(promises);
-			artigosCarregados = resultados.filter(function(art) {
+			estudosCarregados = resultados.filter(function(art) {
 				return art !== null;
 			});
 			
-			if (artigosCarregados.length === 0) {
+			if (estudosCarregados.length === 0) {
 				container.innerHTML = '<p class="text-[#4A3728] italic text-center col-span-full">Não foi possível processar a estrutura dos arquivos JSON.</p>';
 				return;
 			}
 			
-			renderizarArtigos();
+			renderizarEstudos();
 			
 		} catch (error) {
 			console.error("Erro crítico na API do GitHub:", error);
-			container.innerHTML = '<p class="text-[#4A3728] italic text-center col-span-full">Erro de conexão ao buscar artigos.</p>';
+			container.innerHTML = '<p class="text-[#4A3728] italic text-center col-span-full">Erro de conexão ao buscar estudos.</p>';
 		}
 	}
 
-	function renderizarArtigos() {
-		const container = document.getElementById('container-artigos');
+	function renderizarEstudos() {
+		const container = document.getElementById('container-estudos');
 		container.innerHTML = ''; 
 		
-		const limite = mostrandoTudo ? artigosCarregados.length : 3;
-		const artigosParaExibir = artigosCarregados.slice(0, limite);
+		const limite = mostrandoTudo ? estudosCarregados.length : 3;
+		const estudosParaExibir = estudosCarregados.slice(0, limite);
 		
-		artigosParaExibir.forEach(function(artigo) {
+		estudosParaExibir.forEach(function(artigo) {
 			const tituloArtigo = artigo.titulo || artigo.Title || artigo.Título || "Artigo sem Título";
 			const autorArtigo = artigo.autor || artigo.Autor || "Comunidade Atman";
 			const resumoArtigo = artigo.resumo || artigo.Resumo || "";
@@ -616,10 +616,10 @@
 			container.appendChild(card);
 		});
 
-		const blocoBotao = document.getElementById('bloco-botao-artigos');
-		if (artigosCarregados.length > 3) {
+		const blocoBotao = document.getElementById('bloco-botao-estudos');
+		if (estudosCarregados.length > 3) {
 			blocoBotao.classList.remove('hidden');
-			document.getElementById('btn-toggle-artigos').innerText = mostrandoTudo ? 'Ver menos' : 'Ver mais artigos';
+			document.getElementById('btn-toggle-estudos').innerText = mostrandoTudo ? 'Ver menos' : 'Ver mais estudos';
 		} else {
 			blocoBotao.classList.add('hidden');
 		}
@@ -631,11 +631,11 @@
 		abrirModalArtigo(tituloDecodificado, conteudoDecodificado);
 	}
 
-	function toggleArtigos() {
+	function toggleEstudos() {
 		mostrandoTudo = !mostrandoTudo;
-		renderizarArtigos();
+		renderizarEstudos();
 		if (!mostrandoTudo) {
-			document.getElementById('artigos').scrollIntoView({ behavior: 'smooth' });
+			document.getElementById('estudos').scrollIntoView({ behavior: 'smooth' });
 		}
 	}
 
@@ -754,7 +754,7 @@
 			"galeria": "Galeria",
 			"ayahuasca": "Ayahuasca",
 			"previsoes": "Previsões",
-			"artigos": "Artigos",
+			"estudos": "Estudos",
 			"atividades": "Atividades",
 			"orientacoes": "Orientações",
 			"contribua": "Contribua",
@@ -782,7 +782,7 @@
 		});
 
 		loadGallery();
-		carregarArtigosDoGitHub();
+		carregarEstudosDoGitHub();
 		setInterval(mudarNome, 3000);
 		mudarNome();
 	});
