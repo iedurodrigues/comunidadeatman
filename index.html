@@ -438,7 +438,7 @@
 			<div id="modal-audio-container" class="px-6 py-2 bg-stone-50 border-b border-stone-100 hidden flex items-center justify-between">
 				<span class="text-xs text-stone-500 italic">Prefere ouvir?</span>
 				<button id="btn-audio-player" onclick="controlarAudio()" class="bg-[#2D3A27] text-[#FEFAE0] px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase hover:bg-[#3d4f35] transition-all flex items-center gap-1">
-					<span>🔊 Ouvir Conteúdo</span>
+					<span>Ouvir</span>
 				</button>
 			</div>
 			<div id="modal-texto" class="p-6 text-stone-600 leading-relaxed text-sm overflow-y-auto space-y-4">
@@ -459,7 +459,7 @@
 		}
 		executandoAudio = false;
 		const btnAudio = document.getElementById('btn-audio-player');
-		if(btnAudio) btnAudio.innerHTML = '<span>🔊 Ouvir</span>';
+		if(btnAudio) btnAudio.innerHTML = '<span>Ouvir</span>';
 		
 		document.getElementById('modal-previsao').classList.add('hidden');
 		document.body.style.overflow = 'auto';
@@ -475,9 +475,10 @@
 		document.getElementById('modal-titulo').innerText = titulo;
 		document.getElementById('modal-texto').innerHTML = conteudoHtml;
 		document.getElementById('modal-audio-container').classList.remove('hidden');
-		document.getElementById('btn-audio-player').innerHTML = '<span>🔊 Ouvir</span>';
+		document.getElementById('btn-audio-player').innerHTML = '<span>Ouvir</span>';
 		document.getElementById('modal-previsao').classList.remove('hidden');
 		document.body.style.overflow = 'hidden'; 
+		document.getElementById('modal-texto').scrollTop = 0; 
 	}
 	
 	function abrirModalSobre() {
@@ -494,9 +495,10 @@
 		document.getElementById('modal-titulo').innerText = titulo;
 		document.getElementById('modal-texto').innerHTML = conteudoHtml;
 		document.getElementById('modal-audio-container').classList.remove('hidden');
-		document.getElementById('btn-audio-player').innerHTML = '<span>🔊 Ouvir</span>';
+		document.getElementById('btn-audio-player').innerHTML = '<span>Ouvir</span>';
 		document.getElementById('modal-previsao').classList.remove('hidden');
-		document.body.style.overflow = 'hidden'; 
+		document.body.style.overflow = 'hidden';
+		document.getElementById('modal-texto').scrollTop = 0;
 	}
 
 	function controlarAudio() {
@@ -510,7 +512,7 @@
 		if (executandoAudio) {
 			window.speechSynthesis.cancel();
 			executandoAudio = false;
-			btnAudio.innerHTML = '<span>🔊 Ouvir</span>';
+			btnAudio.innerHTML = '<span>Ouvir</span>';
 		} else {
 			window.speechSynthesis.cancel(); 
 			const textoPuro = textoAtualParaLeitura.replace(/<[^>]*>/g, '').trim();
@@ -519,15 +521,15 @@
 			fala.rate = 1.0; 
 			fala.onend = function() {
 				executandoAudio = false;
-				btnAudio.innerHTML = '<span>🔊 Ouvir</span>';
+				btnAudio.innerHTML = '<span>Ouvir</span>';
 			};
 			fala.onerror = function() {
 				executandoAudio = false;
-				btnAudio.innerHTML = '<span>🔊 Ouvir</span>';
+				btnAudio.innerHTML = '<span>Ouvir</span>';
 			};
 			window.speechSynthesis.speak(fala);
 			executandoAudio = true;
-			btnAudio.innerHTML = '<span>🛑 Parar</span>';
+			btnAudio.innerHTML = '<span>Parar</span>';
 		}
 	}
 
