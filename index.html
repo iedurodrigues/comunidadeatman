@@ -514,11 +514,15 @@
 			executandoAudio = false;
 			btnAudio.innerHTML = '<span>Ouvir</span>';
 		} else {
+
 			window.speechSynthesis.cancel(); 
-			const textoPuro = textoAtualParaLeitura.replace(/<[^>]*>/g, '').trim();
+			let textoTratado = textoAtualParaLeitura.replace(/<\/p>/g, '. '); 
+			textoTratado = textoTratado.replace(/<br\s*\/?>/g, ' ');
+			const textoPuro = textoTratado.replace(/<[^>]*>/g, '').trim();
 			const fala = new SpeechSynthesisUtterance(textoPuro);
 			fala.lang = 'pt-BR';
 			fala.rate = 1.0; 
+			
 			fala.onend = function() {
 				executandoAudio = false;
 				btnAudio.innerHTML = '<span>Ouvir</span>';
@@ -527,6 +531,7 @@
 				executandoAudio = false;
 				btnAudio.innerHTML = '<span>Ouvir</span>';
 			};
+
 			window.speechSynthesis.speak(fala);
 			executandoAudio = true;
 			btnAudio.innerHTML = '<span>Parar</span>';
