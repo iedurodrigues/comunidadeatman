@@ -452,12 +452,15 @@
 	let mostrandoTudo = false;
 	let textoAtualParaLeitura = ""; 
 	let executandoAudio = false;
+	let audioPausado = false;
 
 	function fecharModal() {
 		if (window.speechSynthesis) {
 			window.speechSynthesis.cancel();
 		}
 		executandoAudio = false;
+		audioPausado = false;
+		
 		const btnAudio = document.getElementById('btn-audio-player');
 		if(btnAudio) btnAudio.innerHTML = '<span>Ouvir</span>';
 		
@@ -483,7 +486,7 @@
 	
 	function abrirModalSobre() {
 		abrirModal('Sobre', `
-			<p class='mb-4'>Este é o aplicativo oficial da Comunidade Atman - desenvolvido para facilitar o acesso aos trabalhos que realizamos.</p>
+			<p class='mb-4'>Este é o aplicativo oficial da Comunidade Atman. Foi desenvolvido para facilitar o acesso aos trabalhos que realizamos e ao material que disponibilizamos.</p>
 			<p class='mb-4'>Você pode instalar o aplicativo salvando esta página na tela inicial do seu dispositivo.</p>
 			<p>Se nos permitir enviar notificações, avisaremos sobre novas publicações do site.</p>
 		`);
@@ -509,33 +512,43 @@
 			return;
 		}
 
-		if (executandoAudio) {
-			window.speechSynthesis.cancel();
-			executandoAudio = false;
-			btnAudio.innerHTML = '<span>Ouvir</span>';
-		} else {
-
-			window.speechSynthesis.cancel(); 
-			let textoTratado = textoAtualParaLeitura.replace(/<\/p>/g, '. '); 
-			textoTratado = textoTratado.replace(/<br\s*\/?>/g, ' ');
-			const textoPuro = textoTratado.replace(/<[^>]*>/g, '').trim();
-			const fala = new SpeechSynthesisUtterance(textoPuro);
-			fala.lang = 'pt-BR';
-			fala.rate = 1.0; 
-			
-			fala.onend = function() {
-				executandoAudio = false;
-				btnAudio.innerHTML = '<span>Ouvir</span>';
-			};
-			fala.onerror = function() {
-				executandoAudio = false;
-				btnAudio.innerHTML = '<span>Ouvir</span>';
-			};
-
-			window.speechSynthesis.speak(fala);
-			executandoAudio = true;
-			btnAudio.innerHTML = '<span>Parar</span>';
+		if (executandoAudio && !audioPausado) {
+			window.speechSynthesis.pause();
+			audioPausado = true;
+			btnAudio.innerHTML = '<span>Continuar</span>';
+			return;
 		}
+
+		if (executandoAudio && audioPausado) {
+			window.speechSynthesis.resume();
+			audioPausado = false;
+			btnAudio.innerHTML = '<span>Pausar</span>';
+			return;
+		}
+
+		window.speechSynthesis.cancel(); // Garante que a fila de voz esteja limpa
+		let textoTratado = textoAtualParaLeitura.replace(/<\/p>/g, '. '); 
+		textoTratado = textoTratado.replace(/<br\s*\/?>/g, ' ');
+		const textoPuro = textoTratado.replace(/<[^>]*>/g, '').trim();
+		const fala = new SpeechSynthesisUtterance(textoPuro);
+		fala.lang = 'pt-BR';
+		fala.rate = 1.0; 
+		
+		fala.onend = function() {
+			executandoAudio = false;
+			audioPausado = false;
+			btnAudio.innerHTML = '<span>Ouvir</span>';
+		};
+		fala.onerror = function() {
+			executandoAudio = false;
+			audioPausado = false;
+			btnAudio.innerHTML = '<span>Ouvir</span>';
+		};
+
+		window.speechSynthesis.speak(fala);
+		executandoAudio = true;
+		audioPausado = false;
+		btnAudio.innerHTML = '<span>Pausar</span>';
 	}
 
 	async function carregarEstudosDoGitHub() {
