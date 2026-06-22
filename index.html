@@ -184,20 +184,23 @@
 
 	<section id="ayahuasca" class="py-24 bg-[#FEFAE0]">
         <div class="container mx-auto px-6 max-w-6xl">
-            <div class="bg-[#164473] rounded-[3rem] overflow-hidden flex flex-col md:flex-row shadow-2xl">
+			<!-- <div class="bg-[#2D3A27] rounded-[3rem] overflow-hidden flex flex-col md:flex-row shadow-2xl"> | 'text-[#FFFFFF]' para o texto ficar branco -->
+            <div class="bg-[#2D3A27] rounded-[3rem] overflow-hidden flex flex-col md:flex-row shadow-2xl">
                 <div class="md:w-1/2 p-12 md:p-20 text-[#FEFAE0]">
-                    <span class="uppercase tracking-widest text-sm text-[#FFFFFF]">Próxima sessão</span>
-                    <h2 class="text-5xl mt-4 mb-6 italic text-[#FFFFFF]">Cristo Cósmico</h2>
-                    <p class="text-[#FFFFFF] mb-10 leading-relaxed text-sm">
+                    <span class="uppercase tracking-widest text-sm">Próxima sessão</span>
+                    <!-- <h2 class="text-5xl mt-4 mb-6 italic">A Definir</h2> -->
+					<h2 class="text-5xl mt-4 mb-6 italic">A Definir</h2>
+					<!-- <p class="text-[#CCD5AE] mb-10 leading-relaxed text-sm"> -->
+                    <p class="text-[#CCD5AE] mb-10 leading-relaxed text-sm">
                         <b>Consagração de Ayahuasca.</b><br>
-						O Cristo Cósmico é a representação expansiva de Jesus em Cristo. Na consagração, será evocada a força Crística através das estruturas energéticas da Fraternidade Branca e das Religiões Afro.
+						O resumo da temática estará disponível quando o tema for definido.
                     </p>
                     <div class="flex gap-10 border-t border-[#FFFFFF]/30 pt-8">
-                        <div><span class="block text-xs uppercase opacity-60">Data</span><span class="text-xl text-[#FFFFFF]">20 de Junho</span></div>
+                        <div><span class="block text-xs uppercase opacity-60">Data</span><span class="text-xl text-[#FFFFFF]">00 de Julho</span></div>
                         <div><span class="block text-xs uppercase opacity-60">Hora</span><span class="text-xl text-[#FFFFFF]">19:30h</span></div>
                     </div>
                 </div>
-                <div class="md:w-1/2 bg-[url('https://raw.githubusercontent.com/iedurodrigues/comunidadeatman/refs/heads/ComunidadeAtman/SessaoIMG/CristoCosmico.jpeg?auto=format&fit=crop&q=60')] bg-cover bg-center h-60 md:h-auto"></div>
+                <div class="md:w-1/2 bg-[url('https://github.com/iedurodrigues/comunidadeatman/blob/ComunidadeAtman/SessaoIMG/Ayahuasca.webp?raw=true?auto=format&fit=crop&q=60')] bg-cover bg-center h-60 md:h-auto"></div>
             </div>
         </div>
     </section>
@@ -332,8 +335,8 @@
             </a>
 			<a class="card-nature p-10 rounded-[2rem] hover:bg-[#E9EDC9] transition-all group">
 				<details>
-					<summary class="text-xl mb-4 font-serif text-left">Psicanálise</summary>
-						<p class="text-sm opacity-70 text-left">Através da conversa vamos entender nossa forma de pensar. A abordagem se fundamenta no viés Junguiano e Lacaniano - tem por base compreender a estrutura da psiquê.<br><br>Considerando que <b>nosfo foco é no Corpo Espiritual</b>, as conversações terão um direcionamento concentrado no amadurecimento deste.<br><br>Tenha em mente que não menosprezamos as causas da matéria, todavia compreendemos que elas vêm por acréscimo.</p>
+					<summary class="text-xl mb-4 font-serif text-left">Orientação Espiritual</summary>
+						<p class="text-sm opacity-70 text-left">Através da conversa vamos entender nossa forma de pensar. Agendamos uma videochamada que tem duração de uma hora.<br><br>Considerando que <b>nosso foco é no Corpo Espiritual</b>, as conversações terão um direcionamento concentrado no amadurecimento deste.<br><br>Tenha em mente que não menosprezamos as causas da matéria, todavia compreendemos que elas vêm por acréscimo.</p>
 				</details>
             </a>
             <a class="card-nature p-10 rounded-[2rem] hover:bg-[#E9EDC9] transition-all group">
@@ -515,7 +518,7 @@
 		if (executandoAudio && !audioPausado) {
 			window.speechSynthesis.pause();
 			audioPausado = true;
-			btnAudio.innerHTML = '<span>Continuar</span>';
+			btnAudio.innerHTML = '<span>Retomar</span>';
 			return;
 		}
 
@@ -692,7 +695,6 @@
 			document.body.appendChild(textArea);
 			textArea.focus();
 			textArea.select();
-			
 			try {
 				const successful = document.execCommand('copy');
 				if (successful) showSuccess();
@@ -705,7 +707,6 @@
 	}
 
 	document.addEventListener('contextmenu', e => e.preventDefault());
-
 	async function loadGallery() {
 		const user = 'iedurodrigues';
 		const repo = 'comunidadeatman';
