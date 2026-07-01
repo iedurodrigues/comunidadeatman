@@ -446,7 +446,7 @@
         <p class="font-serif italic text-lg mb-4 text-[#FEFAE0]">"A carne é fraca" - então torne-a mais forte</p>
         <p class="text-xs tracking-widest uppercase opacity-50">&copy; 2023 - 2026 Comunidade Atman</p>
 		<button onclick="abrirModalSobre()" class="text-opacity-50 hover:text-stone-200 text-xs transition-colors">
-			Sobre o Aplicativo
+			Sobre
 		</button>
     </footer>
 
@@ -536,6 +536,10 @@
 	function abrirModalArtigo(titulo, conteudoHtml) {
 		textoAtualParaLeitura = conteudoHtml; 
 		executandoAudio = false;
+		document.getElementById('modal-texto').classList.remove('hidden');
+		document.getElementById('modal-imagem').classList.add('hidden');
+		document.getElementById('btn-modal-prev').classList.add('hidden');
+		document.getElementById('btn-modal-next').classList.add('hidden');
 		document.getElementById('modal-titulo').innerText = titulo;
 		document.getElementById('modal-texto').innerHTML = conteudoHtml;
 		document.getElementById('modal-audio-container').classList.remove('hidden');
