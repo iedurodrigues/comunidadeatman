@@ -412,7 +412,7 @@
 				<div class="text-center">
 					<div class="inline-block bg-[#2D3A27] text-[#FEFAE0] p-8 md:p-12 rounded-3xl shadow-xl">
 						<h4 class="uppercase tracking-widest text-xs font-bold mb-4 opacity-70">Chave Pix</h4>
-						<p id="pix-key" class="text-base sm:text-lg md:text-xl lg:text-2xl font-mono mb-8 block select-all text-center break-all sm:break-normal">doacoes@comunidadeatman.org</p>
+						<p id="pix-key" class="text-base sm:text-lg md:text-xl lg:text-2xl font-mono mb-8 block select-all text-center break-all sm:break-normal">doacoes<wbr>@comunidadeatman.org</p>
 						<button onclick="copyPix()" id="btn-copy" class="btn-copy flex items-center gap-2 mx-auto px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest">
 							<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
 							<span id="btn-text">Copiar Chave</span>
@@ -448,13 +448,12 @@
         <p class="font-serif italic text-lg mb-4 text-[#FEFAE0]">"A carne é fraca" - então torne-a mais forte</p>
         <p class="text-xs tracking-widest uppercase opacity-50">&copy; 2023 - 2026 Comunidade Atman</p>
 		<button onclick="abrirModalSobre()" class="text-opacity-50 hover:text-stone-200 text-xs transition-colors">
-			Sobre
+			Sobre o Atman
 		</button>
     </footer>
 
 	<div id="modal-previsao" class="hidden fixed inset-0 bg-stone-900/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 transition-all">
 		<div class="bg-white max-w-lg w-full rounded-2xl shadow-xl border border-stone-100 relative max-h-[85vh] flex flex-col overflow-hidden">
-			
 			<div class="p-6 border-b border-stone-100 flex justify-between items-center bg-white rounded-t-2xl z-10">
 				<h3 id="modal-titulo" class="text-2xl font-serif text-stone-800 pr-4">Título</h3>
 				<button onclick="fecharModal()" class="text-stone-400 hover:text-stone-600 text-3xl font-light transition-colors leading-none">&times;</button>
@@ -470,7 +469,6 @@
 					&#10094;
 				</button>
 				<img id="modal-imagem" src="" alt="" class="hidden w-full h-auto max-h-[60vh] object-contain">
-				
 				<button id="btn-modal-next" onclick="navegarFoto(1)" class="hidden absolute right-4 z-20 bg-black/50 hover:bg-black/80 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all select-none">
 					&#10095;
 				</button>
@@ -527,10 +525,10 @@
 	}
 	
 	function abrirModalSobre() {
-		abrirModal('Sobre', `
-            <p class='mb-4'>Desenvolvemos este canal para facilitar o acesso aos trabalhos que realizamos e ao material que disponibilizamos.</p>
-			<p class='mb-4'>Você pode instalar o aplicativo salvando esta página na tela inicial do seu dispositivo Windows, Android, iOS e macOS.</p>
-			<p>Ao acessar pela primeira vez, você verá uma janela perguntando se podemos te enviar avisos, se você nos permitir, avisaremos sobre novas publicações no site.<hr>
+		abrirModal('Sobre o Atman', `
+            <p class='mb-4'><b>DADOS JURÍDICOS. </b><hr><b>CNPJ:</b> 59.569.266/0001-00. <br><b>CNAE:</b> 94.91-0-00. <br><small>Atividades de organizações religiosas ou filosóficas.</small><br><br></p>
+            <p class='mb-4'><b>SOBRE ESTE RECURSO. </b><hr>Desenvolvemos este canal para facilitar o acesso aos trabalhos que realizamos e ao material que disponibilizamos.</p>
+			<p class='mb-4'>Você pode instalar o aplicativo salvando esta página na tela inicial do seu dispositivo Windows, Android, iOS e macOS.<hr>
 			<b><small>Compilação: 141, de 01 de Julho de 2026.</small></b>
 		`);
 	}
