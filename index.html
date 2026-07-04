@@ -5,12 +5,11 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comunidade Atman</title>
-
+    <meta name="author" content="Comunidade Atman">
     <meta name="description" content="Comunidade Atman: Reconexão com as medicinas da floresta e autoconhecimento.">
     <meta name="keywords" content="xamanismo, cura, autoconhecimento, comunidade atman, medicinas da floresta, psicanálise, fraternidade branca, espiritualidade, londrina, rolândia">
-    <meta name="author" content="Comunidade Atman">
 
+	<title>Comunidade Atman</title>
     <meta property="og:title" content="Comunidade Atman">
     <meta property="og:description" content="Espaço de cura e reconexão. Conheça nossas atividades e vivências.">
     
@@ -197,9 +196,9 @@
         </div>
     </section>
 
-	<section id="galeria" class="py-24 bg-[#FAEDCD]">
+	<section id="memorias" class="py-24 bg-[#FAEDCD]">
 		<div class="container mx-auto px-6 max-w-6xl text-center overflow-hidden">
-			<h2 class="text-5xl italic text-[#2D3A27] mb-12">Galeria</h2>
+			<h2 class="text-5xl italic text-[#2D3A27] mb-12">Memórias</h2>
 			<div class="relative w-full flex items-center group">
 				<button onclick="controlarCarrossel(-1)" class="absolute left-2 z-10 bg-[#2D3A27]/70 hover:bg-[#2D3A27] text-[#FEFAE0] w-10 h-10 rounded-full flex items-center justify-center text-lg shadow-md transition-all select-none opacity-0 group-hover:opacity-100 focus:opacity-100">
 					&#10094;
@@ -526,7 +525,7 @@
             <p class='mb-4'><b>DADOS JURÍDICOS. </b><hr><b>CNPJ:</b> 59.569.266/0001-00. <br><b>CNAE:</b> 94.91-0-00. <br><small>Atividades de organizações religiosas ou filosóficas.</small><br><br></p>
             <p class='mb-4'><b>SOBRE ESTE RECURSO. </b><hr>Desenvolvemos este canal para facilitar o acesso aos trabalhos que realizamos e ao material que disponibilizamos.</p>
 			<p class='mb-4'>Você pode instalar o aplicativo salvando esta página na tela inicial do seu dispositivo Windows, Android, iOS e macOS.<hr>
-			<b><small>Compilação: 141, de 01 de Julho de 2026.</small></b>
+			<b><small>Compilação: 166, de 01 de Julho de 2026.</small></b>
 		`);
 	}
 
@@ -775,10 +774,7 @@
 		}
 	}
 
-	document.addEventListener('contextmenu', function(e) {
-		e.preventDefault();
-	});
-
+	document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
 	document.addEventListener('keydown', function(e) {
 		if (e.keyCode == 123 || 
 			(e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || 
@@ -822,7 +818,7 @@
 			}
 		} catch (e) { 
 			console.error("Erro na galeria:", e);
-			galleryContainer.innerHTML = '<p>Erro ao carregar galeria...</p>'; 
+			galleryContainer.innerHTML = '<p>Erro ao carregar memórias...</p>'; 
 		}
 	}
 
@@ -869,7 +865,7 @@
 		const headerText = document.getElementById("header-text");
 		const secoesTexto = {
 			"inicio": " ",
-			"galeria": "Galeria",
+			"memorias": "Memórias",
 			"ayahuasca": "Ayahuasca",
 			"previsoes": "Previsões",
 			"estudos": "Estudos",
