@@ -4,40 +4,40 @@
 <head>
 
     <meta charset="UTF-8">
+	<title>Comunidade Atman</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Comunidade Atman">
     <meta name="description" content="Comunidade Atman: Reconexão com as medicinas da floresta e autoconhecimento.">
     <meta name="keywords" content="xamanismo, cura, autoconhecimento, comunidade atman, medicinas da floresta, psicanálise, fraternidade branca, espiritualidade, londrina, rolândia">
+	<meta name="theme-color" content="#2D3A27">
 
-	<title>Comunidade Atman</title>
     <meta property="og:title" content="Comunidade Atman">
     <meta property="og:description" content="Espaço de cura e reconexão. Conheça nossas atividades e vivências.">
-    
-    <link rel="manifest" href="manifest.json">
     <meta property="og:image" content="Resources/LogoCirc.png">
+    <meta property="og:url" content="https://comunidadeatman.org">
+    <meta property="og:type" content="website">
+
+    <link rel="manifest" href="manifest.json">
     <link rel="icon" type="image/x-icon" href="Resources/LogoCirc.png">
     <link rel="icon" type="image/png" sizes="512x512" href="Resources/ico512.png">
+	<link rel="apple-touch-icon" href="Resources/ico512.png">
 
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Atman">
-	<link rel="apple-touch-icon" href="Resources/ico512.png">
-
-	<meta name="theme-color" content="#2D3A27">
-    <meta property="og:url" content="https://comunidadeatman.org">
-    <meta property="og:type" content="website">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+ 	<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+   	<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
-	<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
 	<script>
 		window.OneSignalDeferred = window.OneSignalDeferred || [];
 		window.OneSignalDeferred.push(async function(OneSignal) {
 			await OneSignal.init({
-			  appId: "e2080499-e511-4351-ad48-8efa996254ce",
-			  safari_web_id: "web.onesignal.auto.ec8dfb15-992d-42bc-9d04-a1599a0ef9db",
-			  notifyButton: { enable: true, },
+				appId: "e2080499-e511-4351-ad48-8efa996254ce",
+				safari_web_id: "web.onesignal.auto.ec8dfb15-992d-42bc-9d04-a1599a0ef9db",
+				notifyButton: { enable: true, },
 			});
 		});
 	</script>
@@ -64,8 +64,7 @@
         h1, h2, h3, h4, .font-serif { font-family: 'Crimson Text', serif; }
         
         .bg-nature {
-            background: linear-gradient(rgba(45, 58, 39, 0.7), rgba(74, 55, 40, 0.7)), 
-                        url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80');
+            background: linear-gradient(rgba(45, 58, 39, 0.7), rgba(74, 55, 40, 0.7)), url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80');
             background-size: cover;
             background-position: center;
         }
@@ -140,7 +139,6 @@
 
 		@media (min-width: 769px) {
 			.has-submenu { flex-direction: row; }
-
 			.submenu {
 				position: absolute;
 				top: 100%;
@@ -157,7 +155,6 @@
 				transition: all 0.3s ease;
 				z-index: 60;
 			}
-
 			.has-submenu:hover .submenu,
 			.has-submenu:focus-within .submenu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
 			.submenu a { display: block; padding: 0.5rem 1.25rem; white-space: nowrap; text-align: center; }
@@ -182,7 +179,6 @@
 				</div>
 			</button>
 			<div id="menu-links" class="fixed md:static top-0 right-0 h-screen md:h-auto w-64 md:w-auto bg-[#2d3a27] md:bg-transparent flex flex-col md:flex-row items-center justify-center md:justify-start gap-8 md:gap-8 translate-x-full md:translate-x-0 transition-transform duration-500 ease-in-out text-xs uppercase tracking-[0.2em] overflow-y-auto md:overflow-visible px-6 md:px-0">
-				
 				<a href="#ayahuasca" class="menu-item hover:text-[#ccd5ae] transition">Ayahuasca</a>
 				<a href="#previsoes" class="menu-item hover:text-[#ccd5ae] transition">Previsões</a>
 				<div class="has-submenu">
@@ -823,6 +819,7 @@
 				galleryContainer.innerHTML = '<p class="text-[#4A3728] italic">Nenhuma foto encontrada.</p>';
 				return;
 			}
+
 			listaFotosGaleria = imagens.map(file => file.download_url);
 			galleryContainer.innerHTML = '';
 
@@ -862,7 +859,6 @@
 	const menuBtn = document.getElementById('menu-btn');
 	const menuLinks = document.getElementById('menu-links');
 	const links = document.querySelectorAll('.menu-item:not(.submenu-trigger)');
-
 	menuBtn.addEventListener('click', () => { menuBtn.classList.toggle('btn-active'); menuLinks.classList.toggle('menu-open'); });
 
 	links.forEach(link => {
@@ -918,9 +914,7 @@
 					const idSeacao = entry.target.id;
 					headerText.style.opacity = "0";
 					setTimeout(() => {
-						if (secoesTexto[idSeacao]) {
-							headerText.innerText = secoesTexto[idSeacao];
-						}
+						if (secoesTexto[idSeacao]) { headerText.innerText = secoesTexto[idSeacao]; }
 						headerText.style.opacity = "1";
 					}, 300);
 				}
@@ -937,7 +931,7 @@
 		setInterval(mudarNome, 3000);
 		mudarNome();
 	});
-</script>
 
+</script>
 </body>
 </html>
