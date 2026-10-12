@@ -4,13 +4,13 @@
 <head>
 
     <meta charset="UTF-8">
-	<title>Comunidade Atman</title>
+    <title>Comunidade Atman</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Comunidade Atman">
     <meta name="description" content="Comunidade Atman: Reconexão com as medicinas da floresta e autoconhecimento.">
     <meta name="keywords" content="xamanismo, cura, autoconhecimento, comunidade atman, medicinas da floresta, psicanálise, fraternidade branca, espiritualidade, londrina, rolândia">
-	<meta name="theme-color" content="#2D3A27">
+    <meta name="theme-color" content="#2D3A27">
 
     <meta property="og:title" content="Comunidade Atman">
     <meta property="og:description" content="Espaço de cura e reconexão. Conheça nossas atividades e vivências.">
@@ -21,26 +21,26 @@
     <link rel="manifest" href="manifest.json">
     <link rel="icon" type="image/x-icon" href="Resources/LogoCirc.png">
     <link rel="icon" type="image/png" sizes="512x512" href="Resources/ico512.png">
-	<link rel="apple-touch-icon" href="Resources/ico512.png">
+    <link rel="apple-touch-icon" href="Resources/ico512.png">
 
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Atman">
 
     <script src="https://cdn.tailwindcss.com"></script>
- 	<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-   	<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
-	<script>
-		window.OneSignalDeferred = window.OneSignalDeferred || [];
-		window.OneSignalDeferred.push(async function(OneSignal) {
-			await OneSignal.init({
-				appId: "e2080499-e511-4351-ad48-8efa996254ce",
-				safari_web_id: "web.onesignal.auto.ec8dfb15-992d-42bc-9d04-a1599a0ef9db",
-				notifyButton: { enable: true, },
-			});
-		});
-	</script>
+    <script>
+        window.OneSignalDeferred = window.OneSignalDeferred || [];
+        window.OneSignalDeferred.push(async function(OneSignal) {
+            await OneSignal.init({
+                appId: "e2080499-e511-4351-ad48-8efa996254ce",
+                safari_web_id: "web.onesignal.auto.ec8dfb15-992d-42bc-9d04-a1599a0ef9db",
+                notifyButton: { enable: true, },
+            });
+        });
+    </script>
 
     <style>
         :root {
@@ -80,130 +80,172 @@
         .social-icon { fill: var(--verde-claro); transition: transform 0.3s ease, opacity 0.3s ease; }
         .social-icon:hover { transform: scale(1.1); opacity: 1; }
         
-		img { -webkit-user-drag: none; }
-		.btn-copy { background-color: var(--verde-claro); color: var(--verde-floresta); transition: all 0.3s ease; }
+        img { -webkit-user-drag: none; }
+        .btn-copy { background-color: var(--verde-claro); color: var(--verde-floresta); transition: all 0.3s ease; }
         .btn-copy:hover { background-color: #d4d9a8; transform: scale(1.05); }
 
         #mural-fade { text-shadow: 0 0 1px rgba(45, 58, 39, 0.1); }
 
         @media (max-width: 768px) {
-			#mural-fade { font-size: 1.1rem; }
+            #mural-fade { font-size: 1.1rem; }
             .text-6xl { font-size: 3.5rem; }
             .text-5xl { font-size: 2.5rem; }
         }
 
-		@media (max-width: 640px) {	#pix-key { font-size: 0.85rem; word-break: break-all; overflow-wrap: anywhere; } }
+        @media (max-width: 640px) { #pix-key { font-size: 0.85rem; word-break: break-all; overflow-wrap: anywhere; } }
 
-		@media (max-width: 768px) {
-			h2.text-5xl { font-size: 2.7rem !important;	line-height: 1.2; word-wrap: break-word; padding-left: 10px; padding-right: 10px; }
-			#contribua h2, #previsoes h2 { font-size: 2.7rem !important; hyphens: auto; }
-			.container { padding-left: 1rem; padding-right: 1rem; overflow-x: hidden; }
-		}
+        @media (max-width: 768px) {
+            h2.text-5xl { font-size: 2.7rem !important; line-height: 1.2; word-wrap: break-word; padding-left: 10px; padding-right: 10px; }
+            #contribua h2, #previsoes h2 { font-size: 2.7rem !important; hyphens: auto; }
+            .container { padding-left: 1rem; padding-right: 1rem; overflow-x: hidden; }
+        }
 
-		@media (max-width: 767px) { #menu-links.flex { border-bottom: 1px solid rgba(233, 237, 201, 0.1); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); } }
+        @media (max-width: 767px) { #menu-links.flex { border-bottom: 1px solid rgba(233, 237, 201, 0.1); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); } }
 
-		#menu-links.menu-open { transform: translateX(0); box-shadow: -10px 0 30px rgba(0,0,0,0.5); }
-		.btn-active #line-1 { transform: rotate(45deg) translate(2px, -1px); }
-		.btn-active #line-2 { transform: translateX(50px); opacity: 0; }
-		.btn-active #line-3 { transform: rotate(-45deg) translate(2px, 1px); }
+        #menu-links.menu-open { transform: translateX(0); box-shadow: -10px 0 30px rgba(0,0,0,0.5); }
+        .btn-active #line-1 { transform: rotate(45deg) translate(2px, -1px); }
+        .btn-active #line-2 { transform: translateX(50px); opacity: 0; }
+        .btn-active #line-3 { transform: rotate(-45deg) translate(2px, 1px); }
 
-		@keyframes rolagemHorizontal {
-			0% { transform: translateX(0); }
-		  	100% { transform: translateX(-50%); }
-		}
+        @keyframes rolagemHorizontal {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
 
-		.galeria-horizontal-infinita { display: flex; gap: 1.5rem;	width: max-content;	animation: rolagemHorizontal 30s linear infinite; }
-		.galeria-horizontal-infinita:hover { animation-play-state: paused; }
+        .galeria-horizontal-infinita { display: flex; gap: 1.5rem; width: max-content; animation: rolagemHorizontal 30s linear infinite; }
+        .galeria-horizontal-infinita:hover { animation-play-state: paused; }
 
-		.card-ayahuasca-bg {
-			background: linear-gradient(-45deg, #FFCC00, #2B1904, #2B1802, #FFCC00);
-			background-size: 300% 300%;
-			animation: animacaoCoresAyahuasca 12s ease infinite;
-		}
+		/* Cores do card da Ayahuasca*/
+        .card-ayahuasca-bg {
+            background: linear-gradient(-45deg, #FFCC00, #2B1904, #2B1802, #FFCC00); 
+            background-size: 300% 300%;
+            animation: animacaoCoresAyahuasca 12s ease infinite;
+        }
 
-		@keyframes animacaoCoresAyahuasca {
-			0% { background-position: 0% 50%; }
-			50% { background-position: 100% 50%; }
-			100% { background-position: 0% 50%; }
-		}
+        @keyframes animacaoCoresAyahuasca {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-		.has-submenu { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; width: auto; }
-		.submenu-trigger { display: inline-flex !important; align-items: center; justify-content: center; gap: 0.35rem; width: auto !important; background: transparent; border: none; cursor: pointer; }
+        .has-submenu { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; width: auto; }
+        .submenu-trigger { display: inline-flex !important; align-items: center; justify-content: center; gap: 0.35rem; width: auto !important; background: transparent; border: none; cursor: pointer; }
 
-		@media (max-width: 768px) {
-			.submenu { display: none; flex-direction: column; align-items: center; gap: 1.25rem; padding-top: 1.25rem; width: 100%; }
-			.has-submenu.open .submenu { display: flex;	}
-			.arrow-icon { transition: transform 0.3s ease; }
-			.has-submenu.open .arrow-icon {	transform: rotate(180deg); }
-		}
+        @media (max-width: 768px) {
+            .submenu { display: none; flex-direction: column; align-items: center; gap: 1.25rem; padding-top: 1.25rem; width: 100%; }
+            .has-submenu.open .submenu { display: flex; }
+            .arrow-icon { transition: transform 0.3s ease; }
+            .has-submenu.open .arrow-icon { transform: rotate(180deg); }
+        }
 
-		@media (min-width: 769px) {
-			.has-submenu { flex-direction: row; }
-			.submenu {
-				position: absolute;
-				top: 100%;
-				left: 50%;
-				transform: translateX(-50%) translateY(10px);
-				background-color: #2d3a27;
-				border: 1px solid rgba(233, 237, 201, 0.15);
-				border-radius: 0.75rem;
-				padding: 0.75rem 0;
-				min-width: 160px;
-				box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
-				opacity: 0;
-				visibility: hidden;
-				transition: all 0.3s ease;
-				z-index: 60;
-			}
-			.has-submenu:hover .submenu,
-			.has-submenu:focus-within .submenu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
-			.submenu a { display: block; padding: 0.5rem 1.25rem; white-space: nowrap; text-align: center; }
-		}
+        @media (min-width: 769px) {
+            .has-submenu { flex-direction: row; }
+            .submenu {
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%) translateY(10px);
+                background-color: #2d3a27;
+                border: 1px solid rgba(233, 237, 201, 0.15);
+                border-radius: 0.75rem;
+                padding: 0.75rem 0;
+                min-width: 160px;
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                z-index: 60;
+            }
+            .has-submenu:hover .submenu,
+            .has-submenu:focus-within .submenu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+            .submenu a { display: block; padding: 0.5rem 1.25rem; white-space: nowrap; text-align: center; }
+        }
+
+        .fade-in { animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+		
+        @keyframes girarBorda {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .anel-stories {
+            position: relative;
+            border-radius: 50%;
+            padding: 3px; /* Espessura da borda colorida */
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .anel-stories::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            /* Cores do círculo dos Profissionais*/
+            background: conic-gradient(from 0deg, #f09433, #F2D413, #0B73BA, #36A83E, #bc1888, #0B73BA, #F2D413, #f09433);
+            animation: girarBorda 3s linear infinite;
+            z-index: -1;
+        }
+
+        .anel-stories-inner {
+            border: 3px solid var(--creme);
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: var(--creme);
+            position: relative;
+            z-index: 2;
+        }
 
     </style>
 </head>
 
 <body>
 
-	<nav class="fixed w-full z-50 bg-[#2d3a27]/90 backdrop-blur-md text-[#fefae0]">
-		<div class="container mx-auto px-6 py-4 flex justify-between items-center">
-			<div class="flex items-center gap-2">
-				<img src="Resources/LogoCirc.png" alt="" class="h-8 w-auto object-contain">
-				<span id="header-text" class="text-xl font-serif tracking-widest uppercase text-[#FEFAE0]"> </span>
-			</div>
-			<button id="menu-btn" class="block md:hidden focus:outline-none z-50" aria-label="Abrir Menu">
-				<div class="w-6 h-5 relative flex flex-col justify-between overflow-hidden">
-					<span id="line-1" class="w-full h-0.5 bg-current transition-all duration-300 origin-left"></span>
-					<span id="line-2" class="w-full h-0.5 bg-current transition-all duration-300"></span>
-					<span id="line-3" class="w-full h-0.5 bg-current transition-all duration-300 origin-left"></span>
-				</div>
-			</button>
-			<div id="menu-links" class="fixed md:static top-0 right-0 h-screen md:h-auto w-64 md:w-auto bg-[#2d3a27] md:bg-transparent flex flex-col md:flex-row items-center justify-center md:justify-start gap-8 md:gap-8 translate-x-full md:translate-x-0 transition-transform duration-500 ease-in-out text-xs uppercase tracking-[0.2em] overflow-y-auto md:overflow-visible px-6 md:px-0">
-				<a href="#ayahuasca" class="menu-item hover:text-[#ccd5ae] transition">Ayahuasca</a>
-				<a href="#previsoes" class="menu-item hover:text-[#ccd5ae] transition">Previsões</a>
-				<div class="has-submenu">
-					<button class="submenu-trigger menu-item hover:text-[#ccd5ae] transition uppercase tracking-[0.2em]">
-						<span>Aprendizado</span>
-						<svg class="w-3 h-3 arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-					</button>
-					<div class="submenu">
-						<a href="#estudos" class="menu-item hover:text-[#ccd5ae] transition">Estudos</a>
-						<a href="#atividades" class="menu-item hover:text-[#ccd5ae] transition">Atividades</a>
-					</div>
-				</div>
-				<div class="has-submenu">
-					<button class="submenu-trigger menu-item hover:text-[#ccd5ae] transition uppercase tracking-[0.2em]">
-						<span>Conexão</span>
-						<svg class="w-3 h-3 arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-					</button>
-					<div class="submenu">
-						<a href="#contribua" class="menu-item hover:text-[#ccd5ae] transition">Contribua</a>
-						<a href="#contato" class="menu-item hover:text-[#ccd5ae] transition">Contato</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</nav>
+    <nav class="fixed w-full z-50 bg-[#2d3a27]/90 backdrop-blur-md text-[#fefae0]">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <img src="Resources/LogoCirc.png" alt="" class="h-8 w-auto object-contain">
+                <span id="header-text" class="text-xl font-serif tracking-widest uppercase text-[#FEFAE0]"> </span>
+            </div>
+            <button id="menu-btn" class="block md:hidden focus:outline-none z-50" aria-label="Abrir Menu">
+                <div class="w-6 h-5 relative flex flex-col justify-between overflow-hidden">
+                    <span id="line-1" class="w-full h-0.5 bg-current transition-all duration-300 origin-left"></span>
+                    <span id="line-2" class="w-full h-0.5 bg-current transition-all duration-300"></span>
+                    <span id="line-3" class="w-full h-0.5 bg-current transition-all duration-300 origin-left"></span>
+                </div>
+            </button>
+            <div id="menu-links" class="fixed md:static top-0 right-0 h-screen md:h-auto w-64 md:w-auto bg-[#2d3a27] md:bg-transparent flex flex-col md:flex-row items-center justify-center md:justify-start gap-8 md:gap-8 translate-x-full md:translate-x-0 transition-transform duration-500 ease-in-out text-xs uppercase tracking-[0.2em] overflow-y-auto md:overflow-visible px-6 md:px-0">
+                <a href="#ayahuasca" class="menu-item hover:text-[#ccd5ae] transition">Ayahuasca</a>
+                <a href="#previsoes" class="menu-item hover:text-[#ccd5ae] transition">Previsões</a>
+                <div class="has-submenu">
+                    <button class="submenu-trigger menu-item hover:text-[#ccd5ae] transition uppercase tracking-[0.2em]">
+                        <span>Aprendizado</span>
+                        <svg class="w-3 h-3 arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="submenu">
+                        <a href="#estudos" class="menu-item hover:text-[#ccd5ae] transition">Estudos</a>
+                        <a href="#atividades" class="menu-item hover:text-[#ccd5ae] transition">Atividades</a>
+                    </div>
+                </div>
+                <div class="has-submenu">
+                    <button class="submenu-trigger menu-item hover:text-[#ccd5ae] transition uppercase tracking-[0.2em]">
+                        <span>Conexão</span>
+                        <svg class="w-3 h-3 arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="submenu">
+                        <a href="#profissionais" class="menu-item hover:text-[#ccd5ae] transition">Profissionais</a>
+                        <a href="#contribua" class="menu-item hover:text-[#ccd5ae] transition">Contribua</a>
+                        <a href="#contato" class="menu-item hover:text-[#ccd5ae] transition">Contato</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <section id="inicio" class="bg-nature h-screen flex items-center justify-center text-center text-[#FEFAE0] px-4">
         <div class="max-w-4xl">
@@ -213,26 +255,26 @@
         </div>
     </section>
 
-	<section id="memorias" class="py-24 bg-[#FAEDCD]">
-		<div class="container mx-auto px-6 max-w-6xl text-center overflow-hidden">
-			<h2 class="text-5xl italic text-[#2D3A27] mb-12">Memórias</h2>
-			<div class="relative w-full flex items-center group">
-				<button onclick="controlarCarrossel(-1)" class="absolute left-2 z-10 bg-[#2D3A27]/70 hover:bg-[#2D3A27] text-[#FEFAE0] w-10 h-10 rounded-full flex items-center justify-center text-lg shadow-md transition-all select-none opacity-0 group-hover:opacity-100 focus:opacity-100">
-					&#10094;
-				</button>
-				<div id="carousel-wrapper" class="w-full overflow-hidden relative scroll-smooth">
-					<div id="github-gallery" class="galeria-horizontal-infinita">
-						<p class="text-[#4A3728] italic">Carregando memórias...</p>
-					</div>
-				</div>
-				<button onclick="controlarCarrossel(1)" class="absolute right-2 z-10 bg-[#2D3A27]/70 hover:bg-[#2D3A27] text-[#FEFAE0] w-10 h-10 rounded-full flex items-center justify-center text-lg shadow-md transition-all select-none opacity-0 group-hover:opacity-100 focus:opacity-100">
-					&#10095;
-				</button>
-			</div>
-		</div>
-	</section>
+    <section id="memorias" class="py-24 bg-[#FAEDCD]">
+        <div class="container mx-auto px-6 max-w-6xl text-center overflow-hidden">
+            <h2 class="text-5xl italic text-[#2D3A27] mb-12">Memórias</h2>
+            <div class="relative w-full flex items-center group">
+                <button onclick="controlarCarrossel(-1)" class="absolute left-2 z-10 bg-[#2D3A27]/70 hover:bg-[#2D3A27] text-[#FEFAE0] w-10 h-10 rounded-full flex items-center justify-center text-lg shadow-md transition-all select-none opacity-0 group-hover:opacity-100 focus:opacity-100">
+                    &#10094;
+                </button>
+                <div id="carousel-wrapper" class="w-full overflow-hidden relative scroll-smooth">
+                    <div id="github-gallery" class="galeria-horizontal-infinita">
+                        <p class="text-[#4A3728] italic">Carregando memórias...</p>
+                    </div>
+                </div>
+                <button onclick="controlarCarrossel(1)" class="absolute right-2 z-10 bg-[#2D3A27]/70 hover:bg-[#2D3A27] text-[#FEFAE0] w-10 h-10 rounded-full flex items-center justify-center text-lg shadow-md transition-all select-none opacity-0 group-hover:opacity-100 focus:opacity-100">
+                    &#10095;
+                </button>
+            </div>
+        </div>
+    </section>
 
-	<section id="ayahuasca" class="py-24 bg-[#FEFAE0]">
+    <section id="ayahuasca" class="py-24 bg-[#FEFAE0]">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="card-ayahuasca-bg rounded-[3rem] overflow-hidden flex flex-col md:flex-row shadow-2xl transition-all duration-500">
                 <div class="md:w-1/2 p-12 md:p-20 text-[#FAF5F5]">
@@ -252,140 +294,126 @@
         </div>
     </section>
 
-	<section id="previsoes" class="py-16 bg-[#FAEDCD]">
-		<div class="max-w-6xl mx-auto px-4">
-			<div class="text-center mb-12">
-				<h2 class="text-5xl italic text-[#2D3A27] mb-2">Previsões do Mês</h2>
-				<p class="text-stone-600 max-w-md mx-auto">Movimentos Astrológicos de Outubro
-				<br><span style="font-size: 13px";><b>Tônica:</b> A Onça Branca</p>
-			</div>
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-				<div class="bg-white/75 p-8 rounded-2xl shadow-sm border border-stone-100 flex flex-col justify-between transition-all hover:shadow-md">
-					<div>
-						<div class="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center text-amber-700 text-xl mb-6">☀️</div>
-						<h3 class="text-xl font-medium text-stone-800 mb-3">Começo do Mês</h3>
-						<p class="text-stone-600 leading-relaxed text-sm">
-							<b>Entre os dias 01 e 07</b><br>
-							Dias imprevisíveis e carregados de tensão...
-						</p>
-					</div>
-					<button onclick="abrirModal('Começo do Mês', `
-							<p class='mb-4'>
-								<b>RESUMO. </b><hr>
-								Haverá tensão e conflito logo nos primeiros dias - com o intuito de nos manter alertas, presentes e conectados aos nossos sentimentos. Conversas esclarecedoras poderão se fazer necessárias, não as adie. Esse ciclo trará oportunidades de superar resistências persistentes (internas e externas), e construir as bases para colocar planos exigentes em ação. O meio do mês até seu fim trará uma onda de estresse cuja influência tornará difícil ignorar as diferenças, sendo assim defenda seus interesses, pois propósitos frágeis serão atropelados.
-								<br><br></p>
-							<p class='mb-4'>
-								<b>ENTRE DIAS 1 E 7. </b><hr>
-								Dias imprevisíveis e carregados de tensão, mantenha-se atento e lide com os conflitos de forma consciente. Palavras estarão mais afiadas, portanto se sentir que os outros estão sendo insensíveis com você, observe se você também não está sendo com os outros (mesmo que sem perceber). Evite se envolver com discussões sérias ou jogos de poder amargos, pois gerarão um rancor que será arrastado pelos meses seguintes. Nos veremos em situações impensadas que exigirá reavaliar situações que antes estavam certas.
-								<br><small><span style='background-color: #f2f2f2;'><b>Posições:</b> Mercúrio em Escorpião, Marte em Leão e Plutão em Aquário.</span></small>
-								<br><br></p>
-							`)" class="mt-6 text-left text-sm font-medium text-amber-700 hover:text-amber-900 bg-transparent hover:bg-amber-100/70 px-4 py-2 rounded-full transition-all duration-300 transform hover:translate-x-1 inline-flex items-center gap-1">
-						Ler mais &rarr;
-					</button>
-				</div>
-				<div class="bg-white/75 p-8 rounded-2xl shadow-sm border border-stone-100 flex flex-col justify-between transition-all hover:shadow-md">
-					<div>
-						<div class="w-12 h-12 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-700 text-xl mb-6">🌳</div>
-						<h3 class="text-xl font-medium text-stone-800 mb-3">O Ápice do Mês</h3>
-						<p class="text-stone-600 leading-relaxed text-sm">
-							<b>Entre os dias 08 e 18</b><br>
-							Serão dias oportunos à reconciliação...
-						</p>
-					</div>
-					<button onclick="abrirModal('O Ápice do Mês', `
-							<p class='mb-4'>
-								<b>ENTRE DIAS 8 E 11. </b><hr>
-								Serão dias oportunos à reconciliação, portanto caso perceber que agiu com agressividade nos dias anteriores, terá sua chance de se redimir e tentar uma abordagem mais diplomática e menos agressiva. A busca pela conciliação deverá ser o foco da conversa, do contrário serão dias meramente paliativos, sem qualquer efeito prático de longo prazo. <br><br>A partir do dia 10 começa uma fase oportuna para honrar as diferenças, portanto evite prometer o que está além do seu alcance e evite contrarir responsabilidades que estão além da sua competência, pois considere que a sobrecarga nada mais é do que limites anteriormente transpostos.
-								<br><small><span style='background-color: #f2f2f2;'><b>Posição:</b> Lua Nova em Libra.</span></small>
-								<br><br></p>
-							<p class='mb-4'>
-								<b>ENTRE DIAS 12 E 18. </b><hr>
-								Se você vinha enfrentando resistências, este será o momento de tentar superá-las mais uma vez. Talvez você consiga dar um passo decisivo. Processos de transformação interior que vinham fervilhando há meses voltarão a ressoar com mais força. Será ideal ancorar a firmeza de planos complicados ou definir limites de forma clara e objetiva.
-								<br><small><span style='background-color: #f2f2f2;'><b>Posição:</b> Marte em Trígono com Saturno</span></small>
-								<br><br></p>
-							`)" class="mt-6 text-left text-sm font-medium text-emerald-700 hover:text-emerald-900 bg-transparent hover:bg-emerald-100/70 px-4 py-2 rounded-full transition-all duration-300 transform hover:translate-x-1 inline-flex items-center gap-1">
-						Ler mais &rarr;
-					</button>
-				</div>
-				<div class="bg-white/75 p-8 rounded-2xl shadow-sm border border-stone-100 flex flex-col justify-between transition-all hover:shadow-md">
-					<div>
-						<div class="w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center text-purple-700 text-xl mb-6">🌙</div>
-						<h3 class="text-xl font-medium text-stone-800 mb-3">Final do Mês</h3>
-						<p class="text-stone-600 leading-relaxed text-sm">
-							<b>Entre os dias 19 e 23</b><br>
-							Serão dias complexos, intensos e cheios de movimento...
-						</p>
-					</div>
-					<button onclick="abrirModal('Final do Mês', `
-							<p class='mb-4'>
-								<b>ENTRE DIAS 19 E 23. </b><hr>
-								Serão dias complexos, intensos e cheios de movimento. Não poderemos mais adiar certas decisões, especialmente quando envolverem estados emocionais, questões de poder e dependências. As consequências de ações ou omissões das últimas semanas também ficarão muito claras agora. Tenha coragem de ser radicalmente honesto (Onça Branca), com você e com os outros. Ouse perceber e comunicar seus sentimentos. Esse poderá ser um primeiro passo importante para transformar uma situação problemática.
-								<br><small><span style='background-color: #f2f2f2;'><b>Posição:</b> Vênus em Quadratura com Plutão.</span></small>
-								<br><br></p>
-							<p class='mb-4'>
-								<b>ENTRE DIAS 24 E 31. </b><hr>
-								Nos veremos em contato com uma força primordial e selvagem, em forte contraste com os temas mais tecnocráticos possíveis. Tenha coragem de se abrir a essas forças arcaicas, que não são tão facilmente apreendidas pela razão. Elas poderão aproximar você de suas raízes pessoais e transpessoais e, assim, enriquecer sua vida. Dentro da tensão entre as circunstâncias da vida pessoal e a pressão coletiva por mudança, grandes diferenças e até rupturas poderão surgir. <br><br>No debate político e público, o foco estará em temas explosivos ligados a processos profundos de transformação social. Na vida pessoal, também é aconselhável assumir uma posição mais clara e não omitir as diferenças. O momento oferecerá oportunidades para chegar à raiz dos conflitos. Um esclarecimento curativo cria o terreno sobre o qual a vida poderá continuar a se desenvolver, seja em conjunto, seja a sós.
-								<br><small><span style='background-color: #f2f2f2;'><b>Posição:</b> Lua Cheia próxima de Quíron e oposta a Vênus.</span></small>
-								<br><br></p>
-							`)" class="mt-6 text-left text-sm font-medium text-purple-700 hover:text-purple-900 bg-transparent hover:bg-purple-100/70 px-4 py-2 rounded-full transition-all duration-300 transform hover:translate-x-1 inline-flex items-center gap-1">
-						Ler mais &rarr;
-					</button>
-				</div>
-			</div>
-		</div>
-	</section>
+    <section id="previsoes" class="py-16 bg-[#FAEDCD]">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-5xl italic text-[#2D3A27] mb-2">Previsões do Mês</h2>
+                <p class="text-stone-600 max-w-md mx-auto">Movimentos Astrológicos de Outubro
+                <br><span style="font-size: 13px";><b>Tônica:</b> A Onça Branca</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white/75 p-8 rounded-2xl shadow-sm border border-stone-100 flex flex-col justify-between transition-all hover:shadow-md">
+                    <div>
+                        <div class="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center text-amber-700 text-xl mb-6">☀️</div>
+                        <h3 class="text-xl font-medium text-stone-800 mb-3">Começo do Mês</h3>
+                        <p class="text-stone-600 leading-relaxed text-sm">
+                            <b>Entre os dias 01 e 07</b><br>
+                            Dias imprevisíveis e carregados de tensão...
+                        </p>
+                    </div>
+                    <button onclick="abrirModal('Começo do Mês', `
+                            <p class='mb-4'>
+                                <b>RESUMO. </b><hr>
+                                Haverá tensão e conflito logo nos primeiros dias - com o intuito de nos manter alertas, presentes e conectados aos nossos sentimentos. Conversas esclarecedoras poderão se fazer necessárias, não as adie. Esse ciclo trará oportunidades de superar resistências persistentes (internas e externas), e construir as bases para colocar planos exigentes em ação. O meio do mês até seu fim trará uma onda de estresse cuja influência tornará difícil ignorar as diferenças, sendo assim defenda seus interesses, pois propósitos frágeis serão atropelados.
+                                <br><br></p>
+                            <p class='mb-4'>
+                                <b>ENTRE DIAS 1 E 7. </b><hr>
+                                Dias imprevisíveis e carregados de tensão, mantenha-se atento e lide com os conflitos de forma consciente. Palavras estarão mais afiadas, portanto se sentir que os outros estão sendo insensíveis com você, observe se você também não está sendo com os outros (mesmo que sem perceber). Evite se envolver com discussões sérias ou jogos de poder amargos, pois gerarão um rancor que será arrastado pelos meses seguintes. Nos veremos em situações impensadas que exigirá reavaliar situações que antes estavam certas.
+                                <br><small><span style='background-color: #f2f2f2;'><b>Posições:</b> Mercúrio em Escorpião, Marte em Leão e Plutão em Aquário.</span></small>
+                                <br><br></p>
+                            `)" class="mt-6 text-left text-sm font-medium text-amber-700 hover:text-amber-900 bg-transparent hover:bg-amber-100/70 px-4 py-2 rounded-full transition-all duration-300 transform hover:translate-x-1 inline-flex items-center gap-1">
+                        Ler mais &rarr;
+                    </button>
+                </div>
+                <div class="bg-white/75 p-8 rounded-2xl shadow-sm border border-stone-100 flex flex-col justify-between transition-all hover:shadow-md">
+                    <div>
+                        <div class="w-12 h-12 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-700 text-xl mb-6">🌳</div>
+                        <h3 class="text-xl font-medium text-stone-800 mb-3">O Ápice do Mês</h3>
+                        <p class="text-stone-600 leading-relaxed text-sm">
+                            <b>Entre os dias 08 e 18</b><br>
+                            Serão dias oportunos à reconciliação...
+                        </p>
+                    </div>
+                    <button onclick="abrirModal('O Ápice do Mês', `
+                            <p class='mb-4'>
+                                <b>ENTRE DIAS 8 E 11. </b><hr>
+                                Serão dias oportunos à reconciliação, portanto caso perceber que agiu com agressividade nos dias anteriores, terá sua chance de se redimir e tentar uma abordagem mais diplomática e menos agressiva. A busca pela conciliação deverá ser o foco da conversa, do contrário serão dias meramente paliativos, sem qualquer efeito prático de longo prazo. <br><br>A partir do dia 10 começa uma fase oportuna para honrar as diferenças, portanto evite prometer o que está além do seu alcance e evite contrarir responsabilidades que estão além da sua competência, pois considere que a sobrecarga nada mais é do que limites anteriormente transpostos.
+                                <br><small><span style='background-color: #f2f2f2;'><b>Posição:</b> Lua Nova em Libra.</span></small>
+                                <br><br></p>
+                            <p class='mb-4'>
+                                <b>ENTRE DIAS 12 E 18. </b><hr>
+                                Se você vinha enfrentando resistências, este será o momento de tentar superá-las mais uma vez. Talvez você consiga dar um passo decisivo. Processos de transformação interior que vinham fervilhando há meses voltarão a ressoar com mais força. Será ideal ancorar a firmeza de planos complicados ou definir limites de forma clara e objetiva.
+                                <br><small><span style='background-color: #f2f2f2;'><b>Posição:</b> Marte em Trígono com Saturno</span></small>
+                                <br><br></p>
+                            `)" class="mt-6 text-left text-sm font-medium text-emerald-700 hover:text-emerald-900 bg-transparent hover:bg-emerald-100/70 px-4 py-2 rounded-full transition-all duration-300 transform hover:translate-x-1 inline-flex items-center gap-1">
+                        Ler mais &rarr;
+                    </button>
+                </div>
+                <div class="bg-white/75 p-8 rounded-2xl shadow-sm border border-stone-100 flex flex-col justify-between transition-all hover:shadow-md">
+                    <div>
+                        <div class="w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center text-purple-700 text-xl mb-6">🌙</div>
+                        <h3 class="text-xl font-medium text-stone-800 mb-3">Final do Mês</h3>
+                        <p class="text-stone-600 leading-relaxed text-sm">
+                            <b>Entre os dias 19 e 23</b><br>
+                            Serão dias complexos, intensos e cheios de movimento...
+                        </p>
+                    </div>
+                    <button onclick="abrirModal('Final do Mês', `
+                            <p class='mb-4'>
+                                <b>ENTRE DIAS 19 E 23. </b><hr>
+                                Serão dias complexos, intensos e cheios de movimento. Não poderemos mais adiar certas decisões, especialmente quando envolverem estados emocionais, questões de poder e dependências. As consequências de ações ou omissões das últimas semanas também ficarão muito claras agora. Tenha coragem de ser radicalmente honesto (Onça Branca), com você e com os outros. Ouse perceber e comunicar seus sentimentos. Esse poderá ser um primeiro passo importante para transformar uma situação problemática.
+                                <br><small><span style='background-color: #f2f2f2;'><b>Posição:</b> Vênus em Quadratura com Plutão.</span></small>
+                                <br><br></p>
+                            <p class='mb-4'>
+                                <b>ENTRE DIAS 24 E 31. </b><hr>
+                                Nos veremos em contato com uma força primordial e selvagem, em forte contraste com os temas mais tecnocráticos possíveis. Tenha coragem de se abrir a essas forças arcaicas, que não são tão facilmente apreendidas pela razão. Elas poderão aproximar você de suas raízes pessoais e transpessoais e, assim, enriquecer sua vida. Dentro da tensão entre as circunstâncias da vida pessoal e a pressão coletiva por mudança, grandes diferenças e até rupturas poderão surgir. <br><br>No debate político e público, o foco estará em temas explosivos ligados a processos profundos de transformação social. Na vida pessoal, também é aconselhável assumir uma posição mais clara e não omitir as diferenças. O momento oferecerá oportunidades para chegar à raiz dos conflitos. Um esclarecimento curativo cria o terreno sobre o qual a vida poderá continuar a se desenvolver, seja em conjunto, seja a sós.
+                                <br><small><span style='background-color: #f2f2f2;'><b>Posição:</b> Lua Cheia próxima de Quíron e oposta a Vênus.</span></small>
+                                <br><br></p>
+                            `)" class="mt-6 text-left text-sm font-medium text-purple-700 hover:text-purple-900 bg-transparent hover:bg-purple-100/70 px-4 py-2 rounded-full transition-all duration-300 transform hover:translate-x-1 inline-flex items-center gap-1">
+                        Ler mais &rarr;
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	<section id="estudos" class="py-24 bg-[#FEFAE0]">
-		<div class="max-w-6xl mx-auto px-4">
-			<div class="text-center mb-12">
-				<h2 class="text-5xl italic text-[#2D3A27] mb-2">Estudos e Reflexões</h2>
-				<p class="text-stone-600 max-w-md mx-auto">Reflexões sobre o que vivenciamos.</p>
+    <section id="estudos" class="py-24 bg-[#FEFAE0]">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-5xl italic text-[#2D3A27] mb-2">Estudos e Reflexões</h2>
+                <p class="text-stone-600 max-w-md mx-auto">Reflexões sobre o que vivenciamos</p>
+            </div>
+            <div id="container-estudos" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    			<p id="estudos-status" class="text-[#4A3728] italic text-center col-span-full">Sintonizando pensamentos...</p>
 			</div>
-			<div id="container-estudos" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-				<p id="estudos-status" class="text-[#4A3728] italic text-center col-span-full">Sintonizando pensamentos...</p>
-			</div>
-			<div id="bloco-botao-estudos" class="flex justify-center items-center gap-4 mt-12 hidden">
-				<button id="btn-estudos-recentes" onclick="mudarPaginaEstudos(-1)" class="bg-[#2D3A27] text-[#FEFAE0] px-6 py-3 rounded-full hover:bg-[#3d4f35] transition-all text-xs font-bold uppercase tracking-widest shadow-md disabled:opacity-40 disabled:cursor-not-allowed">
-					&larr;
-				</button>
-				<button id="btn-estudos-anteriores" onclick="mudarPaginaEstudos(1)" class="bg-[#2D3A27] text-[#FEFAE0] px-6 py-3 rounded-full hover:bg-[#3d4f35] transition-all text-xs font-bold uppercase tracking-widest shadow-md disabled:opacity-40 disabled:cursor-not-allowed">
-					&rarr;
-				</button>
-			</div>
-		</div>
-	</section>
+            <div id="bloco-botao-estudos" class="flex justify-center items-center gap-4 mt-12 hidden">
+                <button id="btn-estudos-recentes" onclick="mudarPaginaEstudos(-1)" class="bg-[#2D3A27] text-[#FEFAE0] px-6 py-3 rounded-full hover:bg-[#3d4f35] transition-all text-xs font-bold uppercase tracking-widest shadow-md disabled:opacity-40 disabled:cursor-not-allowed">
+                    &larr;
+                </button>
+                <button id="btn-estudos-anteriores" onclick="mudarPaginaEstudos(1)" class="bg-[#2D3A27] text-[#FEFAE0] px-6 py-3 rounded-full hover:bg-[#3d4f35] transition-all text-xs font-bold uppercase tracking-widest shadow-md disabled:opacity-40 disabled:cursor-not-allowed">
+                    &rarr;
+                </button>
+            </div>
+        </div>
+    </section>
 
     <section id="atividades" class="py-24 bg-[#FAEDCD] text-center">
-		<div class="text-center mb-12">
-			<h2 class="text-5xl italic text-[#2D3A27] mb-2">Atividades</h2>
-			<p class="text-stone-600 max-w-md mx-auto">Clique no item para expandir o texto.<br><small>Para conhecer nossas metodologias, <a href="https://drive.google.com/file/d/1COvVXzl-UBGNnlsq3IGkJzwGLEZQj3B-/view?usp=sharing" target="_blank" class="hover:underline"><b>clique aqui</b></a>.</small></p>
-		</div>
-		<div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-5xl italic text-[#2D3A27] mb-2">Atividades</h2>
+            <p class="text-stone-600 max-w-md mx-auto">Clique no item para expandir o texto<br><small>Conheça as metodologias completas <a href="https://drive.google.com/file/d/1COvVXzl-UBGNnlsq3IGkJzwGLEZQj3B-/view?usp=sharing" target="_blank" class="hover:underline"><b>clicando aqui</b></a></small></p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto px-6">
             <a class="card-nature p-10 rounded-[2rem] hover:bg-[#E9EDC9] transition-all group">
-				<details>
-					<summary class="text-xl mb-4 font-serif text-left">Ayahuasca</summary>
-						<p class="text-sm opacity-70 text-left">Consagramos a Sagrada Medicina na busca por nós mesmos. As Consagrações acontecem presencialmente nas cidades de Londrina, Rolândia e região.<br><br>Temos um grande foco no Xamanismo, sendo assim durante as Consagrações utilizamos instrumentos como Tambor Lakota, Maracás e Djembês.<br><br>Nos consideramos Universalistas - não nos restringimos a dogmas religiosos específicos, mas sim na liberdade individual filosófica que permite uma conexão através dos próprios moldes.</p>
-				</details>
-            </a>
-			<a class="card-nature p-10 rounded-[2rem] hover:bg-[#E9EDC9] transition-all group">
-				<details>
-					<summary class="text-xl mb-4 font-serif text-left">Orientação Espiritual</summary>
-						<p class="text-sm opacity-70 text-left">Podemos te orientar sobre práticas para compreender suas emoções e elaborá-las em conversas por texto ou vídeo chamada.<br><br>Tenha em mente que <b>nós não fazemos acompanhamentos</b>, nós apenas te oferecemos aconselhamentos focados em suas maiores preocupações do momento.<br><br>O profissional que te atenderá tem formação em Psicanálise e uma forte experiência com o corpo mental, o corpo emocional e o corpo espiritual.</p>
-				</details>
+                <details>
+                    <summary class="text-xl mb-4 font-serif text-left">No Corpo Físico</summary>
+                        <p class="text-sm opacity-70 text-left"><b>Ayahuasca:</b> Consagramos a Sagrada Medicina na busca por nós mesmos. As Consagrações acontecem presencialmente nas cidades de Londrina, Rolândia e região. Nos consideramos Universalistas - não nos restringimos a dogmas religiosos específicos, mas sim na liberdade individual filosófica que permite uma conexão através dos próprios moldes.<br><br><b>Orientaçao Espiritual:</b> Conversamos sobre práticas para compreender suas emoções e elaborá-las em conversas por vídeochamada, te oferecendo aconselhamentos focados em suas maiores preocupações do momento.</p>
+                </details>
             </a>
             <a class="card-nature p-10 rounded-[2rem] hover:bg-[#E9EDC9] transition-all group">
-				<details>
-					<summary class="text-xl mb-4 font-serif text-left">Mesa Radiônica</summary>
-						<p class="text-sm opacity-70 text-left">É possível Harmonizar as Relações, desfazendo qualquer energia adversa. Observe que serão identificados todos os empecilhos que te afastam dos seus objetivos e eles serão removidos.<br><br><b>O processo envolve:</b><br>- Mapeamento da sua frequência<br>- Remoção dos bloqueios existentes<br>- Alinhamento dos Chakras<br>- Aplicação de Gráficos de Radiestesia conforme se mostrarem necessários.<br><br>A Mesa atua por 90 dias, então durante esse período as coisas mudarão progressivamente.</p>
-				</details>
-            </a>
-            <a class="card-nature p-10 rounded-[2rem] hover:bg-[#E9EDC9] transition-all group">
-				<details>
-					<summary class="text-xl mb-4 font-serif text-left">Astrologia</summary>
-						<p class="text-sm opacity-70 text-left"><b>Mapa Astrológico:</b> A mais profunda ferramenta para autoconhecimento. Identificaremos os Planetas Retrógrados, As Doze Casas (partindo da vida íntima e indo até a vida social e profissional) e Posições Extras (Lilith, Quíron, Roda da Fortuna, Nodo Sul e Nodo Norte).<br><br><br>
-						<b>Revolução Solar:</b> Muito parecido com o Mapa Astrológico, a única diferença é que o Mapa Astrológico rege toda a encarnação, enquanto a Revolução Solar rege apenas o ano o qual é solicitada.<br><br><br>
-						<b>Numerologia:</b> Os Nomes carregam números por trás, e com isso interpretamos aspectos interiores e exteriores. Aplicamos a Numerologia Caldéia também e analisaremos se há Números Cármicos - juntamos esses dados e trazemos sugestões comportamentais afim de evitar crises.</p>
-				</details>
+                <details>
+                    <summary class="text-xl mb-4 font-serif text-left">No Corpo Espiritual</summary>
+                        <p class="text-sm opacity-70 text-left"><b>Mesa Radiônica:</b> É possível Harmonizar as Relações, desfazendo qualquer energia adversa. Observe que serão identificados todos os empecilhos que te afastam dos seus objetivos e eles serão removidos. Esse processo envolve desde o alinhamento dos Chakras e Cromoterapia até o desfazimento de energias pesadas que fecham os caminhos.<br><br><b>Mapa Astrológico:</b> Confeccionamos seu Mapa Astral para contexualizar suas experiências de vida, analisando desde as Doze Casas até os Nodos Lunares, Quíron, Roda da Fortuna e Lilith.</p>
+                </details>
             </a>
         </div>
     </section>
@@ -393,47 +421,65 @@
     <section id="orientacoes" class="py-24 bg-[#FEFAE0]">
         <div class="container mx-auto px-6 max-w-5xl">
             <h2 class="text-5xl italic text-[#2D3A27] text-center mb-16">Orientação aos Caminhantes</h2>
-			<div class="grid md:grid-cols-2 gap-8 italic font-serif">
-				<!-- <div class="p-8 border-l-4 border-green-800 bg-white/50 rounded-r-2xl"> -->
-				<div class="p-8 border-l-4 border-amber-800 bg-white/50 rounded-r-2xl">
-					<p class="opacity-80">Cursos</p>
-					<h4 class="text-2sm mb-2">Para aprender gratuitamente conosco,</h4>
-					<a href="https://www.youtube.com/@ComunidadeAtman/courses" target="_blank" class="hover:underline">Acesse o canal.</a>
-				</div>
-				<div class="p-8 border-l-4 border-green-800 bg-white/50 rounded-r-2xl">
-					<p class="opacity-80">Anamnese</p>
-					<h4 class="text-2sm mb-2">Consagrará Ayahuasca conosco pela primeira vez?</h4>
-					<a href="https://docs.google.com/forms/d/e/1FAIpQLSfsiikE-qdAF7DKLkA6ZUBljmaOiCCgQYl6dgvryf_r4aEpcA/viewform?usp=share_link" target="_blank" class="hover:underline">Preencha aqui.</a>
-				</div>
-			</div>
+            <div class="grid md:grid-cols-2 gap-8 italic font-serif">
+                <div class="p-8 border-l-4 border-amber-800 bg-white/50 rounded-r-2xl">
+                    <p class="opacity-80">Cursos</p>
+                    <h4 class="text-2sm mb-2">Para aprender gratuitamente conosco,</h4>
+                    <a href="https://www.youtube.com/@ComunidadeAtman/courses" target="_blank" class="hover:underline">Acesse o canal.</a>
+                </div>
+                <div class="p-8 border-l-4 border-green-800 bg-white/50 rounded-r-2xl">
+                    <p class="opacity-80">Anamnese</p>
+                    <h4 class="text-2sm mb-2">Consagrará Ayahuasca conosco pela primeira vez?</h4>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfsiikE-qdAF7DKLkA6ZUBljmaOiCCgQYl6dgvryf_r4aEpcA/viewform?usp=share_link" target="_blank" class="hover:underline">Preencha aqui.</a>
+                </div>
+            </div>
         </div>
     </section>
 
-	<section id="contribua" class="py-24 bg-[#FAEDCD]">
-		<div class="container mx-auto px-6 max-w-5xl">
-			<div class="bg-white/40 p-12 md:p-16 rounded-[3rem] border border-[#2D3A27]/10 text-center text-[#4A3728]">
-				<h2 class="text-5xl italic text-[#2D3A27] mb-8">Contribua</h2>
-				<p class="text-sm mb-10">Praticamos a caridade e estamos abertos para receber contribuições. Somos transparentes com a forma que tratamos os recebimentos. Você pode conferir os relatórios <a href="https://docs.google.com/spreadsheets/d/1NniQBEfyofqLYEkZCBXYahCKzzo7AZrox8C42Umpj0k/edit?usp=share_link" target="_blank" class="hover:underline"><b>aqui</b></a>.</p>
-				<div class="text-center">
-					<div class="inline-block bg-[#2D3A27] text-[#FEFAE0] p-8 md:p-12 rounded-3xl shadow-xl">
-						<h4 class="uppercase tracking-widest text-xs font-bold mb-4 opacity-70">Chave Pix</h4>
-						<p id="pix-key" class="text-base sm:text-lg md:text-xl lg:text-2xl font-mono mb-8 block select-all text-center break-all sm:break-normal"><span class="inline-block">doacoes</span><span class="inline-block">@comunidadeatman.org</span></p>
-						<button onclick="copyPix()" id="btn-copy" class="btn-copy flex items-center gap-2 mx-auto px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest">
-							<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
-							<span id="btn-text">Copiar Chave</span>
-						</button>
-					</div>
-				</div>
-				<div class="mt-8">
-					<p class="text-xs uppercase tracking-[0.3em] mb-6 opacity-60 font-bold">Mural de Gratidão</p>
-					<div class="h-12 overflow-hidden relative">
-						<div id="mural-fade" class="text-2xl italic font-serif text-[#2D3A27] transition-all duration-1000 opacity-0 transform translate-y-4">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+    <section id="profissionais" class="py-24 bg-[#FAEDCD]">
+        <div class="container mx-auto px-6 max-w-5xl text-center">
+            <h2 class="text-5xl italic text-[#2D3A27] mb-4">Profissionais Recomendados</h2>
+            <p class="text-stone-600 max-w-md mx-auto mb-16">Cada profissional tem sua forma de trabalhar<br><small>Clique no nome para abrir o resumo</small></p>
+            <div id="container-profissionais" class="grid grid-cols-1 md:grid-cols-3 gap-10 justify-items-center min-h-[16rem]"></div>
+            <div id="bloco-botao-profissionais" class="flex justify-center items-center gap-4 mt-12 hidden">
+                <button id="btn-prof-ant" onclick="mudarPaginaProfissionais(-1)" class="bg-[#2D3A27] text-[#FEFAE0] px-6 py-3 rounded-full hover:bg-[#3d4f35] transition-all text-xs font-bold uppercase tracking-widest shadow-md disabled:opacity-40 disabled:cursor-not-allowed">
+                    &larr;
+                </button>
+                <button id="btn-prof-prox" onclick="mudarPaginaProfissionais(1)" class="bg-[#2D3A27] text-[#FEFAE0] px-6 py-3 rounded-full hover:bg-[#3d4f35] transition-all text-xs font-bold uppercase tracking-widest shadow-md disabled:opacity-40 disabled:cursor-not-allowed">
+                    &rarr;
+                </button>
+            </div>
+            <div class="mt-16 border-t border-[#2D3A27]/10 pt-6">
+                <p class="text-xs text-stone-500 max-w-3xl mx-auto leading-relaxed md:text-center"><b>Isenção de Responsabilidade:</b> A Comunidade Atman atua apenas como indicadora do profissional. Os atendimentos, diagnósticos, metodologias e eventuais resultados dependem de cada um.</p>
+            </div>
+        </div> 
+    </section> 
+
+    <section id="contribua" class="py-24 bg-[#FEFAE0]">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="bg-white/40 p-12 md:p-16 rounded-[3rem] border border-[#2D3A27]/10 text-center text-[#4A3728]">
+                <h2 class="text-5xl italic text-[#2D3A27] mb-8">Contribua</h2>
+                <p class="text-sm mb-10">Praticamos a caridade e estamos abertos para receber contribuições. Somos transparentes com a forma que tratamos os recebimentos. Você pode conferir os relatórios <a href="https://docs.google.com/spreadsheets/d/1NniQBEfyofqLYEkZCBXYahCKzzo7AZrox8C42Umpj0k/edit?usp=share_link" target="_blank" class="hover:underline"><b>aqui</b></a>.</p>
+                <div class="text-center">
+                    <div class="inline-block bg-[#2D3A27] text-[#FEFAE0] p-8 md:p-12 rounded-3xl shadow-xl">
+                        <h4 class="uppercase tracking-widest text-xs font-bold mb-4 opacity-70">Chave Pix</h4>
+                        <p id="pix-key" class="text-base sm:text-lg md:text-xl lg:text-2xl font-mono mb-8 block select-all text-center break-all sm:break-normal"><span class="inline-block">doacoes</span><span class="inline-block">@comunidadeatman.org</span></p>
+                        <button onclick="copyPix()" id="btn-copy" class="btn-copy flex items-center gap-2 mx-auto px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+                            <span id="btn-text">Copiar Chave</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <p class="text-xs uppercase tracking-[0.3em] mb-6 opacity-60 font-bold">Mural de Gratidão</p>
+                    <div class="h-12 overflow-hidden relative">
+                        <div id="mural-fade" class="text-2xl italic font-serif text-[#2D3A27] transition-all duration-1000 opacity-0 transform translate-y-4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="contato" class="py-24 bg-[#4A3728]">
         <div class="container mx-auto px-6 max-w-3xl text-center text-[#FEFAE0]">
@@ -452,483 +498,561 @@
     <footer class="py-12 bg-[#2D3A27] text-[#CCD5AE] text-center">
         <p class="font-serif italic text-lg mb-4 text-[#FEFAE0]">"A carne é fraca" - então torne-a mais forte</p>
         <p class="text-xs tracking-widest uppercase opacity-50">&copy; 2023 - 2026 Comunidade Atman</p>
-		<button onclick="abrirModalSobre()" class="text-opacity-50 hover:text-stone-200 text-xs transition-colors">
-			Sobre o Atman
-		</button>
+        <button onclick="abrirModalSobre()" class="text-opacity-50 hover:text-stone-200 text-xs transition-colors">
+            Sobre o Atman
+        </button>
     </footer>
 
-	<div id="modal-previsao" class="hidden fixed inset-0 bg-stone-900/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 transition-all">
-		<div class="bg-white max-w-lg w-full rounded-2xl shadow-xl border border-stone-100 relative max-h-[85vh] flex flex-col overflow-hidden">
-			<div class="p-6 border-b border-stone-100 flex justify-between items-center bg-white rounded-t-2xl z-10">
-				<h3 id="modal-titulo" class="text-2xl font-serif text-stone-800 pr-4">Título</h3>
-				<button onclick="fecharModal()" class="text-stone-400 hover:text-stone-600 text-3xl font-light transition-colors leading-none">&times;</button>
-			</div>
-			<div id="modal-audio-container" class="px-6 py-2 bg-stone-50 border-b border-stone-100 hidden flex items-center justify-between">
-				<span class="text-xs text-stone-500 italic">Prefere ouvir?</span>
-				<button id="btn-audio-player" onclick="controlarAudio()" class="bg-[#2D3A27] text-[#FEFAE0] px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase hover:bg-[#3d4f35] transition-all flex items-center gap-1">
-					<span>Ouvir</span>
-				</button>
-			</div>
-			<div class="relative w-full flex-1 flex items-center justify-center bg-stone-950 group">
-				<button id="btn-modal-prev" onclick="navegarFoto(-1)" class="hidden absolute left-4 z-20 bg-black/50 hover:bg-black/80 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all select-none">
-					&#10094;
-				</button>
-				<img id="modal-imagem" src="" alt="" class="hidden w-full h-auto max-h-[60vh] object-contain">
-				<button id="btn-modal-next" onclick="navegarFoto(1)" class="hidden absolute right-4 z-20 bg-black/50 hover:bg-black/80 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all select-none">
-					&#10095;
-				</button>
-			</div>
-			<div id="modal-texto" class="p-6 text-stone-600 leading-relaxed text-sm overflow-y-auto space-y-4 hidden">
-			</div>
-		</div>
-	</div>
+    <div id="modal-previsao" class="hidden fixed inset-0 bg-stone-900/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 transition-all">
+        <div class="bg-white max-w-lg w-full rounded-2xl shadow-xl border border-stone-100 relative max-h-[85vh] flex flex-col overflow-hidden">
+            <div class="p-6 border-b border-stone-100 flex justify-between items-center bg-white rounded-t-2xl z-10">
+                <h3 id="modal-titulo" class="text-2xl font-serif text-stone-800 pr-4">Título</h3>
+                <button onclick="fecharModal()" class="text-stone-400 hover:text-stone-600 text-3xl font-light transition-colors leading-none">&times;</button>
+            </div>
+            <div id="modal-audio-container" class="px-6 py-2 bg-stone-50 border-b border-stone-100 hidden flex items-center justify-between">
+                <span class="text-xs text-stone-500 italic">Prefere ouvir?</span>
+                <button id="btn-audio-player" onclick="controlarAudio()" class="bg-[#2D3A27] text-[#FEFAE0] px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase hover:bg-[#3d4f35] transition-all flex items-center gap-1">
+                    <span>Ouvir</span>
+                </button>
+            </div>
+            <div class="relative w-full flex-1 flex items-center justify-center bg-stone-950 group">
+                <button id="btn-modal-prev" onclick="navegarFoto(-1)" class="hidden absolute left-4 z-20 bg-black/50 hover:bg-black/80 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all select-none">
+                    &#10094;
+                </button>
+                <img id="modal-imagem" src="" alt="" class="hidden w-full h-auto max-h-[60vh] object-contain">
+                <button id="btn-modal-next" onclick="navegarFoto(1)" class="hidden absolute right-4 z-20 bg-black/50 hover:bg-black/80 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all select-none">
+                    &#10095;
+                </button>
+            </div>
+            <div id="modal-texto" class="p-6 text-stone-600 leading-relaxed text-sm overflow-y-auto space-y-4 hidden">
+            </div>
+        </div>
+    </div>
 
 <script>
 
-	let mostrandoTudo = false;
-	let textoAtualParaLeitura = ""; 
-	let executandoAudio = false;
-	let audioPausado = false;
-	let listaFotosGaleria = [];
-	let indexFotoAtual = -1;
-	let estudosCarregados = [];
-	let paginaAtualEstudos = 0;
-	const ITENS_POR_PAGINA_ESTUDOS = 3;
+    let mostrandoTudo = false;
+    let textoAtualParaLeitura = ""; 
+    let executandoAudio = false;
+    let audioPausado = false;
+    let listaFotosGaleria = [];
+    let indexFotoAtual = -1;
+    let estudosCarregados = [];
+    let paginaAtualEstudos = 0;
+    const ITENS_POR_PAGINA_ESTUDOS = 3;
 
-	function fecharModal() {
-		if (window.speechSynthesis) {
-			window.speechSynthesis.cancel();
-		}
-		executandoAudio = false;
-		audioPausado = false;
-		const btnAudio = document.getElementById('btn-audio-player');
-		if(btnAudio) btnAudio.innerHTML = '<span>Ouvir</span>';
-		document.getElementById('modal-imagem').classList.add('hidden');
-		document.getElementById('btn-modal-prev').classList.add('hidden');
-		document.getElementById('btn-modal-next').classList.add('hidden');
-		document.getElementById('modal-previsao').classList.add('hidden');
-		document.body.style.overflow = 'auto';
-		indexFotoAtual = -1;
-	}
+    const profissionaisData = [
+        {
+            nome: "Elaine Paiva",
+            especialidade: "Terapeuta",
+            foto: "https://raw.githubusercontent.com/iedurodrigues/comunidadeatman/refs/heads/ComunidadeAtman/Profissionais/ElainePaiva.jpg?auto=format&fit=crop&w=200&q=80",
+            resumo: "<p><b>RESUMO DO PERFIL. </b><hr>Escuta, presença e orientação simbólica: <br>• Tarô; <br>• Astrologia; <br>• Leituras energéticas. <br><br> - Acesse o Instagram <a href='https://www.instagram.com/_a_reluzente' target='_blank' rel='noopener noreferrer'><u>aqui</u></a>. <br>- Acesse o WhatsApp <a href='https://api.whatsapp.com/send/?phone=5531975236855&text&type=phone_number&app_absent=0' target='_blank' rel='noopener noreferrer'><u>aqui</u></a>. <br></p>"
+        },        {
+            nome: "Joice Miguel",
+            especialidade: "Psicanalista",
+            foto: "https://raw.githubusercontent.com/iedurodrigues/comunidadeatman/refs/heads/ComunidadeAtman/Profissionais/JoiceMiguel.jpg?auto=format&fit=crop&w=200&q=80",
+            resumo: "<p><b>RESUMO DO PERFIL. </b><hr>Explorando labirintos da mente humana através da lente da psicanálise. <br><br> - Acesse o Instagram <a href='https://www.instagram.com/mente_conectaa/' target='_blank' rel='noopener noreferrer'><u>aqui</u></a>. <br>- Acesse o WhatsApp <a href='https://api.whatsapp.com/send/?phone=5511992648019&text=Olá%2C+gostaria+de+saber+mais+sobre+as+sessões&type=phone_number&app_absent=0' target='_blank' rel='noopener noreferrer'><u>aqui</u></a>. <br></p>"
+        },
+        {
+            nome: "Sury Fialho",
+            especialidade: "Cartomante",
+            foto: "https://raw.githubusercontent.com/iedurodrigues/comunidadeatman/refs/heads/ComunidadeAtman/Profissionais/SuryFialho.jpg?auto=format&fit=crop&w=200&q=80",
+            resumo: "<p><b>RESUMO DO PERFIL</b><hr>Cartomancia e transformação consciente. <br><br> - Acesse o Instagram <a href='https://www.instagram.com/sury_fialho/' target='_blank' rel='noopener noreferrer'><u>aqui</u></a>. <br>- Acesse o WhatsApp <a href='https://api.whatsapp.com/send?phone=5543996370625&text=Olá%2C%20vim%20para%20saber%20mais%20sobre%20a%20leitura%20de%20cartas!%20' target='_blank' rel='noopener noreferrer'><u>aqui</u></a>. <br></p>"
+        }
+    ];
 
-	document.getElementById('modal-previsao').addEventListener('click', function(e) {
-		if (e.target === this) { fecharModal(); }
-	});
+    let paginaAtualProfissionais = 0;
+    const ITENS_POR_PAGINA_PROF = 3;
 
-	function abrirModal(titulo, conteudoHtml) {
-		textoAtualParaLeitura = conteudoHtml; 
-		executandoAudio = false;
-		document.getElementById('btn-modal-prev').classList.add('hidden');
-		document.getElementById('btn-modal-next').classList.add('hidden');
-		document.getElementById('modal-imagem').classList.add('hidden');
-		document.getElementById('modal-titulo').innerText = titulo;
-		document.getElementById('modal-texto').innerHTML = conteudoHtml;
-		document.getElementById('modal-texto').classList.remove('hidden');
-		document.getElementById('modal-audio-container').classList.remove('hidden');
-		document.getElementById('btn-audio-player').innerHTML = '<span>Ouvir</span>';
-		document.getElementById('modal-previsao').classList.remove('hidden');
-		document.body.style.overflow = 'hidden'; 
-		document.getElementById('modal-texto').scrollTop = 0; 
-	}
-	
-	function abrirModalSobre() {
-		abrirModal('Sobre o Atman', `
+    function renderizarProfissionais() {
+        const container = document.getElementById('container-profissionais');
+        container.innerHTML = ''; 
+        
+        const inicio = paginaAtualProfissionais * ITENS_POR_PAGINA_PROF;
+        const fim = inicio + ITENS_POR_PAGINA_PROF;
+        const profsParaExibir = profissionaisData.slice(inicio, fim);
+
+        profsParaExibir.forEach((prof, idx) => {
+            const indexReal = inicio + idx; // Usamos o índice real da lista para o Modal
+            const div = document.createElement('div');
+            div.className = "flex flex-col items-center group fade-in";
+            div.innerHTML = `
+                <div class="anel-stories w-32 h-32 mb-4 shadow-md cursor-pointer group-hover:scale-105 transition-all duration-300" onclick="abrirModalPerfil(${indexReal})">
+                    <div class="anel-stories-inner">
+                        <img src="${prof.foto}" alt="Foto ${prof.nome}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" draggable="false">
+                    </div>
+                </div>
+                <h3 class="text-xl font-serif text-[#2D3A27] cursor-pointer hover:underline mt-2" onclick="abrirModalPerfil(${indexReal})">${prof.nome}</h3>
+                <p class="text-xs uppercase tracking-widest text-stone-500 mt-1">${prof.especialidade}</p>
+            `;
+            container.appendChild(div);
+        });
+
+        // Configuração dos botões
+        const blocoBotao = document.getElementById('bloco-botao-profissionais');
+        const btnAnt = document.getElementById('btn-prof-ant');
+        const btnProx = document.getElementById('btn-prof-prox');
+
+        if (profissionaisData.length > ITENS_POR_PAGINA_PROF) {
+            blocoBotao.classList.remove('hidden');
+            btnAnt.disabled = (paginaAtualProfissionais === 0);
+            btnProx.disabled = (fim >= profissionaisData.length);
+        } else {
+            blocoBotao.classList.add('hidden');
+        }
+    }
+
+    function mudarPaginaProfissionais(direcao) {
+        const novaPagina = paginaAtualProfissionais + direcao;
+        const totalPaginas = Math.ceil(profissionaisData.length / ITENS_POR_PAGINA_PROF);
+
+        if (novaPagina >= 0 && novaPagina < totalPaginas) {
+            paginaAtualProfissionais = novaPagina;
+            renderizarProfissionais();
+        }
+    }
+
+    function abrirModalPerfil(index) {
+        const prof = profissionaisData[index];
+        abrirModal(prof.nome, prof.resumo);
+    }
+
+    function fecharModal() {
+        if (window.speechSynthesis) {
+            window.speechSynthesis.cancel();
+        }
+        executandoAudio = false;
+        audioPausado = false;
+        const btnAudio = document.getElementById('btn-audio-player');
+        if(btnAudio) btnAudio.innerHTML = '<span>Ouvir</span>';
+        document.getElementById('modal-imagem').classList.add('hidden');
+        document.getElementById('btn-modal-prev').classList.add('hidden');
+        document.getElementById('btn-modal-next').classList.add('hidden');
+        document.getElementById('modal-previsao').classList.add('hidden');
+        document.body.style.overflow = 'auto';
+        indexFotoAtual = -1;
+    }
+
+    document.getElementById('modal-previsao').addEventListener('click', function(e) {
+        if (e.target === this) { fecharModal(); }
+    });
+
+    function abrirModal(titulo, conteudoHtml) {
+        textoAtualParaLeitura = conteudoHtml; 
+        executandoAudio = false;
+        document.getElementById('btn-modal-prev').classList.add('hidden');
+        document.getElementById('btn-modal-next').classList.add('hidden');
+        document.getElementById('modal-imagem').classList.add('hidden');
+        document.getElementById('modal-titulo').innerText = titulo;
+        document.getElementById('modal-texto').innerHTML = conteudoHtml;
+        document.getElementById('modal-texto').classList.remove('hidden');
+        document.getElementById('modal-audio-container').classList.remove('hidden');
+        document.getElementById('btn-audio-player').innerHTML = '<span>Ouvir</span>';
+        document.getElementById('modal-previsao').classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; 
+        document.getElementById('modal-texto').scrollTop = 0; 
+    }
+    
+    function abrirModalSobre() {
+        abrirModal('Sobre o Atman', `
             <p class='mb-4'><b>DADOS JURÍDICOS. </b><hr><b>CNPJ:</b> 59.569.266/0001-00. <br><b>CNAE:</b> 94.91-0-00. <br><small>Atividades de organizações religiosas ou filosóficas.</small><br><br></p>
             <p class='mb-4'><b>SOBRE ESTE RECURSO. </b><hr>Desenvolvemos este canal para facilitar o acesso aos trabalhos que realizamos e ao material que disponibilizamos.</p>
-			<p class='mb-4'>Você pode instalar o aplicativo salvando esta página na tela inicial do seu dispositivo Windows, Android, iOS e macOS.<hr>
-			<b><small>Compilação: 24.0, de 01 de Outubro de 2026.</small></b>
-		`);
-	}
+            <p class='mb-4'>Você pode instalar o aplicativo salvando esta página na tela inicial do seu dispositivo Windows, Android, iOS e macOS.<hr>
+            <b><small>Compilação: 24.0, de 01 de Outubro de 2026.</small></b>
+        `);
+    }
 
-	function abrirModalArtigo(titulo, conteudoHtml) {
-		textoAtualParaLeitura = conteudoHtml; 
-		executandoAudio = false;
-		document.getElementById('modal-texto').classList.remove('hidden');
-		document.getElementById('modal-imagem').classList.add('hidden');
-		document.getElementById('btn-modal-prev').classList.add('hidden');
-		document.getElementById('btn-modal-next').classList.add('hidden');
-		document.getElementById('modal-titulo').innerText = titulo;
-		document.getElementById('modal-texto').innerHTML = conteudoHtml;
-		document.getElementById('modal-audio-container').classList.remove('hidden');
-		document.getElementById('btn-audio-player').innerHTML = '<span>Ouvir</span>';
-		document.getElementById('modal-previsao').classList.remove('hidden');
-		document.body.style.overflow = 'hidden';
-		document.getElementById('modal-texto').scrollTop = 0;
-	}
+    function abrirModalArtigo(titulo, conteudoHtml) {
+        textoAtualParaLeitura = conteudoHtml; 
+        executandoAudio = false;
+        document.getElementById('modal-texto').classList.remove('hidden');
+        document.getElementById('modal-imagem').classList.add('hidden');
+        document.getElementById('btn-modal-prev').classList.add('hidden');
+        document.getElementById('btn-modal-next').classList.add('hidden');
+        document.getElementById('modal-titulo').innerText = titulo;
+        document.getElementById('modal-texto').innerHTML = conteudoHtml;
+        document.getElementById('modal-audio-container').classList.remove('hidden');
+        document.getElementById('btn-audio-player').innerHTML = '<span>Ouvir</span>';
+        document.getElementById('modal-previsao').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        document.getElementById('modal-texto').scrollTop = 0;
+    }
 
-	function abrirModalFoto(urlFoto) {
-		textoAtualParaLeitura = ""; 
-		executandoAudio = false;
-		document.getElementById('modal-texto').classList.add('hidden');
-		document.getElementById('modal-audio-container').classList.add('hidden');
-		document.getElementById('modal-titulo').innerText = 'Memórias';
-		indexFotoAtual = listaFotosGaleria.indexOf(urlFoto);
-		const imgModal = document.getElementById('modal-imagem');
-		imgModal.src = urlFoto;
-		imgModal.classList.remove('hidden');
-		if (listaFotosGaleria.length > 1) {
-			document.getElementById('btn-modal-prev').classList.remove('hidden');
-			document.getElementById('btn-modal-next').classList.remove('hidden');
-		}
-		document.getElementById('modal-previsao').classList.remove('hidden');
-		document.body.style.overflow = 'hidden'; 
-	}
+    function abrirModalFoto(urlFoto) {
+        textoAtualParaLeitura = ""; 
+        executandoAudio = false;
+        document.getElementById('modal-texto').classList.add('hidden');
+        document.getElementById('modal-audio-container').classList.add('hidden');
+        document.getElementById('modal-titulo').innerText = 'Memórias';
+        indexFotoAtual = listaFotosGaleria.indexOf(urlFoto);
+        const imgModal = document.getElementById('modal-imagem');
+        imgModal.src = urlFoto;
+        imgModal.classList.remove('hidden');
+        if (listaFotosGaleria.length > 1) {
+            document.getElementById('btn-modal-prev').classList.remove('hidden');
+            document.getElementById('btn-modal-next').classList.remove('hidden');
+        }
+        document.getElementById('modal-previsao').classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; 
+    }
 
-	function navegarFoto(direcao) {
-		if (listaFotosGaleria.length === 0 || indexFotoAtual === -1) return;
-		indexFotoAtual = (indexFotoAtual + direcao + listaFotosGaleria.length) % listaFotosGaleria.length;
-		const novaUrl = listaFotosGaleria[indexFotoAtual];
-		document.getElementById('modal-imagem').src = novaUrl;
-	}
+    function navegarFoto(direcao) {
+        if (listaFotosGaleria.length === 0 || indexFotoAtual === -1) return;
+        indexFotoAtual = (indexFotoAtual + direcao + listaFotosGaleria.length) % listaFotosGaleria.length;
+        const novaUrl = listaFotosGaleria[indexFotoAtual];
+        document.getElementById('modal-imagem').src = novaUrl;
+    }
 
-	function controlarCarrossel(direcao) {
-		const wrapper = document.getElementById('carousel-wrapper');
-		const quantidadeMovimento = 274 * direcao; 
-		wrapper.scrollBy({
-			left: quantidadeMovimento,
-			behavior: 'smooth'
-		});
-	}
-	
-	function controlarAudio() {
-		const btnAudio = document.getElementById('btn-audio-player');
-		
-		if (!window.speechSynthesis) {
-			alert("Desculpe, o seu dispositivo não suporta a leitura de texto em voz alta.");
-			return;
-		}
+    function controlarCarrossel(direcao) {
+        const wrapper = document.getElementById('carousel-wrapper');
+        const quantidadeMovimento = 274 * direcao; 
+        wrapper.scrollBy({
+            left: quantidadeMovimento,
+            behavior: 'smooth'
+        });
+    }
+    
+    function controlarAudio() {
+        const btnAudio = document.getElementById('btn-audio-player');
+        
+        if (!window.speechSynthesis) {
+            alert("Desculpe, o seu dispositivo não suporta a leitura de texto em voz alta.");
+            return;
+        }
 
-		if (executandoAudio && !audioPausado) {
-			window.speechSynthesis.pause();
-			audioPausado = true;
-			btnAudio.innerHTML = '<span>Retomar</span>';
-			return;
-		}
+        if (executandoAudio && !audioPausado) {
+            window.speechSynthesis.pause();
+            audioPausado = true;
+            btnAudio.innerHTML = '<span>Retomar</span>';
+            return;
+        }
 
-		if (executandoAudio && audioPausado) {
-			window.speechSynthesis.resume();
-			audioPausado = false;
-			btnAudio.innerHTML = '<span>Pausar</span>';
-			return;
-		}
+        if (executandoAudio && audioPausado) {
+            window.speechSynthesis.resume();
+            audioPausado = false;
+            btnAudio.innerHTML = '<span>Pausar</span>';
+            return;
+        }
 
-		window.speechSynthesis.cancel();
-		let textoTratado = textoAtualParaLeitura.replace(/<\/p>/g, '. '); 
-		textoTratado = textoTratado.replace(/<br\s*\/?>/g, ' ');
-		const textoPuro = textoTratado.replace(/<[^>]*>/g, '').trim();
-		const fala = new SpeechSynthesisUtterance(textoPuro);
-		fala.lang = 'pt-BR';
-		fala.rate = 1.0; 
-		
-		fala.onend = function() { executandoAudio = false; audioPausado = false; btnAudio.innerHTML = '<span>Ouvir</span>'; };
-		fala.onerror = function() {	executandoAudio = false; audioPausado = false; btnAudio.innerHTML = '<span>Ouvir</span>'; };
+        window.speechSynthesis.cancel();
+        let textoTratado = textoAtualParaLeitura.replace(/<\/p>/g, '. '); 
+        textoTratado = textoTratado.replace(/<br\s*\/?>/g, ' ');
+        const textoPuro = textoTratado.replace(/<[^>]*>/g, '').trim();
+        const fala = new SpeechSynthesisUtterance(textoPuro);
+        fala.lang = 'pt-BR';
+        fala.rate = 1.0; 
+        
+        fala.onend = function() { executandoAudio = false; audioPausado = false; btnAudio.innerHTML = '<span>Ouvir</span>'; };
+        fala.onerror = function() { executandoAudio = false; audioPausado = false; btnAudio.innerHTML = '<span>Ouvir</span>'; };
 
-		window.speechSynthesis.speak(fala);
-		executandoAudio = true;
-		audioPausado = false;
-		btnAudio.innerHTML = '<span>Pausar</span>';
-	}
+        window.speechSynthesis.speak(fala);
+        executandoAudio = true;
+        audioPausado = false;
+        btnAudio.innerHTML = '<span>Pausar</span>';
+    }
 
-	async function carregarEstudosDoGitHub() {
-		const user = 'iedurodrigues';
-		const repo = 'comunidadeatman';
-		const path = 'Estudos'; 
-		const container = document.getElementById('container-estudos');
-		
-		try {
-			const urlAPI = 'https://api.github.com/repos/' + user + '/' + repo + '/contents/' + path + '?t=' + Date.now();
-			const response = await fetch(urlAPI);
-			
-			if (!response.ok) {
-				container.innerHTML = '<p class="text-[#4A3728] italic text-center col-span-full">Pasta "Estudos" não localizada no repositório.</p>';
-				return;
-			}
-			
-			const arquivos = await response.json();
-			const arquivosJson = arquivos.filter(function(arq) {
-				return arq.name.toLowerCase().endsWith('.json');
-			});
-			
-			if (arquivosJson.length === 0) {
-				container.innerHTML = '<p class="text-[#4A3728] italic text-center col-span-full">Nenhum artigo publicado dentro da pasta ainda.</p>';
-				return;
-			}
+    async function carregarEstudosDoGitHub() {
+        const user = 'iedurodrigues';
+        const repo = 'comunidadeatman';
+        const path = 'Estudos'; 
+        const container = document.getElementById('container-estudos');
+        
+        try {
+            const urlAPI = 'https://api.github.com/repos/' + user + '/' + repo + '/contents/' + path + '?t=' + Date.now();
+            const response = await fetch(urlAPI);
+            
+            if (!response.ok) {
+                container.innerHTML = '<p class="text-[#4A3728] italic text-center col-span-full">Pasta "Estudos" não localizada no repositório.</p>';
+                return;
+            }
+            
+            const arquivos = await response.json();
+            const arquivosJson = arquivos.filter(function(arq) {
+                return arq.name.toLowerCase().endsWith('.json');
+            });
+            
+            if (arquivosJson.length === 0) {
+                container.innerHTML = '<p class="text-[#4A3728] italic text-center col-span-full">Nenhum artigo publicado dentro da pasta ainda.</p>';
+                return;
+            }
 
-			const promises = arquivosJson.map(async function(arq) {
-				try {
-					const res = await fetch(arq.download_url);
-					if (!res.ok) return null;
-					return await res.json();
-				} catch (e) {
-					console.error("Erro no arquivo " + arq.name, e);
-					return null;
-				}
-			});
-			
-			const resultados = await Promise.all(promises);
-			estudosCarregados = resultados.filter(function(art) {
-				return art !== null;
-			});
-			
-			if (estudosCarregados.length === 0) {
-				container.innerHTML = '<p class="text-[#4A3728] italic text-center col-span-full">Não foi possível processar a estrutura dos arquivos JSON.</p>';
-				return;
-			}
-			
-			paginaAtualEstudos = 0;
-			renderizarEstudos();
-			
-		} catch (error) {
-			console.error("Erro crítico na API do GitHub:", error);
-			container.innerHTML = '<p class="text-[#4A3728] italic text-center col-span-full">Erro de conexão ao buscar estudos.</p>';
-		}
-	}
+            const promises = arquivosJson.map(async function(arq) {
+                try {
+                    const res = await fetch(arq.download_url);
+                    if (!res.ok) return null;
+                    return await res.json();
+                } catch (e) {
+                    console.error("Erro no arquivo " + arq.name, e);
+                    return null;
+                }
+            });
+            
+            const resultados = await Promise.all(promises);
+            estudosCarregados = resultados.filter(function(art) {
+                return art !== null;
+            });
+            
+            if (estudosCarregados.length === 0) {
+                container.innerHTML = '<p class="text-[#4A3728] italic text-center col-span-full">Não foi possível processar a estrutura dos arquivos JSON.</p>';
+                return;
+            }
+            
+            paginaAtualEstudos = 0;
+            renderizarEstudos();
+            
+        } catch (error) {
+            console.error("Erro crítico na API do GitHub:", error);
+            container.innerHTML = '<p class="text-[#4A3728] italic text-center col-span-full">Erro de conexão ao buscar estudos.</p>';
+        }
+    }
 
-	function renderizarEstudos() {
-		const container = document.getElementById('container-estudos');
-		container.innerHTML = ''; 
-		const inicio = paginaAtualEstudos * ITENS_POR_PAGINA_ESTUDOS;
-		const fim = inicio + ITENS_POR_PAGINA_ESTUDOS;
-		const estudosParaExibir = estudosCarregados.slice(inicio, fim);
+    function renderizarEstudos() {
+        const container = document.getElementById('container-estudos');
+        container.innerHTML = ''; 
+        const inicio = paginaAtualEstudos * ITENS_POR_PAGINA_ESTUDOS;
+        const fim = inicio + ITENS_POR_PAGINA_ESTUDOS;
+        const estudosParaExibir = estudosCarregados.slice(inicio, fim);
 
-		estudosParaExibir.forEach(function(artigo) {
-			const tituloArtigo = artigo.titulo || artigo.Title || artigo.Título || "Artigo sem Título";
-			const autorArtigo = artigo.autor || artigo.Autor || "Comunidade Atman";
-			const resumoArtigo = artigo.resumo || artigo.Resumo || "";
-			const conteudoArtigo = artigo.conteudo || artigo.Conteudo || "";
-			const textoCodificado = btoa(encodeURIComponent(conteudoArtigo));
-			const tituloCodificado = btoa(encodeURIComponent(tituloArtigo));
-			const card = document.createElement('div');
-			card.className = "card-nature p-8 rounded-[2rem] flex flex-col justify-between transition-all hover:shadow-md";
-			card.innerHTML = `
-				<div>
-					<span class="text-xs uppercase tracking-widest text-[#4A3728] opacity-60">Por: ${autorArtigo}</span>
-					<h3 class="text-xl font-medium text-stone-800 mb-3">${tituloArtigo}</h3>
-					<p class="text-stone-600 text-sm leading-relaxed line-clamp-3">${resumoArtigo}</p>
-				</div>
-				<button onclick="descompactarEFecharModal('${tituloCodificado}', '${textoCodificado}')" class="mt-6 text-left text-sm font-medium text-[#2D3A27] hover:underline inline-flex items-center gap-1">
-					Continuar lendo &rarr;
-				</button>
-			`;
-			container.appendChild(card);
-		});
+        estudosParaExibir.forEach(function(artigo) {
+            const tituloArtigo = artigo.titulo || artigo.Title || artigo.Título || "Artigo sem Título";
+            const autorArtigo = artigo.autor || artigo.Autor || "Comunidade Atman";
+            const resumoArtigo = artigo.resumo || artigo.Resumo || "";
+            const conteudoArtigo = artigo.conteudo || artigo.Conteudo || "";
+            const textoCodificado = btoa(encodeURIComponent(conteudoArtigo));
+            const tituloCodificado = btoa(encodeURIComponent(tituloArtigo));
+            const card = document.createElement('div');
+            card.className = "card-nature p-8 rounded-[2rem] flex flex-col justify-between transition-all hover:shadow-md";
+            card.innerHTML = `
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-[#4A3728] opacity-60">Por: ${autorArtigo}</span>
+                    <h3 class="text-xl font-medium text-stone-800 mb-3">${tituloArtigo}</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed line-clamp-3">${resumoArtigo}</p>
+                </div>
+                <button onclick="descompactarEFecharModal('${tituloCodificado}', '${textoCodificado}')" class="mt-6 text-left text-sm font-medium text-[#2D3A27] hover:underline inline-flex items-center gap-1">
+                    Continuar lendo &rarr;
+                </button>
+            `;
+            container.appendChild(card);
+        });
 
-		const blocoBotao = document.getElementById('bloco-botao-estudos');
-		const btnRecentes = document.getElementById('btn-estudos-recentes');
-		const btnAnteriores = document.getElementById('btn-estudos-anteriores');
+        const blocoBotao = document.getElementById('bloco-botao-estudos');
+        const btnRecentes = document.getElementById('btn-estudos-recentes');
+        const btnAnteriores = document.getElementById('btn-estudos-anteriores');
 
-		if (estudosCarregados.length > ITENS_POR_PAGINA_ESTUDOS) {
-			blocoBotao.classList.remove('hidden');
-			btnRecentes.disabled = (paginaAtualEstudos === 0);
-			btnAnteriores.disabled = (fim >= estudosCarregados.length);
-		} else {
-			blocoBotao.classList.add('hidden');
-		}
-	}
+        if (estudosCarregados.length > ITENS_POR_PAGINA_ESTUDOS) {
+            blocoBotao.classList.remove('hidden');
+            btnRecentes.disabled = (paginaAtualEstudos === 0);
+            btnAnteriores.disabled = (fim >= estudosCarregados.length);
+        } else {
+            blocoBotao.classList.add('hidden');
+        }
+    }
 
-	function mudarPaginaEstudos(direcao) {
-		const novaPagina = paginaAtualEstudos + direcao;
-		const totalPaginas = Math.ceil(estudosCarregados.length / ITENS_POR_PAGINA_ESTUDOS);
+    function mudarPaginaEstudos(direcao) {
+        const novaPagina = paginaAtualEstudos + direcao;
+        const totalPaginas = Math.ceil(estudosCarregados.length / ITENS_POR_PAGINA_ESTUDOS);
 
-		if (novaPagina >= 0 && novaPagina < totalPaginas) {
-			paginaAtualEstudos = novaPagina;
-			renderizarEstudos();
-			document.getElementById('estudos').scrollIntoView({ behavior: 'smooth' });
-		}
-	}
+        if (novaPagina >= 0 && novaPagina < totalPaginas) {
+            paginaAtualEstudos = novaPagina;
+            renderizarEstudos();
+            document.getElementById('estudos').scrollIntoView({ behavior: 'smooth' });
+        }
+    }
 
-	function descompactarEFecharModal(tituloBase64, conteudoBase64) {
-		const tituloDecodificado = decodeURIComponent(atob(tituloBase64));
-		const conteudoDecodificado = decodeURIComponent(atob(conteudoBase64));
-		abrirModalArtigo(tituloDecodificado, conteudoDecodificado);
-	}
+    function descompactarEFecharModal(tituloBase64, conteudoBase64) {
+        const tituloDecodificado = decodeURIComponent(atob(tituloBase64));
+        const conteudoDecodificado = decodeURIComponent(atob(conteudoBase64));
+        abrirModalArtigo(tituloDecodificado, conteudoDecodificado);
+    }
 
-	function toggleEstudos() {
-		mostrandoTudo = !mostrandoTudo;
-		renderizarEstudos();
-		if (!mostrandoTudo) {
-			document.getElementById('estudos').scrollIntoView({ behavior: 'smooth' });
-		}
-	}
+    function toggleEstudos() {
+        mostrandoTudo = !mostrandoTudo;
+        renderizarEstudos();
+        if (!mostrandoTudo) {
+            document.getElementById('estudos').scrollIntoView({ behavior: 'smooth' });
+        }
+    }
 
-	function copyPix() {
-		const pixText = document.getElementById('pix-key').innerText.trim();
-		const btnText = document.getElementById('btn-text');
-		const btn = document.getElementById('btn-copy');
-		function showSuccess() {
-			const originalText = "Copiar Chave";
-			btnText.innerText = 'Copiado';
-			btn.style.backgroundColor = '#FEFAE0';
-			btn.style.color = '#2D3A27';
-			setTimeout(() => {
-				btnText.innerText = originalText;
-				btn.style.backgroundColor = '';
-				btn.style.color = '';
-			}, 2000);
-		}
+    function copyPix() {
+        const pixText = document.getElementById('pix-key').innerText.trim();
+        const btnText = document.getElementById('btn-text');
+        const btn = document.getElementById('btn-copy');
+        function showSuccess() {
+            const originalText = "Copiar Chave";
+            btnText.innerText = 'Copiado';
+            btn.style.backgroundColor = '#FEFAE0';
+            btn.style.color = '#2D3A27';
+            setTimeout(() => {
+                btnText.innerText = originalText;
+                btn.style.backgroundColor = '';
+                btn.style.color = '';
+            }, 2000);
+        }
 
-		if (navigator.clipboard && window.isSecureContext) {
-			navigator.clipboard.writeText(pixText)
-				.then(() => showSuccess())
-				.catch(() => fallbackCopy(pixText));
-		} else {
-			fallbackCopy(pixText);
-		}
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(pixText)
+                .then(() => showSuccess())
+                .catch(() => fallbackCopy(pixText));
+        } else {
+            fallbackCopy(pixText);
+        }
 
-		function fallbackCopy(text) {
-			const textArea = document.createElement("textarea");
-			textArea.value = text;
-			textArea.style.position = "fixed";
-			textArea.style.left = "-9999px";
-			textArea.style.top = "0";
-			document.body.appendChild(textArea);
-			textArea.focus();
-			textArea.select();
-			try {
-				const successful = document.execCommand('copy');
-				if (successful) showSuccess();
-			} catch (err) {
-				console.error('Erro no fallback:', err);
-				prompt("Pressione Ctrl+C para copiar a chave:", text);
-			}
-			document.body.removeChild(textArea);
-		}
-	}
+        function fallbackCopy(text) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";
+            textArea.style.left = "-9999px";
+            textArea.style.top = "0";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) showSuccess();
+            } catch (err) {
+                console.error('Erro no fallback:', err);
+                prompt("Pressione Ctrl+C para copiar a chave:", text);
+            }
+            document.body.removeChild(textArea);
+        }
+    }
 
-	document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
-	document.addEventListener('keydown', function(e) {
-		if (e.keyCode == 123 || 
-			(e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || 
-			(e.ctrlKey && e.keyCode == 85)) {
-			e.preventDefault();
-			return false;
-		}
-	});
+    document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    document.addEventListener('keydown', function(e) {
+        if (e.keyCode == 123 || 
+            (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || 
+            (e.ctrlKey && e.keyCode == 85)) {
+            e.preventDefault();
+            return false;
+        }
+    });
 
-	async function loadGallery() {
-		const user = 'iedurodrigues';
-		const repo = 'comunidadeatman';
-		const path = 'Fotos';
-		const galleryContainer = document.getElementById('github-gallery');
+    async function loadGallery() {
+        const user = 'iedurodrigues';
+        const repo = 'comunidadeatman';
+        const path = 'Fotos';
+        const galleryContainer = document.getElementById('github-gallery');
 
-		try {
-			const response = await fetch(`https://api.github.com/repos/${user}/${repo}/contents/${path}`);
-			const files = await response.json();
-			const imagens = files.filter(file => file.name.match(/\.(jpg|jpeg|png|gif|webp)$/i));
-			if (imagens.length === 0) {
-				galleryContainer.innerHTML = '<p class="text-[#4A3728] italic">Nenhuma foto encontrada.</p>';
-				return;
-			}
+        try {
+            const response = await fetch(`https://api.github.com/repos/${user}/${repo}/contents/${path}`);
+            const files = await response.json();
+            const imagens = files.filter(file => file.name.match(/\.(jpg|jpeg|png|gif|webp)$/i));
+            if (imagens.length === 0) {
+                galleryContainer.innerHTML = '<p class="text-[#4A3728] italic">Nenhuma foto encontrada.</p>';
+                return;
+            }
 
-			listaFotosGaleria = imagens.map(file => file.download_url);
-			galleryContainer.innerHTML = '';
+            listaFotosGaleria = imagens.map(file => file.download_url);
+            galleryContainer.innerHTML = '';
 
-			for (let i = 0; i < 2; i++) {
-				imagens.forEach(file => {
-					const item = document.createElement('div');
-					item.className = 'carousel-item flex-shrink-0 w-[250px]'; 
-					item.innerHTML = `
-						<img src="${file.download_url}" 
-							 onclick="abrirModalFoto('${file.download_url}')" 
-							 draggable="false"
-							 style="pointer-events: auto !important; -webkit-user-drag: none;"
-							 class="rounded-3xl w-full h-64 object-cover border-4 border-[#FAEDCD] cursor-pointer hover:scale-[1.02] transition-transform duration-300" 
-							 alt="Atman">
-					`;
-					galleryContainer.appendChild(item);
-				});
-			}
-		} catch (e) { 
-			console.error("Erro na galeria:", e);
-			galleryContainer.innerHTML = '<p>Erro ao carregar memórias...</p>'; 
-		}
-	}
+            for (let i = 0; i < 2; i++) {
+                imagens.forEach(file => {
+                    const item = document.createElement('div');
+                    item.className = 'carousel-item flex-shrink-0 w-[250px]'; 
+                    item.innerHTML = `
+                        <img src="${file.download_url}" 
+                             onclick="abrirModalFoto('${file.download_url}')" 
+                             draggable="false"
+                             style="pointer-events: auto !important; -webkit-user-drag: none;"
+                             class="rounded-3xl w-full h-64 object-cover border-4 border-[#FAEDCD] cursor-pointer hover:scale-[1.02] transition-transform duration-300" 
+                             alt="Atman">
+                    `;
+                    galleryContainer.appendChild(item);
+                });
+            }
+        } catch (e) { 
+            console.error("Erro na galeria:", e);
+            galleryContainer.innerHTML = '<p>Erro ao carregar memórias...</p>'; 
+        }
+    }
 
-	const nomes = ["🌿 Ana Moraes", "🌿 Bruna Maia", "🌿 Carla Michele", "🌿 Cledineia Maia", "🌿 Elaine Paiva", "🌿 Izaura Costa", "🌿 Rafaela Maia", "🌿 Raíssa Torres", "🌿 Roseneide Cunha"];
-	let index = 0;
-	const mural = document.getElementById('mural-fade');
-	function mudarNome() {
-		mural.classList.add('opacity-0', 'translate-y-4');
-		setTimeout(() => {
-			mural.innerText = nomes[index];
-			index = (index + 1) % nomes.length;
-			mural.classList.remove('opacity-0', 'translate-y-4');
-		}, 1000);
-	}
+    const nomes = ["🌿 Ana Moraes", "🌿 Bruna Maia", "🌿 Carla Michele", "🌿 Cledineia Maia", "🌿 Elaine Paiva", "🌿 Izaura Costa", "🌿 Rafaela Maia", "🌿 Raíssa Torres", "🌿 Roseneide Cunha"];
+    let index = 0;
+    const mural = document.getElementById('mural-fade');
+    function mudarNome() {
+        mural.classList.add('opacity-0', 'translate-y-4');
+        setTimeout(() => {
+            mural.innerText = nomes[index];
+            index = (index + 1) % nomes.length;
+            mural.classList.remove('opacity-0', 'translate-y-4');
+        }, 1000);
+    }
 
-	const menuBtn = document.getElementById('menu-btn');
-	const menuLinks = document.getElementById('menu-links');
-	const links = document.querySelectorAll('.menu-item:not(.submenu-trigger)');
-	menuBtn.addEventListener('click', () => { menuBtn.classList.toggle('btn-active'); menuLinks.classList.toggle('menu-open'); });
+    const menuBtn = document.getElementById('menu-btn');
+    const menuLinks = document.getElementById('menu-links');
+    const links = document.querySelectorAll('.menu-item:not(.submenu-trigger)');
+    menuBtn.addEventListener('click', () => { menuBtn.classList.toggle('btn-active'); menuLinks.classList.toggle('menu-open'); });
 
-	links.forEach(link => {
-		link.addEventListener('click', () => {
-			menuBtn.classList.remove('btn-active');
-			menuLinks.classList.remove('menu-open');
-			document.querySelectorAll('.has-submenu').forEach(el => el.classList.remove('open'));
-		});
-	});
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            menuBtn.classList.remove('btn-active');
+            menuLinks.classList.remove('menu-open');
+            document.querySelectorAll('.has-submenu').forEach(el => el.classList.remove('open'));
+        });
+    });
 
-	const submenuTriggers = document.querySelectorAll('.submenu-trigger');
-	submenuTriggers.forEach(trigger => {
-		trigger.addEventListener('click', (e) => {
-			if (window.innerWidth <= 768) {
-				e.preventDefault();
-				const parent = trigger.closest('.has-submenu');
-				document.querySelectorAll('.has-submenu').forEach(item => { if (item !== parent) item.classList.remove('open'); });
-				parent.classList.toggle('open');
-			}
-		});
-	});
+    const submenuTriggers = document.querySelectorAll('.submenu-trigger');
+    submenuTriggers.forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const parent = trigger.closest('.has-submenu');
+                document.querySelectorAll('.has-submenu').forEach(item => { if (item !== parent) item.classList.remove('open'); });
+                parent.classList.toggle('open');
+            }
+        });
+    });
 
-	if ('serviceWorker' in navigator) {
-		window.addEventListener('load', () => {
-			navigator.serviceWorker.register('sw.js')
-				.then(reg => {
-					console.log('Service Worker registrado!');
-					reg.update();
-				})
-				.catch(err => console.error('Erro ao registrar Service Worker:', err));
-		});
-	}
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('sw.js')
+                .then(reg => {
+                    console.log('Service Worker registrado!');
+                    reg.update();
+                })
+                .catch(err => console.error('Erro ao registrar Service Worker:', err));
+        });
+    }
 
-	document.addEventListener("DOMContentLoaded", function () {
-		const headerText = document.getElementById("header-text");
-		const secoesTexto = {
-			"inicio": " ",
-			"memorias": "Memórias",
-			"ayahuasca": "Ayahuasca",
-			"previsoes": "Previsões",
-			"estudos": "Estudos",
-			"atividades": "Atividades",
-			"orientacoes": "Orientações",
-			"contribua": "Contribua",
-			"contato": "Contato"
-		};
-		const options = { root: null, threshold: 0.5 };
-		const observer = new IntersectionObserver((entries) => {
-			entries.forEach((entry) => {
-				if (entry.isIntersecting) {
-					const idSeacao = entry.target.id;
-					headerText.style.opacity = "0";
-					setTimeout(() => {
-						if (secoesTexto[idSeacao]) { headerText.innerText = secoesTexto[idSeacao]; }
-						headerText.style.opacity = "1";
-					}, 300);
-				}
-			});
-		}, options);
+    document.addEventListener("DOMContentLoaded", function () {
+        const headerText = document.getElementById("header-text");
+        const secoesTexto = {
+            "inicio": " ",
+            "memorias": "Memórias",
+            "ayahuasca": "Ayahuasca",
+            "previsoes": "Previsões",
+            "estudos": "Estudos",
+            "atividades": "Atividades",
+            "orientacoes": "Orientações",
+            "profissionais": "Profissionais",
+            "contribua": "Contribua",
+            "contato": "Contato"
+        };
+        const options = { root: null, threshold: 0.5 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const idSeacao = entry.target.id;
+                    headerText.style.opacity = "0";
+                    setTimeout(() => {
+                        if (secoesTexto[idSeacao]) { headerText.innerText = secoesTexto[idSeacao]; }
+                        headerText.style.opacity = "1";
+                    }, 300);
+                }
+            });
+        }, options);
 
-		Object.keys(secoesTexto).forEach((id) => {
-			const elemento = document.getElementById(id);
-			if (elemento) observer.observe(elemento);
-		});
+        Object.keys(secoesTexto).forEach((id) => {
+            const elemento = document.getElementById(id);
+            if (elemento) observer.observe(elemento);
+        });
 
-		loadGallery();
-		carregarEstudosDoGitHub();
-		setInterval(mudarNome, 3000);
-		mudarNome();
-	});
+        loadGallery();
+        carregarEstudosDoGitHub();
+        renderizarProfissionais();
+        setInterval(mudarNome, 3000);
+        mudarNome();
+    });
 
 </script>
 </body>
