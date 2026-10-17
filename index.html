@@ -85,7 +85,6 @@
         .btn-copy:hover { background-color: #d4d9a8; transform: scale(1.05); }
 
         #mural-fade { text-shadow: 0 0 1px rgba(45, 58, 39, 0.1); }
-
         @media (max-width: 768px) {
             #mural-fade { font-size: 1.1rem; }
             .text-6xl { font-size: 3.5rem; }
@@ -93,7 +92,6 @@
         }
 
         @media (max-width: 640px) { #pix-key { font-size: 0.85rem; word-break: break-all; overflow-wrap: anywhere; } }
-
         @media (max-width: 768px) {
             h2.text-5xl { font-size: 2.7rem !important; line-height: 1.2; word-wrap: break-word; padding-left: 10px; padding-right: 10px; }
             #contribua h2, #previsoes h2 { font-size: 2.7rem !important; hyphens: auto; }
@@ -101,21 +99,16 @@
         }
 
         @media (max-width: 767px) { #menu-links.flex { border-bottom: 1px solid rgba(233, 237, 201, 0.1); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); } }
-
         #menu-links.menu-open { transform: translateX(0); box-shadow: -10px 0 30px rgba(0,0,0,0.5); }
         .btn-active #line-1 { transform: rotate(45deg) translate(2px, -1px); }
         .btn-active #line-2 { transform: translateX(50px); opacity: 0; }
         .btn-active #line-3 { transform: rotate(-45deg) translate(2px, 1px); }
 
-        @keyframes rolagemHorizontal {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
+        @keyframes rolagemHorizontal { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         .galeria-horizontal-infinita { display: flex; gap: 1.5rem; width: max-content; animation: rolagemHorizontal 30s linear infinite; }
         .galeria-horizontal-infinita:hover { animation-play-state: paused; }
 
-		/* Cores do card da Ayahuasca*/
+        /* Cores do card da Ayahuasca*/
         .card-ayahuasca-bg {
             background: linear-gradient(-45deg, #FFCC00, #2B1904, #2B1802, #FFCC00); 
             background-size: 300% 300%;
@@ -141,20 +134,14 @@
         @media (min-width: 769px) {
             .has-submenu { flex-direction: row; }
             .submenu {
-                position: absolute;
-                top: 100%;
-                left: 50%;
+                position: absolute; top: 100%; left: 50%;
                 transform: translateX(-50%) translateY(10px);
                 background-color: #2d3a27;
                 border: 1px solid rgba(233, 237, 201, 0.15);
-                border-radius: 0.75rem;
-                padding: 0.75rem 0;
-                min-width: 160px;
-                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.3s ease;
-                z-index: 60;
+                border-radius: 0.75rem; padding: 0.75rem 0;
+                min-width: 160px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+                opacity: 0; visibility: hidden;
+                transition: all 0.3s ease; z-index: 60;
             }
             .has-submenu:hover .submenu,
             .has-submenu:focus-within .submenu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
@@ -162,20 +149,13 @@
         }
 
         .fade-in { animation: fadeIn 0.4s ease-in-out; }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-		
-        @keyframes girarBorda {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes girarBorda { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
         .anel-stories {
             position: relative;
             border-radius: 50%;
-            padding: 3px; /* Espessura da borda colorida */
+            padding: 3px;
             overflow: hidden;
             z-index: 1;
         }
@@ -184,7 +164,6 @@
             content: '';
             position: absolute;
             top: -50%; left: -50%; width: 200%; height: 200%;
-            /* Cores do círculo dos Profissionais*/
             background: conic-gradient(from 0deg, #f09433, #F2D413, #0B73BA, #36A83E, #bc1888, #0B73BA, #F2D413, #f09433);
             animation: girarBorda 3s linear infinite;
             z-index: -1;
@@ -200,6 +179,11 @@
             position: relative;
             z-index: 2;
         }
+
+        .oculto-scroll { opacity: 0; transform: translateY(40px); transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .revelado-scroll { opacity: 1; transform: translateY(0); }
+        @keyframes respiracao { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
+        .anim-respirar { animation: respiracao 6s ease-in-out infinite; }
 
     </style>
 </head>
@@ -247,16 +231,16 @@
         </div>
     </nav>
 
-    <section id="inicio" class="bg-nature h-screen flex items-center justify-center text-center text-[#FEFAE0] px-4">
+    <section id="inicio" class="bg-nature bg-fixed h-screen flex items-center justify-center text-center text-[#FEFAE0] px-4">
         <div class="max-w-4xl">
             <span class="uppercase tracking-[0.5em] text-sm mb-4 block">Bem-vindo à Floresta</span>
-            <h1 class="text-6xl md:text-8xl mb-6">Comunidade Atman</h1>
+            <h1 class="text-6xl md:text-8xl mb-6 anim-respirar">Comunidade Atman</h1>
             <p class="text-xl md:text-2xl font-serif italic max-w-2xl mx-auto">Comprometidos com o Espiritual</p>
         </div>
     </section>
 
     <section id="memorias" class="py-24 bg-[#FAEDCD]">
-        <div class="container mx-auto px-6 max-w-6xl text-center overflow-hidden">
+        <div class="container mx-auto px-6 max-w-6xl text-center overflow-hidden oculto-scroll">
             <h2 class="text-5xl italic text-[#2D3A27] mb-12">Memórias</h2>
             <div class="relative w-full flex items-center group">
                 <button onclick="controlarCarrossel(-1)" class="absolute left-2 z-10 bg-[#2D3A27]/70 hover:bg-[#2D3A27] text-[#FEFAE0] w-10 h-10 rounded-full flex items-center justify-center text-lg shadow-md transition-all select-none opacity-0 group-hover:opacity-100 focus:opacity-100">
@@ -275,7 +259,7 @@
     </section>
 
     <section id="ayahuasca" class="py-24 bg-[#FEFAE0]">
-        <div class="container mx-auto px-6 max-w-6xl">
+        <div class="container mx-auto px-6 max-w-6xl oculto-scroll">
             <div class="card-ayahuasca-bg rounded-[3rem] overflow-hidden flex flex-col md:flex-row shadow-2xl transition-all duration-500">
                 <div class="md:w-1/2 p-12 md:p-20 text-[#FAF5F5]">
                     <span class="uppercase tracking-widest text-sm">Próxima sessão</span>
@@ -296,19 +280,19 @@
 
     <section id="previsoes" class="py-16 bg-[#FAEDCD]">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-12">
+            <div class="text-center mb-12 oculto-scroll">
                 <h2 class="text-5xl italic text-[#2D3A27] mb-2">Previsões do Mês</h2>
                 <p class="text-stone-600 max-w-md mx-auto">Movimentos Astrológicos de Outubro
                 <br><span style="font-size: 13px";><b>Tônica:</b> A Onça Branca</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white/75 p-8 rounded-2xl shadow-sm border border-stone-100 flex flex-col justify-between transition-all hover:shadow-md">
+                <div class="bg-white/75 p-8 rounded-2xl shadow-sm border border-stone-100 flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-[#2D3A27]/20 oculto-scroll">
                     <div>
                         <div class="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center text-amber-700 text-xl mb-6">☀️</div>
                         <h3 class="text-xl font-medium text-stone-800 mb-3">Começo do Mês</h3>
                         <p class="text-stone-600 leading-relaxed text-sm">
                             <b>Entre os dias 01 e 07</b><br>
-                            Dias imprevisíveis e carregados de tensão...
+                            Dias imprevisíveis e carregados de muita tensão...
                         </p>
                     </div>
                     <button onclick="abrirModal('Começo do Mês', `
@@ -325,13 +309,13 @@
                         Ler mais &rarr;
                     </button>
                 </div>
-                <div class="bg-white/75 p-8 rounded-2xl shadow-sm border border-stone-100 flex flex-col justify-between transition-all hover:shadow-md">
+                <div class="bg-white/75 p-8 rounded-2xl shadow-sm border border-stone-100 flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-[#2D3A27]/20 oculto-scroll">
                     <div>
                         <div class="w-12 h-12 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-700 text-xl mb-6">🌳</div>
                         <h3 class="text-xl font-medium text-stone-800 mb-3">O Ápice do Mês</h3>
                         <p class="text-stone-600 leading-relaxed text-sm">
                             <b>Entre os dias 08 e 18</b><br>
-                            Serão dias oportunos à reconciliação...
+                            Serão dias oportunos para buscar reconciliação...
                         </p>
                     </div>
                     <button onclick="abrirModal('O Ápice do Mês', `
@@ -349,13 +333,13 @@
                         Ler mais &rarr;
                     </button>
                 </div>
-                <div class="bg-white/75 p-8 rounded-2xl shadow-sm border border-stone-100 flex flex-col justify-between transition-all hover:shadow-md">
+                <div class="bg-white/75 p-8 rounded-2xl shadow-sm border border-stone-100 flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-[#2D3A27]/20 oculto-scroll">
                     <div>
                         <div class="w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center text-purple-700 text-xl mb-6">🌙</div>
                         <h3 class="text-xl font-medium text-stone-800 mb-3">Final do Mês</h3>
                         <p class="text-stone-600 leading-relaxed text-sm">
                             <b>Entre os dias 19 e 23</b><br>
-                            Serão dias complexos, intensos e cheios de movimento...
+                            Serão dias complexos, intensos e com movimento...
                         </p>
                     </div>
                     <button onclick="abrirModal('Final do Mês', `
@@ -378,14 +362,14 @@
     </section>
 
     <section id="estudos" class="py-24 bg-[#FEFAE0]">
-        <div class="max-w-6xl mx-auto px-4">
+        <div class="max-w-6xl mx-auto px-4 oculto-scroll">
             <div class="text-center mb-12">
                 <h2 class="text-5xl italic text-[#2D3A27] mb-2">Estudos e Reflexões</h2>
                 <p class="text-stone-600 max-w-md mx-auto">Reflexões sobre o que vivenciamos</p>
             </div>
             <div id="container-estudos" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-    			<p id="estudos-status" class="text-[#4A3728] italic text-center col-span-full">Sintonizando pensamentos...</p>
-			</div>
+                <p id="estudos-status" class="text-[#4A3728] italic text-center col-span-full">Sintonizando pensamentos...</p>
+            </div>
             <div id="bloco-botao-estudos" class="flex justify-center items-center gap-4 mt-12 hidden">
                 <button id="btn-estudos-recentes" onclick="mudarPaginaEstudos(-1)" class="bg-[#2D3A27] text-[#FEFAE0] px-6 py-3 rounded-full hover:bg-[#3d4f35] transition-all text-xs font-bold uppercase tracking-widest shadow-md disabled:opacity-40 disabled:cursor-not-allowed">
                     &larr;
@@ -398,36 +382,36 @@
     </section>
 
     <section id="atividades" class="py-24 bg-[#FAEDCD] text-center">
-        <div class="text-center mb-12">
+        <div class="text-center mb-12 oculto-scroll">
             <h2 class="text-5xl italic text-[#2D3A27] mb-2">Atividades</h2>
             <p class="text-stone-600 max-w-md mx-auto">Clique no item para expandir o texto<br><small>Conheça as metodologias completas <a href="https://drive.google.com/file/d/1COvVXzl-UBGNnlsq3IGkJzwGLEZQj3B-/view?usp=sharing" target="_blank" class="hover:underline"><b>clicando aqui</b></a></small></p>
         </div>
         <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto px-6">
-            <a class="card-nature p-10 rounded-[2rem] hover:bg-[#E9EDC9] transition-all group">
+            <a class="card-nature p-10 rounded-[2rem] hover:bg-[#E9EDC9] transition-all duration-500 group hover:-translate-y-2 hover:shadow-lg hover:shadow-[#2D3A27]/20 oculto-scroll">
                 <details>
-                    <summary class="text-xl mb-4 font-serif text-left">No Corpo Físico</summary>
-                        <p class="text-sm opacity-70 text-left"><b>Ayahuasca:</b> Consagramos a Sagrada Medicina na busca por nós mesmos. As Consagrações acontecem presencialmente nas cidades de Londrina, Rolândia e região. Nos consideramos Universalistas - não nos restringimos a dogmas religiosos específicos, mas sim na liberdade individual filosófica que permite uma conexão através dos próprios moldes.<br><br><b>Orientaçao Espiritual:</b> Conversamos sobre práticas para compreender suas emoções e elaborá-las em conversas por vídeochamada, te oferecendo aconselhamentos focados em suas maiores preocupações do momento.</p>
+                    <summary class="text-xl mb-4 font-serif text-left cursor-pointer">No Corpo Físico</summary>
+                        <p class="text-sm opacity-70 text-left mt-4"><b>Ayahuasca:</b> Consagramos a Sagrada Medicina na busca por nós mesmos. As Consagrações acontecem presencialmente nas cidades de Londrina, Rolândia e região. Nos consideramos Universalistas - não nos restringimos a dogmas religiosos específicos, mas sim na liberdade individual filosófica que permite uma conexão através dos próprios moldes.<br><br><b>Orientaçao Espiritual:</b> Conversamos sobre práticas para compreender suas emoções e elaborá-las em conversas por vídeochamada, te oferecendo aconselhamentos focados em suas maiores preocupações do momento.</p>
                 </details>
             </a>
-            <a class="card-nature p-10 rounded-[2rem] hover:bg-[#E9EDC9] transition-all group">
+            <a class="card-nature p-10 rounded-[2rem] hover:bg-[#E9EDC9] transition-all duration-500 group hover:-translate-y-2 hover:shadow-lg hover:shadow-[#2D3A27]/20 oculto-scroll">
                 <details>
-                    <summary class="text-xl mb-4 font-serif text-left">No Corpo Espiritual</summary>
-                        <p class="text-sm opacity-70 text-left"><b>Mesa Radiônica:</b> É possível Harmonizar as Relações, desfazendo qualquer energia adversa. Observe que serão identificados todos os empecilhos que te afastam dos seus objetivos e eles serão removidos. Esse processo envolve desde o alinhamento dos Chakras e Cromoterapia até o desfazimento de energias pesadas que fecham os caminhos.<br><br><b>Mapa Astrológico:</b> Confeccionamos seu Mapa Astral para contexualizar suas experiências de vida, analisando desde as Doze Casas até os Nodos Lunares, Quíron, Roda da Fortuna e Lilith.</p>
+                    <summary class="text-xl mb-4 font-serif text-left cursor-pointer">No Corpo Espiritual</summary>
+                        <p class="text-sm opacity-70 text-left mt-4"><b>Mesa Radiônica:</b> É possível Harmonizar as Relações, desfazendo qualquer energia adversa. Observe que serão identificados todos os empecilhos que te afastam dos seus objetivos e eles serão removidos. Esse processo envolve desde o alinhamento dos Chakras e Cromoterapia até o desfazimento de energias pesadas que fecham os caminhos.<br><br><b>Mapa Astrológico:</b> Confeccionamos seu Mapa Astral para contexualizar suas experiências de vida, analisando desde as Doze Casas até os Nodos Lunares, Quíron, Roda da Fortuna e Lilith.</p>
                 </details>
             </a>
         </div>
     </section>
 
     <section id="orientacoes" class="py-24 bg-[#FEFAE0]">
-        <div class="container mx-auto px-6 max-w-5xl">
+        <div class="container mx-auto px-6 max-w-5xl oculto-scroll">
             <h2 class="text-5xl italic text-[#2D3A27] text-center mb-16">Orientação aos Caminhantes</h2>
             <div class="grid md:grid-cols-2 gap-8 italic font-serif">
-                <div class="p-8 border-l-4 border-amber-800 bg-white/50 rounded-r-2xl">
+                <div class="p-8 border-l-4 border-amber-800 bg-white/50 rounded-r-2xl hover:bg-white transition-colors duration-300">
                     <p class="opacity-80">Cursos</p>
                     <h4 class="text-2sm mb-2">Para aprender gratuitamente conosco,</h4>
                     <a href="https://www.youtube.com/@ComunidadeAtman/courses" target="_blank" class="hover:underline">Acesse o canal.</a>
                 </div>
-                <div class="p-8 border-l-4 border-green-800 bg-white/50 rounded-r-2xl">
+                <div class="p-8 border-l-4 border-green-800 bg-white/50 rounded-r-2xl hover:bg-white transition-colors duration-300">
                     <p class="opacity-80">Anamnese</p>
                     <h4 class="text-2sm mb-2">Consagrará Ayahuasca conosco pela primeira vez?</h4>
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSfsiikE-qdAF7DKLkA6ZUBljmaOiCCgQYl6dgvryf_r4aEpcA/viewform?usp=share_link" target="_blank" class="hover:underline">Preencha aqui.</a>
@@ -438,8 +422,10 @@
 
     <section id="profissionais" class="py-24 bg-[#FAEDCD]">
         <div class="container mx-auto px-6 max-w-5xl text-center">
-            <h2 class="text-5xl italic text-[#2D3A27] mb-4">Profissionais Recomendados</h2>
-            <p class="text-stone-600 max-w-md mx-auto mb-16">Cada profissional tem sua forma de trabalhar<br><small>Clique no nome para abrir o resumo</small></p>
+            <div class="oculto-scroll">
+                <h2 class="text-5xl italic text-[#2D3A27] mb-4">Profissionais Recomendados</h2>
+                <p class="text-stone-600 max-w-md mx-auto mb-16">Cada profissional tem sua forma de trabalhar<br><small>Clique no nome para abrir o resumo</small></p>
+            </div>
             <div id="container-profissionais" class="grid grid-cols-1 md:grid-cols-3 gap-10 justify-items-center min-h-[16rem]"></div>
             <div id="bloco-botao-profissionais" class="flex justify-center items-center gap-4 mt-12 hidden">
                 <button id="btn-prof-ant" onclick="mudarPaginaProfissionais(-1)" class="bg-[#2D3A27] text-[#FEFAE0] px-6 py-3 rounded-full hover:bg-[#3d4f35] transition-all text-xs font-bold uppercase tracking-widest shadow-md disabled:opacity-40 disabled:cursor-not-allowed">
@@ -449,14 +435,11 @@
                     &rarr;
                 </button>
             </div>
-            <div class="mt-16 border-t border-[#2D3A27]/10 pt-6">
-                <p class="text-xs text-stone-500 max-w-3xl mx-auto leading-relaxed md:text-center"><b>Isenção de Responsabilidade:</b> A Comunidade Atman atua apenas como indicadora do profissional. Os atendimentos, diagnósticos, metodologias e eventuais resultados dependem de cada um.</p>
-            </div>
         </div> 
     </section> 
 
     <section id="contribua" class="py-24 bg-[#FEFAE0]">
-        <div class="container mx-auto px-6 max-w-5xl">
+        <div class="container mx-auto px-6 max-w-5xl oculto-scroll">
             <div class="bg-white/40 p-12 md:p-16 rounded-[3rem] border border-[#2D3A27]/10 text-center text-[#4A3728]">
                 <h2 class="text-5xl italic text-[#2D3A27] mb-8">Contribua</h2>
                 <p class="text-sm mb-10">Praticamos a caridade e estamos abertos para receber contribuições. Somos transparentes com a forma que tratamos os recebimentos. Você pode conferir os relatórios <a href="https://docs.google.com/spreadsheets/d/1NniQBEfyofqLYEkZCBXYahCKzzo7AZrox8C42Umpj0k/edit?usp=share_link" target="_blank" class="hover:underline"><b>aqui</b></a>.</p>
@@ -482,10 +465,10 @@
     </section>
 
     <section id="contato" class="py-24 bg-[#4A3728]">
-        <div class="container mx-auto px-6 max-w-3xl text-center text-[#FEFAE0]">
+        <div class="container mx-auto px-6 max-w-3xl text-center text-[#FEFAE0] oculto-scroll">
             <h2 class="text-5xl italic mb-8">Fale Conosco</h2>
             <p class="mt-4 font-serif text-lg opacity-80 italic mb-12">Dúvidas ou solicitações?<br>Entre em contato.</p>
-            <a href="mailto:contato@comunidadeatman.org" class="inline-block bg-[#2D3A27] text-[#FEFAE0] px-12 py-5 rounded-full hover:bg-[#2D3A27] transition-all shadow-lg uppercase tracking-widest text-sm font-bold mb-12 border border-[#E9EDC9]/20">
+            <a href="mailto:contato@comunidadeatman.org" class="inline-block bg-[#2D3A27] text-[#FEFAE0] px-12 py-5 rounded-full hover:bg-[#1a2316] transition-all shadow-lg uppercase tracking-widest text-sm font-bold mb-12 border border-[#E9EDC9]/20 anim-respirar">
                 Enviar E-mail</a>
             <div class="flex justify-center gap-12">
                 <a href="https://youtube.com/@comunidadeatman" target="_blank" title="YouTube">
@@ -498,7 +481,7 @@
     <footer class="py-12 bg-[#2D3A27] text-[#CCD5AE] text-center">
         <p class="font-serif italic text-lg mb-4 text-[#FEFAE0]">"A carne é fraca" - então torne-a mais forte</p>
         <p class="text-xs tracking-widest uppercase opacity-50">&copy; 2023 - 2026 Comunidade Atman</p>
-        <button onclick="abrirModalSobre()" class="text-opacity-50 hover:text-stone-200 text-xs transition-colors">
+        <button onclick="abrirModalSobre()" class="text-opacity-50 hover:text-stone-200 text-xs transition-colors mt-2">
             Sobre o Atman
         </button>
     </footer>
@@ -531,6 +514,7 @@
 
 <script>
 
+    let globalRevealObserver;
     let mostrandoTudo = false;
     let textoAtualParaLeitura = ""; 
     let executandoAudio = false;
@@ -567,15 +551,14 @@
     function renderizarProfissionais() {
         const container = document.getElementById('container-profissionais');
         container.innerHTML = ''; 
-        
         const inicio = paginaAtualProfissionais * ITENS_POR_PAGINA_PROF;
         const fim = inicio + ITENS_POR_PAGINA_PROF;
         const profsParaExibir = profissionaisData.slice(inicio, fim);
-
         profsParaExibir.forEach((prof, idx) => {
-            const indexReal = inicio + idx; // Usamos o índice real da lista para o Modal
+            const indexReal = inicio + idx; 
             const div = document.createElement('div');
-            div.className = "flex flex-col items-center group fade-in";
+            // Adicionado "oculto-scroll" para surgimento ao rolar
+            div.className = "flex flex-col items-center group fade-in oculto-scroll";
             div.innerHTML = `
                 <div class="anel-stories w-32 h-32 mb-4 shadow-md cursor-pointer group-hover:scale-105 transition-all duration-300" onclick="abrirModalPerfil(${indexReal})">
                     <div class="anel-stories-inner">
@@ -586,13 +569,12 @@
                 <p class="text-xs uppercase tracking-widest text-stone-500 mt-1">${prof.especialidade}</p>
             `;
             container.appendChild(div);
+            if(globalRevealObserver) { globalRevealObserver.observe(div); }
         });
 
-        // Configuração dos botões
         const blocoBotao = document.getElementById('bloco-botao-profissionais');
         const btnAnt = document.getElementById('btn-prof-ant');
         const btnProx = document.getElementById('btn-prof-prox');
-
         if (profissionaisData.length > ITENS_POR_PAGINA_PROF) {
             blocoBotao.classList.remove('hidden');
             btnAnt.disabled = (paginaAtualProfissionais === 0);
@@ -605,7 +587,6 @@
     function mudarPaginaProfissionais(direcao) {
         const novaPagina = paginaAtualProfissionais + direcao;
         const totalPaginas = Math.ceil(profissionaisData.length / ITENS_POR_PAGINA_PROF);
-
         if (novaPagina >= 0 && novaPagina < totalPaginas) {
             paginaAtualProfissionais = novaPagina;
             renderizarProfissionais();
@@ -812,7 +793,6 @@
         const inicio = paginaAtualEstudos * ITENS_POR_PAGINA_ESTUDOS;
         const fim = inicio + ITENS_POR_PAGINA_ESTUDOS;
         const estudosParaExibir = estudosCarregados.slice(inicio, fim);
-
         estudosParaExibir.forEach(function(artigo) {
             const tituloArtigo = artigo.titulo || artigo.Title || artigo.Título || "Artigo sem Título";
             const autorArtigo = artigo.autor || artigo.Autor || "Comunidade Atman";
@@ -821,7 +801,7 @@
             const textoCodificado = btoa(encodeURIComponent(conteudoArtigo));
             const tituloCodificado = btoa(encodeURIComponent(tituloArtigo));
             const card = document.createElement('div');
-            card.className = "card-nature p-8 rounded-[2rem] flex flex-col justify-between transition-all hover:shadow-md";
+            card.className = "card-nature p-8 rounded-[2rem] flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-[#2D3A27]/20 oculto-scroll";
             card.innerHTML = `
                 <div>
                     <span class="text-xs uppercase tracking-widest text-[#4A3728] opacity-60">Por: ${autorArtigo}</span>
@@ -833,12 +813,14 @@
                 </button>
             `;
             container.appendChild(card);
+            if(globalRevealObserver) {
+                globalRevealObserver.observe(card);
+            }
         });
 
         const blocoBotao = document.getElementById('bloco-botao-estudos');
         const btnRecentes = document.getElementById('btn-estudos-recentes');
         const btnAnteriores = document.getElementById('btn-estudos-anteriores');
-
         if (estudosCarregados.length > ITENS_POR_PAGINA_ESTUDOS) {
             blocoBotao.classList.remove('hidden');
             btnRecentes.disabled = (paginaAtualEstudos === 0);
@@ -851,7 +833,6 @@
     function mudarPaginaEstudos(direcao) {
         const novaPagina = paginaAtualEstudos + direcao;
         const totalPaginas = Math.ceil(estudosCarregados.length / ITENS_POR_PAGINA_ESTUDOS);
-
         if (novaPagina >= 0 && novaPagina < totalPaginas) {
             paginaAtualEstudos = novaPagina;
             renderizarEstudos();
@@ -893,9 +874,7 @@
             navigator.clipboard.writeText(pixText)
                 .then(() => showSuccess())
                 .catch(() => fallbackCopy(pixText));
-        } else {
-            fallbackCopy(pixText);
-        }
+        } else { fallbackCopy(pixText); }
 
         function fallbackCopy(text) {
             const textArea = document.createElement("textarea");
@@ -982,7 +961,6 @@
     const menuLinks = document.getElementById('menu-links');
     const links = document.querySelectorAll('.menu-item:not(.submenu-trigger)');
     menuBtn.addEventListener('click', () => { menuBtn.classList.toggle('btn-active'); menuLinks.classList.toggle('menu-open'); });
-
     links.forEach(link => {
         link.addEventListener('click', () => {
             menuBtn.classList.remove('btn-active');
@@ -1015,6 +993,21 @@
     }
 
     document.addEventListener("DOMContentLoaded", function () {
+        globalRevealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // Quando o elemento entra na tela, aplicamos a classe que o revela
+                    entry.target.classList.add('revelado-scroll');
+                    // Retiramos o observador após a primeira animação para não repetir
+                    globalRevealObserver.unobserve(entry.target);
+                }
+            });
+        }, { 
+            threshold: 0.10
+        });
+
+        document.querySelectorAll('.oculto-scroll').forEach((el) => { globalRevealObserver.observe(el); });
+
         const headerText = document.getElementById("header-text");
         const secoesTexto = {
             "inicio": " ",
